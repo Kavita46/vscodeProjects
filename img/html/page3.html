@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+body{
+    display:flex;
+    flex-direction:row;
+}
+
+div.header{
+    position:fixed;
+    width:500px;
+    height:50px;
+    top:0;
+    left:0;
+    background-color:#cc0000;
+    color:white;
+    font-family:'Exo 2', sans-serif;
+    padding:1em;
+}
+
+div.video{
+    position:relative;
+}
+        
+
+        div.container{
+            display:flex;
+            flex-direction:row;
+        }
+
+        div.card {
+            height: 150px;
+            width: 100px;
+            box-shadow:04px8px0rgba(0, 0, 0, 0.2), 06px20px0rgba(0, 0, 0, 0.19);
+            text-align:center;
+            border-style: solid;
+            border-color: greenyellow;
+
+        }
+    </style>
+
+
+
+
+
+<body>
+<div class = "header" >
+</head>
+
+<header id="header">Welcome to Diana`s page
+</br>
+<img id="header-img" src="../img/ybb.jpeg" height="300px" width="300px">
+
+<nav id="nav-bar"> This is inner nav</nav>
+<ul>
+<li> <a href="#div1" class="nav-link">to div1</a></li>
+<li><a href="#div2" class="nav-link">to div2</a></li>
+<li>  <a href="#div3" class="nav-link">to div3</a></li> 
+</ul>
+
+</header>
+</div>
+
+
+
+<div class = "video">
+    <video id='video' width="320" height="240" controls>
+
+        <source src="../img/猫中毒.mp4" type="video/mp4">
+    </video>
+</div>
+    <form id="form" action="https://www.freecodecamp.com/email-submit"></form>
+    <label for="email">Input your email</label>
+    <input name="email" type="email">
+    <button type='submit'>Submit</button>
+
+    <div class = "container">
+        <div class="card" id = "div1">
+            <p>100 dollar</p>
+            <p>舰长</p>
+            <button type="button">购买</button>
+        </div>
+        <div class="card" id = "div2">
+            <p>199 dollar</p>
+            <p>总督</p>
+            <button type='submit'>购买</button>
+        </div>
+        <div class="card" id = "div3">
+            <p>399 dollar</p>
+            <p>提督</p>
+            <button type='submit'>购买</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /* 
+        1. ul ol元素 默认占一行 块元素 span标签称为行元素  
+        块元素：div、h、p、table、ul、ol
+        行元素：span、label、a、img、em 、strong
+        2. 默认有margin-top：16px  margin-bottom：16px
+        3. 默认有padding: left 40px;的内边距——盒子内部的填充空间。
+        */
+        ul{
+            border: 1px solid red;
+            /* 设置当前盒子离前面盒子的距离 ——离父盒子 */
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        input:foucs{
+	outline:20px solid red;
+	outline:none;  
+}
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>星期一</li>
+        <li>星期二</li>
+        <li>星期三</li>
+    </ul>
+    <ol>
+        <li>孵化园</li>
+        <li>火车南站</li>
+    </ol>
+    
+    <span>span</span>
+    
+    <table border="1">
+        <tr>
+            <td>1233</td>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <td>1233</td>
+        </tr>
+    </table>
+
+    <input type="text" placeholder="请输入账号.." style=" outline: none;border:0px;">
+</body>
+</html>

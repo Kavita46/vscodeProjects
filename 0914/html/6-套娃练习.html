@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+.whole{
+    width:100%;
+    height:500px;
+    display:flex;
+}
+
+        .top{
+width:100%;
+border:3px red solid;
+height:20%;
+display:flex;
+        }
+        .aside{
+float:left;
+width:20%;
+border:green 2px solid;
+height:70%;
+-webkit-box-ordinal-group:0; -moz-box-ordinal-group:0; box-ordinal-group:0;
+        }
+        .main{
+          float:center;
+            width:65%;
+border:green 2px solid;
+height:70%;
+-webkit-box-flex:1; -moz-box-flex:1; box-flex:1; -webkit-box-ordinal-group:1; -moz-box-ordinal-group:1; box-ordinal-group:1;
+        }
+        .sub{
+            float:right;
+            width:25%;
+border:green 2px solid;
+height:70%;
+-webkit-box-ordinal-group:2; -moz-box-ordinal-group:2; box-ordinal-group:2;
+        }
+        .footer{
+            display:flex;
+            width:100%;
+border:green 2px solid;
+height:10%;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class = " whole" >
+        <div class = "top" ></div>
+        <div class = "aside" ></div>
+        <div class = "main" ></div>
+        <div class = "sub" ></div>
+        <div class = "footer" ></div>
+
+    </div>
+   
+</body>
+</html>
