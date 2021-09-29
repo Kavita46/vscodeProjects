@@ -1,0 +1,33 @@
+*{
+    border:1px solid red;
+}
+
+.content{
+    display:flex;
+    padding:30px;
+    width:100%;
+    height:2000px;
+    background:#fff;
+    flex-wrap:wrap;
+}
+
+.content-box{
+    width:570px;
+    height:340px;
+    margin-bottom:30px;
+}
+
+.content-box img{
+    width:100%;
+    height:inherit;
+}
+
+.content-box2{
+    width:570px;
+    height:340px;
+}
+
+.content-box2 img{
+    width:100%;
+    height:inherit;
+}

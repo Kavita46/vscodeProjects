@@ -1,0 +1,546 @@
+*{
+    margin: 0px;
+    padding: 0px;
+text-align:center;
+text-decoration:none;
+list-style-type: none;
+    /* border: 1px red solid;  */
+}
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+body{
+    background: #d0e2d1;
+}
+
+.container1{
+    width: 100%;
+    height: 85px;
+    background: rgb(184,217,190);
+}
+
+.container1 .box1{
+    width: 90%;
+    margin: auto;
+    height: 85px;
+}
+
+.container1 .box1 .text1{
+    width: auto;
+    line-height: 85px;
+
+    float: left;
+    
+}
+
+.container1 .box1 .text1 span{
+    color: rgb(175, 161, 168);
+}
+
+.container1 .box1 .li1{
+    line-height: 85px;
+    float: right;
+}
+
+.container1 .box1 .li1 ul{
+    list-style: none;
+}
+
+.container1 .box1 .li1 ul li{
+    float: left;
+}
+
+.container1 .box1 .li1 ul li a{
+    padding: 0px 15px;
+    border-left: 1px solid black;
+}
+
+.container1 .box1 .li1 ul li:nth-child(1) a{
+    border-left: 0px solid black;
+}
+
+.container1 .box1 .li1 ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.container1 .box1 .li1 ul li a:hover{
+    color: orange;
+}
+
+.container2{
+    width: 90%;
+    height: 120px;
+    margin: auto;
+
+    margin-top: 5px;
+}
+
+.container2 .box1{
+    width: 60%;
+    height: 120px;
+    float: left;
+    background: url(../img/logo.gif) no-repeat;
+}
+
+.container2 .box2{
+    width: 25%;
+    line-height: 120px;
+    float: left;
+}
+
+.container2 .box2 input{
+    outline: none;
+    border: 0px;
+    width: 250px;
+    height: 40px;
+}
+
+.container2 .box2 .icon1{
+    width: 40px;
+    height: 40px;
+    background-color: #efefef;
+    background-image: url(../img/header.gif);
+    background-position: -9px -7px;
+    float: left;
+    position: relative;
+    left: 270px;
+    top: 41.5px;
+}
+
+.container2 .box3{
+    width: 10%;
+    line-height: 30px;
+    float: left;
+    margin-top: 45px;
+    margin-left: 45px;
+    
+}
+
+.container2 .box3 .icon2{
+    width: 30px;
+    height: 30px;
+    background: orange;
+    float: left;
+
+    background: url(../img/header.gif);
+    background-position: -15px -43px;
+}
+
+.container2 .box3 .a1{
+    height: 30px;
+    width: 120x;
+    background: orange;
+}
+
+.container2 .box3 .a1 a{
+    /* background: orange; */
+    text-decoration: none;
+    color:white;
+}
+
+.container2 .box3:hover .a1 a{
+    color:green;
+}
+
+.container3{
+    width: 90%;
+    height: 65px;
+    margin: auto;
+    background: #5bbd5b;
+
+    margin-top: 5px;
+}
+
+.container3 ul li{
+    list-style: none;
+    float: left;
+    padding: 16px 30px;
+}
+
+.container3 ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+/* 设置悬停变黄 */
+
+.container3 ul li:hover{
+    background: rgba(0,128,0,1);
+    font-size: 27px;
+
+}
+
+.container3 ul li:hover a{
+    color:#fffc55;
+}
+
+
+.container4{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top:5px;
+}
+
+.container4 img{
+    width: 100%;
+}
+
+p{
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.container5{
+    width: 90%;
+    height: 709px;
+    margin: auto;
+    margin-top: 5px;
+    background: gray;
+
+    position: relative;
+}
+.container5 [class*=box]:hover {
+    background-size: 98% 98%;
+}
+
+.container5 .box1{
+    border:3px solid black;
+    width: 640px;
+    height: 350px;
+    background: white url(../img/1.jpg) no-repeat;
+    background-size: 100% 100%;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+.container5 .box2{
+    width: 640px;
+    border:3px solid black;
+    height: 350px;
+    background: white url(../img/2.jpg) no-repeat;
+    background-size: 100% 100%;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.container5 .box3{
+    border:1.5px solid black;
+    width: 320px;
+    height: 350px;
+    background: white url(../img/4.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+}
+
+.container5 .box4{
+    border:1.5px solid black;
+    width: 320px;
+    height: 350px;
+    background: white url(../img/5.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 323px;
+}
+
+.container5 .box5{
+    border:1.5px solid black;
+    width: 320px;
+    height: 350px;
+    background: white url(../img/6.jpg);
+    background-size: 100% 100%;
+
+    position: absolute;
+    right: 323px;
+    bottom: 0px;
+}
+
+.container5 .box6{
+    border:1.5px solid black;
+    width: 320px;
+    height: 350px;
+    background: white url(../img/7.jpg);
+    background-size: 100% 100%;
+
+    position: absolute;
+    right:0px;
+    bottom: 0px;
+}
+
+.container5 [class*=box] a{
+    position: relative;
+    top:50px;
+    left: 50px;
+    text-decoration: none;
+    color: green;
+}
+
+.container5 [class*=box] i{
+    position: relative;
+    top:50px;
+    left: 50px;
+}
+
+.container5 [class*=box]:hover a{
+    color: orange;
+}
+
+
+.container6{
+    width: 90%;
+    height: 701px;
+    margin: auto;
+    margin-top: 5px;
+    background: gray;
+
+    position: relative;
+}
+.container6 [class*=box]{
+    border :1px solid black;
+
+}
+.container6 .box1{
+    width: 640px;
+    height: 350px;
+    background: white;
+    background: url(../img/3.jpg)no-repeat;
+    background-size: 100% 100%;
+}
+
+.container6 .box2{
+    width: 320px;
+    height: 350px;
+    background: white;
+    background: url(../img/8.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top:0px;
+    left: 642px;
+
+}
+
+.container6 .box3{
+    width: 319px;
+    height: 350px;
+    background: white;
+    background: url(../img/9.jpg);
+    background-size: 100% 100%;
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+}
+
+.container6 .box4{
+    width: 319px;
+    height: 350px;
+    background: white;
+    background: url(../img/10.jpg);
+    background-size: 100% 100%;
+
+    position: absolute;
+    bottom: 0px;
+    left: 321px;
+
+}
+
+.container6 .box5{
+    width: 319px;
+    height: 350px;
+    background: white;
+    background: url(../img/11.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0px;
+    left:642px;;
+
+}
+
+.container6 [class*=box]:not(.box6) a{
+    position: relative;
+    top:50px;
+    left: 50px;
+    text-decoration: none;
+    color: green;
+}
+
+.container6 [class*=box] i{
+    position: relative;
+    top:50px;
+    left: 50px;
+}
+
+.container6 .box6{
+    width: 25%;
+    height: 100%;
+    background: white;
+    /* background: url(../img/11.jpg); */
+    background-size: 100% 100%;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;   
+}
+
+.container6 .box6 ul li{
+    padding: 45px;
+    list-style: none;
+}
+
+.container6 .box6 ul li a{
+    text-align: center;
+    text-decoration: none;
+    color: gray;
+}
+
+.container6 .box6 ul li:nth-child(1){
+    background: gray;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container6 .box6 ul li:nth-child(2){
+    background: url(../img/12.jpg);
+    background-size: 100% 100%;
+}
+
+.container6 .box6 ul li:nth-child(3){
+    background: url(../img/13.jpg);
+    background-size: 100% 100%;
+}
+
+.container6 .box6 ul li:nth-child(4){
+    background: url(../img/14.jpg);
+    background-size: 100% 100%;
+}
+
+.container6 .box6 ul li:nth-child(5){
+    background: url(../img/15.jpg);
+    background-size: 100% 100%;
+}
+
+.container6 .box6 ul li:nth-child(6){
+    background: url(../img/16.jpg);
+    background-size: 100% 100%;
+}
+
+.container6 [class*=box]:not(.box6):hover a{
+    color: orange;
+}
+
+.container6 .box6 ul li:hover a{
+    color: orange;
+}
+
+.container6 .box6 ul li:hover a span{
+    color: orange;
+    font-size: 35px;
+}
+
+.container6 [class*=box]:hover {
+    background-size: 99% 99%;
+}
+
+.container7{
+    width: 90%;
+    margin: auto;
+    height: auto;
+    margin-top:5px;
+    margin-bottom: 50px;
+}
+
+
+.container7 img{
+    width: 100%;
+}
+
+.container8{
+    width: 90%;
+    height: 250px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.container8 [class*=box]{
+    width: 15%;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    float: left;
+    
+    border-right: 1px solid gray;
+}
+
+.container8 .box5{
+    width: 10%;
+}
+
+.container8 .box6{
+    width: 20%;
+    border: 0px;
+}
+
+.container8 span{
+    color: gray;
+}
+
+.container8 .box6 button{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background: orange;
+}
+
+.container9{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.container9 ul li{
+    margin: 0px 10px;
+    margin-top: 10px;
+    list-style: none;
+    float: left;
+}
+
+.container9 ul li:nth-child(1){
+    color: #81cf8b;
+    font-size: 20px;
+}
+
+.container9 ul li+li a{
+    text-decoration: none;
+    color: #5f7540;
+}
+
+.container9 ul li+li a:hover{
+    color: orange;
+}
+
+.container10{
+    width: 90%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+}

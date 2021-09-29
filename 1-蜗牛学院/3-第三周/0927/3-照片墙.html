@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            height: 600px;
+            width: 100%;
+            border: 1px solid red;
+            display: flex;
+            position: relative;
+        }
+        .box2 {
+            background: url("img/gyy02.jpg") no-repeat;
+            width: 250px;
+            height: 140px;
+            position: absolute;
+            left: 300px;
+            transform: rotate(30deg);
+        }
+
+        .box1 {
+
+            background: url("img/gyy01.jpeg") no-repeat;
+            width: 329px;
+            height: 218px;
+            position: absolute;
+            left: 400px;
+            transform: rotate(-20deg);
+        }
+
+    
+
+        .box3 {
+            background: url("img/gyy03.jpg") no-repeat;
+            width: 320px;
+            height: 200px;
+            position: absolute;
+            left: 600px;
+            transform: rotate(45deg);
+        }
+
+        [class*=box] {
+            opacity: 0.6;
+            display: inline-block;
+            width: 400px;
+            height: 300px;
+            border: 1px solid red;
+            transition: 3s;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+
+
+        [class*=box]:hover{
+            margin-top:100px;
+            opacity:1;
+            transform:rotate(0deg) scale(1.3);
+            z-index:10;
+        }
+
+        /* .box2:hover {
+            opacity: 1;
+            transform:  rotate(0deg) scale(1.3);
+        }
+
+
+        .box1:hover {
+
+            opacity: 1;
+            transform:rotate(0deg) scale(1.3) ;
+        }
+
+        .box3:hover {
+
+            opacity: 1;
+            transform: rotate(0deg) scale(1.5) ;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class=" box2"></div>
+        <div class=" box3 "></div>
+    </div>
+</body>
+
+</html>

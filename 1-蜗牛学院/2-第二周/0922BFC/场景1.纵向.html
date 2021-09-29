@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            margin-bottom: 20px;
+        }
+        .box2{
+            width: 20die0px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 50px;
+        }
+        .container{
+            /* 没有BFC的时候 margin为50px,有重叠,有BFC的时候margin为70,无重叠 */
+        /*创建BFC容器 解决margin重叠问题*/    
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class = "container">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

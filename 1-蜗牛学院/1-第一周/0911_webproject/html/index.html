@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿拉手网</title>
+
+    <style type="text/css">
+        #index-top tr td {
+            border: 1px solid red;
+           
+        }
+
+        #index-top2 tr td {
+            border: 1px solid rgb(253, 253, 253);
+        }
+
+        tr, td {
+            background-color: #f0f0f1;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+            color: blue;
+        }
+
+        #top {
+            height: 40px;
+        }
+
+        #nav {
+            background: orangered;
+            height: 50px;
+            line-height: 40px;
+        }
+
+        #nav li {
+            list-style-type: none;
+            float: left;
+            font-size: 20px;
+            width: 100px;
+            text-align: center;
+        }
+
+        #nav li a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+        }
+
+        #div1 {
+            width: 100%;
+            border: 1px solid #00ff00;
+        }
+
+        #div2 {
+            display: flex;
+            width: 100%;
+            border: 1px solid red;
+            height: 70px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="div1" width = "100%">
+        <table border="1">
+            <tr>
+                <td>
+                    <a href="#">收藏拉手网</a>
+                    <a href="#">订阅</a>
+                    <a href="#">帮助</a>
+                    <a href="#">反馈</a>
+                </td>
+                <td >
+                    <select>
+                        <option>购物车</option>
+                    </select>
+                    <select>
+                        <option>最近浏览</option>
+                    </select>
+                    <select>
+                        <option>我的拉手</option>
+                    </select>
+                    <a href="">登录</a>
+                    <a href="">注册</a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="div2" style = "width :100%">
+        <div id="div2_1" style = "width :15%">
+            <img src="/0911_webproject/img/图标/logo.png">
+        </div>
+        <div id="div2_2" style = "width :60% ;height:100%;">
+
+            <table border="2">
+                <tr style = "height:40%">
+                    <td >
+                        <span>重庆</span>
+                        <select>
+                            <option value="default">--切换城市--</option>
+                            <option value="cq">重庆</option>
+                            <option value="bj">北京</option>
+                            <option value="sh">上海</option>
+                            <option value="tj">天津</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="search">
+                        <input type="submit" value="搜索">
+                    </td>
+                </tr>
+                <tr style = "height:60%">
+                    <td>
+                        <img src="/0911_webproject/img/图标/rain.png">
+                        <span>19℃/17℃ 小雨</span>
+                    </td>
+                    <td>
+                        <a href="#">美食</a>
+                        <a href="#">自助餐</a>
+                        <a href="#">万州</a>
+                        <a href="#">火锅</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="div2_3" style = "width :100%">
+            <img src="/0911_webproject/img/图标/commitment.png">
+        </div>
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li style="background:greenyellow; height:50px; width:150px;"><a href="#">全部商品分类</a></li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">新单</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">美食</a> </li>
+            <li><a href="#">酒店</a> </li>
+            <li><a href="#">旅游</a> </li>
+            <li><a href="#">购物</a> </li>
+        </ul>
+    </div>
+
+    <table id="index-top2" style="width: 100%;padding: auto;">
+        <tr>
+            <td style="width: 20%;">
+                <table>
+
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">美食</option>
+                            </select>
+                            <br>
+                            <a href="">自助餐</a>
+                            <a href="">火锅</a>
+                            <a href="">川菜</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">电影|在线选座</option>
+                            </select>
+                            <br>
+                            <a href="">银河护卫队</a>
+                            <a href="">新华怒放</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">酒 &nbsp;店</option>
+                            </select>
+                            <br>
+                            <a href="">经济型酒店</a>
+                            <a href="">特色酒店</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">休闲娱乐</option>
+                            </select>
+                            <br>
+                            <a href="">KTV</a>
+                            <a href="">养生休闲</a>
+                            <a href="">其他娱乐</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">旅游</option>
+                            </select>
+                            <br>
+                            <a href="">门票</a>
+                            <a href="">周边游</a>
+                            <a href="">国内游</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">生活护理</option>
+                            </select>
+                            <br>
+                            <a href="">健康护理</a>
+                            <a href="">婚庆服务</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">摄影写真</option>
+                            </select>
+                            <br>
+                            <a href="">儿童写真</a>
+                            <a href="">成人写真</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">丽 &nbsp;人</option>
+                            </select>
+                            <br>
+                            <a href="">美发</a>
+                            <a href="">美甲</a>
+                            <a href="">美体</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="">
+                                <option value="">购物</option>
+                            </select>
+                            <br>
+                            <a href="">女装</a>
+                            <a href="">手机</a>
+                            <a href="">电脑</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">0元抽奖</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+
+            <td style="width: 60%;">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <table cellpadding="10px">
+                                <tr>
+                                    <td>热门团购</td>
+                                    <td>
+                                        <a href="">电影</a>
+                                        <a href="">KTV</a>
+                                        <a href="">门票</a>
+                                        <a href="">自助餐</a>
+                                        <a href="">电影票</a>
+                                        <a href="">烤全羊</a>
+                                        <a href="">蛋糕</a>
+                                        <a href="">美发</a>
+                                        <a href="">火锅</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>全部区域</td>
+                                    <td>
+                                        <a href="">渝北区</a>
+                                        <a href="">万州区</a>
+                                        <a href="">南岸区</a>
+                                        <a href="">永川区</a>
+                                        <a href="">沙坪坝</a>
+                                        <a href="">渝中区</a>
+                                        <a href="">江北区</a>
+                                        <a href="">巴南区</a>
+                                        <a href="">更多&gt;</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>热门商圈</td>
+                                    <td>
+                                        <a href="">南平</a>
+                                        <a href="">观音桥</a>
+                                        <a href="">朝天门</a>
+                                        <a href="">解放碑</a>
+                                        <a href="">洋人街</a>
+                                        <a href="">沙坪坝</a>
+                                        <a href="">大坪</a>
+                                        <a href="">三峡广场</a>
+                                        <a href="">磁器口</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>购物</td>
+                                    <td>
+                                        <a href="">服装鞋包</a>
+                                        <a href="">运动户外</a>
+                                        <a href="">家居家纺</a>
+                                        <a href="">食品茶酒</a>
+                                        <a href="">钟表首饰</a>
+                                        <a href="">美妆个护</a>
+                                        <a href="">数码家电</a>
+                                        <a href="">母婴玩具 </a>
+                                        <a href="">婚纱摄影 </a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            热门商品
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">
+                            <a href="">
+                                <img src="/photo/re men shang pin/CqgBJlQ2Km6AFqyJAAF1K_SaX5I846-429x273.jpg" alt=""
+                                    style="width:350px; height:200px">
+                                【永川】乐和乐都<br>欢乐世界成人票1张</a>
+                            <br><span style="color: red;font-size: 20px;">&yen;136</span><span
+                                style="font-size: 6px;"><s>&yen;;160</s></span>
+                            <div style="float: right;">已售<span style="color: red;">18</span></div>
+                        </td>
+                        <td>
+                            <a href="">
+                                <img src="/photo/re men shang pin/CqgBHlQqwr6AeI0PAAFbd6-efCM443-308x196.jpg" alt=""
+                                    style="width:350px; height:200px">
+                                【南坪】金逸影城IMAX<br>单人2d电影票，2张电影票可升级为IMAX</a>
+                            <br><span style="color: red;font-size: 20px;">&yen;26</span><span
+                                style="font-size: 6px; "><s>&yen;;80</s></span>
+                            <div style="float: right;">已售<span style="color: red;">179</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 20%;">
+                <table>
+                    <tr>
+                        <td colspan="4"><img src="/photo/huafei/1.jpg" alt=""></td>
+                        </trtr>
+                    <tr>
+                        <td colspan="4"><img src="/photo/111a.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/photo/xiao tu biao1/]BBEVJT[E`)YL~[RW1DR83X.jpg" alt=""></td>
+                        <td><img src="/photo/xiao tu biao1/QYHXXJ]R5(YDXY$0JE@O8GP.jpg" alt=""></td>
+                        <td><img src="/photo/xiao tu biao1/Q{08EBN$A}B(SJ]QPZ1DWMO.jpg" alt=""></td>
+                        <td><img src="/photo/xiao tu biao1/~G9JO1R(NBL3JG8%8RJZIQ2.jpg" alt=""></td>
+                    </tr>
+
+        </tr>
+        <tr>
+            <td colspan="4">
+                号码:<input type="text"><br>
+                面值：<select name="" id="">
+                    <option value="">10元</option>
+                </select><br>
+                售价<span style="color: red;">10-500元</span>
+                <br><input type="button" value="立刻充值">
+            </td>
+        </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+
+
+</body>
+
+</html>

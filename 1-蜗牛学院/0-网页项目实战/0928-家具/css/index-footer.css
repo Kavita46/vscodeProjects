@@ -1,0 +1,39 @@
+.footbar{
+
+    height:190px;
+    width:100%;
+    background:#c3ab89;
+}
+
+.footbar-text{
+    margin-top:100px;
+    margin-left:60px;
+    width:1150px;
+    height:150px;
+
+}
+
+.footbar-text h1{
+    color:white;
+    font-size:30px;
+}
+
+.footbar-text p{
+    font-size:15px;
+    color:#e2d5c2;
+}
+
+.footbar2{
+    width:100%;
+    height:200px;
+    background:#f7f5f5;
+}
+.footbar2 p{
+    border-bottom:#aaaaaa 2px solid;
+}
+.footbar3{
+    width:100%;
+    height:50px;
+    background:#fae0cc;
+}
+

@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    width: 100%;
+    border-bottom: 2px solid #3f9af7;
+    height: 90px;
+    background: linear-gradient(to right, #2e2965, #ae55e0);
+    /* background-image: url(img/pursebg.png); */
+    position: fixed;
+    top: 0px;
+    overflow: hidden;
+}
+.box{
+    width: 80%;
+    margin: 0px auto;
+    height: 90px;
+    /* float: left; */
+    overflow: hidden;
+}
+.img{
+    margin-top: 5px;
+    float: left;
+}
+
+.box2{
+    float: right;
+    border: 0px solid red;
+    margin-top: -3px;
+}
+.box2 li{
+    /* border: 1px solid red; */
+    line-height: 90px;
+    font-size: 16px;
+    float: left;
+    list-style: none;
+    margin-right: 40px;
+}
+.box2 li a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+}
+.box2 li input{
+    background-color: rgb(64, 40, 120);
+    border: 0px;
+    width: 92px;
+    height: 30px;
+    border-bottom: 1px solid white;
+}
+.box2 li .i1{
+    color: rgb(92,46,145);
+}
+.box2 li .i2{
+    color:white;
+}
+.top .box .box2 li:first-child{
+    /* border: 1px solid red; */
+    background-color: white;
+    /* height: 40px; */
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 40px;
+    margin-top: 27px;
+   }
+.box2 li a:hover{
+    color: rgb(153,204,255);
+}
+.top .box .box2 li:first-child a:hover{
+    color: rgb(92,46,145);
+}
+.center{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 630px;
+    background-image: url(../img/pursebg.png);
+    background-size: cover;
+    overflow: hidden;
+}
+.bigbox{
+    width: 80%;
+    height: 500px;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    background-image: url(../img/shenzhen-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -50px 0px;
+    margin-top: 120px;
+    border-radius: 10px;
+}
+.center .bigbox .nav a{
+    text-decoration: none;
+    width: 200px;
+    color: white;
+    /* border: 1px solid red; */
+    margin-top: 15px;
+    display: inline-block;
+}
+.center .bigbox .nav li{
+    list-style: none;
+    /* margin-top: 10px; */
+}
+.small-box{
+    position: relative;
+    width: 250px;
+    /* border: 1px solid red; */
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgba(33,45,72,0.5);
+    text-align: center;
+}
+.small-box>li{
+    margin-top: 20px;
+}
+.center .bigbox .nav li .item{
+    /* border:1px solid red; */
+    width: 665px;
+    position: absolute;
+    height: 500px;
+    left:250px;
+    top:0px;
+    display: none;
+    background-color: rgba(62, 62, 112, 0.7);
+    border-radius: 10px;
+}
+
+.center .bigbox .nav li:hover .item1{
+    display: block;
+}
+.center .bigbox .nav li:hover .item2{
+    display: block;
+    /* margin-top: 10px; */
+}
+.center .bigbox .nav li:hover .item3{
+    display: block;
+    /* margin-top: 10px; */
+}
+.center .bigbox .nav li:hover .item4{
+    display: block;
+    /* margin-top: 10px; */
+}
+.center .bigbox .nav li .item .a{
+    /* border: 1px solid red; */
+    color: black;
+    border-radius: 7px;
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    display: block;
+    text-align: center;
+    /* margin-bottom: 10px; */
+    font-weight: 700;
+    margin-top: 8px;
+}
+.center .bigbox .nav li .item li{
+    float: left;
+    margin-right: 30px;
+    font-size: 15px;
+}
+.fuhao{
+    float: right;
+    /* border: 1px solid red; */
+    margin-left: 50px;
+}
+
+.PBET{
+    height:170px;
+    width:100%;
+    margin-top:60px;
+}
+.PBET img{
+    width:100%;
+    height:170px;
+}
+
+.other{
+    width:100%;
+    height:1000px;
+    background:white;
+}

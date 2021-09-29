@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transform-style: preserve-3d;
+        }
+
+        body {
+            border: 1px solid red;
+            justify-content: center;
+            height: 600px;
+            align-items: center;
+            display: flex;
+        }
+
+        .container {
+            width: 1500px;
+            height: 600px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            flex-wrap: wrap;
+            transition: 3s;
+        }
+
+        .box {
+            transform-style: preserve-3d;
+            margin-top: 15px;
+            width: 270px;
+            margin-left: 100px;
+            height: 150px;
+            border: 1px solid red;
+            perspective: 10000px;
+            transform-origin: 50% 50% -50%;
+            transition: 3s;
+
+        }
+
+        .box .text1 {
+            transition: 3s;
+            position: absolute;
+            display: block;
+            /* width: 100%; */
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .box .text {
+            transition: 3s;
+            transform-origin: bottom left;
+            position: absolute;
+            display: block;
+            background: pink;
+            width: 100%;
+            height: 100%;
+            transform: rotateX(270deg) translateY(150px);
+        }
+
+
+        .container:hover .box {
+            transform-style: preserve-3d;
+            /* perspective-origin: ; */
+            transform: rotate3d(1, 0, 0, 90deg);
+        }
+
+        /* .box:hover .img{
+            transition:3s;
+            transform-origin: bottom left;
+            transform:rotateX(90deg) translateZ(150px);
+        }
+
+        .box:hover .text{
+            transition:3s;
+            transform-origin: top left;
+            transform: translateZ(10px);
+        
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img class="img" src="项目/img/1.jpg">
+            <div class="text">
+                <p>西虹市首富</p>
+                <p>看了以后非常开心,有一种丰收的喜=喜悦</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text2">
+                <p>西虹市首富</p>
+                <p>看了以后非常开心,有一种丰收的喜=喜悦</p>
+            </div>
+            <div class="text"></div>
+        </div>
+        <div class="box">
+            <div class="text2"></div>
+            <div class="text"></div>
+        </div>
+        <div class="box">
+            <div class="text2"></div>
+            <div class="text"></div>
+        </div>
+        <div class="box">
+            <div class="text2"></div>
+            <div class="text"></div>
+        </div>
+        <div class="box">
+            <div class="text2"></div>
+            <div class="text"></div>
+        </div>
+        <div class="box">
+            <div class="text2"></div>
+            <div class="text"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

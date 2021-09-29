@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            margin-top: 100px;
+            width: 400px;
+            height: 500px;
+            border: 1px solid red;
+
+        }
+
+        [class*=box] {
+            border: 1px solid green;
+            width: 95%;
+            height: 95%;
+            transition: 3s;
+            margin: 0 auto;
+        }
+
+        .box1 {
+
+            background: url(img/gyy01.jpeg) no-repeat;
+            width: 30%;
+            transform: rotate(30deg);
+        }
+
+        .box2 {
+            background: url(img/gyy02.jpg) no-repeat;
+            width: 30%;
+            transform: rotate(-20deg);
+        }
+
+        .box3 {
+            background: url(img/gyy03.jpg) no-repeat;
+            width: 30%;
+            transform: rotate(40deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>

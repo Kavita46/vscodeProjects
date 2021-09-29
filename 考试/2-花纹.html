@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.container{
+    position:absolute;
+    left:100px;
+    top:100px;
+    width:300px;
+    height:300px;
+     border:1px solid red; 
+      background-image:repeating-linear-gradient(45deg,
+     #f4b585 0px, #f4b585 30px, #fffd8f 30px, #fffd8f 60px)
+     , repeating-linear-gradient(-45deg,
+    #ef847f 0px, #ef847f 30px, red 30px, red 60px)
+     ;   
+     z-index:4;
+}
+
+.container2{
+    z-index:3;
+    border:1px solid green;
+    position:absolute;
+    left:100px;
+    top:100px;
+    width:300px;
+    height:300px;
+
+    background-image:repeating-linear-gradient(-45deg,
+    #ef847f 0px, #ef847f 30px, red 30px, red 60px);  
+
+    /* background-image:
+    repeating-linear-gradient(-45deg,
+     #f4b585 0px, #f4b585 30px, #fffd8f 30px, #fffd8f 60px);    */
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class ="container"></div>
+    <div class ="container2"></div>
+</body>
+</html>

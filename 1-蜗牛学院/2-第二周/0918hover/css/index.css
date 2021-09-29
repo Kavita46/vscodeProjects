@@ -1,0 +1,36 @@
+
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+ul li{
+    list-style:none;
+}
+
+.small-box{
+    position:relative;
+}
+.box ul li .item{
+    border:1px solid red;
+    width:200px;
+    position:absolute;
+    left:120px;
+    top:0;
+    /* display:none; */
+}
+
+.box ul li .item2{
+    top:26px;
+}
+
+/* 添加hover */
+
+.box ul li:hover .item1{
+    display:block;
+}
+.box ul li:hover .item2{
+    display:block;
+}

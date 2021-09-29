@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+/* 放图片的icon */
+[class*=icon]{
+    width:120px;
+    height:100px;
+    position:absolute;
+    top:30px;
+    left:30px;
+    border:1px solid red;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+.icon1{
+    background-image: url("img/pic_p01.jpg");
+}
+.icon2{
+    background-image: url("img/pic_p02.jpg");
+}
+.icon3{
+    background-image: url("img/pic_p03.jpg");
+}
+.icon4{
+    background-image: url("img/pic_p04.jpg");
+}
+.icon5{
+    background-image: url("img/pic_p05.jpg");
+}
+.icon6{
+    background-image: url("img/pic_p06.jpg");
+}
+
+
+        .container {
+            justify-content: center;
+            display: flex;
+            height: 500px;
+            width: 1300px;
+            border: 1px solid red;
+        }
+
+        [class*="box"] div-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        [class*="box"] a {
+            display: block;
+            height: 30px;
+            width: 80px;
+            text-decoration: none;
+            border: 1px solid red;
+            color: red;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+        }
+
+        [class*="box"] {
+            position: relative;
+
+        }
+
+        .box1 {
+
+            border: 1px solid red;
+
+            width: 300px;
+            /* background: url("img/pic_p01.jpg") no-repeat; */
+        }
+
+        .box1:hover img{
+            transform:translate(-30px,-30px);
+        }
+        .box2:hover img{
+            transform:translate(-30px,-30px);
+        }
+        .box3:hover img{
+            transform:translate(-30px,-30px);
+        }
+        .box4:hover img{
+            transform:translate(-30px,-30px);
+        }
+        .box5:hover img{
+            transform:translate(-30px,-30px);
+        }
+        .box6:hover img{
+            transform:translate(-30px,-30px);
+        }
+
+        .box-2plus {
+            justify-content: center;
+            overflow: hidden;
+            width: 604px;
+            display: flex;
+            display: inherit;
+            flex-wrap: wrap;
+        }
+
+        .box2 {
+
+            border: 1px solid red;
+            height: 250px;
+            width: 300px;
+            /* background-image:url("img/pic_p02.jpg") */
+        }
+
+        .box3 {
+            border: 1px solid red;
+            height: 250px;
+            width: 300px;
+        }
+
+        .box4 {
+            border: 1px solid red;
+            height: 250px;
+            width: 300px;
+        }
+
+        .box5 {
+            border: 1px solid red;
+            height: 250px;
+            width: 300px;
+        }
+
+        .box6 {
+            border: 1px solid red;
+            width: 300px;
+
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <div clss = "icon1"></div>
+            <div class="div-text">
+                <h3>安享康健2018
+
+                </h3>
+                <p>保120种疾病<br>
+                    赔付最高可达116万
+                </p>
+                <a href="#">查看详情</a>
+            </div>
+
+        </div>
+
+        <div class="box-2plus">
+            <div class="box2">
+                <div clss = "icon1"></div>
+                <div class="div-text">
+                    <h3>安享康健2018
+    
+                    </h3>
+                    <p>保120种疾病<br>
+                        赔付最高可达116万
+                    </p>
+                    <a href="#">查看详情</a>
+                </div>
+                
+            </div>
+            <div class="box3">
+                <div clss = "icon1"></div>
+                <div class="div-text">
+                    <h3>安享康健2018
+    
+                    </h3>
+                    <p>保120种疾病<br>
+                        赔付最高可达116万
+                    </p>
+                    <a href="#">查看详情</a>
+                </div>
+                
+            </div>
+            <div class="box4">
+                <div class="div-text">
+                    <h3>安享康健2018
+    
+                    </h3>
+                    <p>保120种疾病<br>
+                        赔付最高可达116万
+                    </p>
+                    <a href="#">查看详情</a>
+                </div>
+                <img src="img/pic_p04.jpg">
+            </div>
+            <div class="box5">
+                <div class="div-text">
+                    <h3>安享康健2018
+    
+                    </h3>
+                    <p>保120种疾病<br>
+                        赔付最高可达116万
+                    </p>
+                    <a href="#">查看详情</a>
+                </div>
+                <img src="img/pic_p05.jpg">
+            </div>
+        </div>
+        <div class="box6">
+            <div class="div-text">
+                <h3>安享康健2018
+
+                </h3>
+                <p>保120种疾病<br>
+                    赔付最高可达116万
+                </p>
+                <a href="#">查看详情</a>
+            </div>
+            <img src="img/pic_p06.jpg">
+        </div>
+    </div>
+</body>
+
+</html>

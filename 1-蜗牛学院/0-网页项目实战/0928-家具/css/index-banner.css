@@ -1,0 +1,23 @@
+.banner{
+    width:100%;
+    height:400px;
+
+    background:url("/1-蜗牛学院/0-网页项目实战/0928-家具/img/ban.jpg");
+}
+
+.banner-text{
+    position:absolute;
+    width:400px;
+    height:300px;
+    top:120px;
+    left:25%;
+    background:#6f5335;
+opacity:0.6;
+}
+
+.banner-tail{
+    width:100%;
+    height:60px;
+    background:#c3ab89;
+}
+

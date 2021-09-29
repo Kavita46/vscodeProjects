@@ -1,0 +1,35 @@
+.title{
+   line-height:40px;
+    
+}
+.score{
+    line-height:40px;
+    color:red;
+    font-weight:bold;
+    position:absolute;
+    right:10px;
+}
+
+
+.item-2-score{
+    display:inline;
+    position:absolute;
+    right:20px;
+    top:0px;
+    color:red;
+}
+.item-2-title{
+    display:inline;
+font-size:20px;
+font-weight: bold;
+color:#6c6c6c;
+}
+
+.item-2-info{
+    font-size:12px;
+    color:#a8acb1;
+}
+.item-2-detail{
+    font-size:12px;
+    color:#4c4a47;
+}

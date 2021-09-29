@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/index-header.css" />
+		<link rel="stylesheet" href="css/index-nav.css" />
+		<link rel="stylesheet" href="css/index-container.css" />
+		<link rel="stylesheet" href="css/index-footer.css" />
+		<link rel="stylesheet" href="css/index-pop.css" />
+		<link rel="shortcut icon" href="img-index/index_favicon.ico" type="image/x-icon"/>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="header-logo"><img src="img-index/logo.png" /></div>
+			<a class="header-game"><img src="img-index/header_game.jpg" />
+				<div class="hide-header-game">
+					<img src="img-index/bg_header_game.jpg" />
+				</div>
+			</a>
+			<div class="header-right">
+				<img align="center" src="img-index/header_icon.png" />
+				<a class="header-a" class="header-right-l">成长守护平台</a>
+				<div class="header-right-r" style="margin-left: 25px;">
+					<a class="header-a">腾讯游戏排行榜</a>
+					<a class="header-select"></a>
+		
+				</div>
+
+			</div>
+		</div>
+		<div class="nav">
+			<div class="nav-header">
+				<div class="nav-inner" onmouseover="showBg()" onmouseout="hideBg()">
+					<h1 style="display: inline-block;width: 204px;height: 152px;float: left;position: relative;z-index: 120;"><img src="img-index/nav_logo.png" /></h1>
+					<ul>
+						<li>
+							<a class="nav-inner-top">官网首页</a>
+							<a class="nav-inner-bottom">HOME</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">游戏资料</a>
+							<a class="nav-inner-bottom">DATA</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">攻略中心</a>
+							<a class="nav-inner-bottom">RAIDERS</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">赛事中心</a>
+							<a class="nav-inner-bottom">MATCH</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">商城/合作</a>
+							<a class="nav-inner-bottom">STORE</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">社区互动</a>
+							<a class="nav-inner-bottom">COMMUNITY</a>
+						</li>
+						<li>
+							<a class="nav-inner-top">玩家支持</a>
+							<a class="nav-inner-bottom">PALYER</a>
+						</li>
+					</ul>
+					<div class="login-pannel">
+						<a class="login-icon" href="personal.html">
+							<img src="img-index/login.png" />
+						</a>
+						<div class="login-info">
+							<a  class="login-text" onclick="showPop()">欢迎登录</a>
+							<a class="login-tint">登录后查看游戏战绩</a>
+						</div>
+
+					</div>
+				</div>
+				<div class="bg" id="bg" onmouseover="showBg()" onmouseout="hideBg()">
+					<div class="hide-nav">
+						<ol>
+							<li></li>
+							<li>
+								<a>版本介绍</a>
+								<a>游戏介绍</a>
+								<a>英雄资料</a>
+								<a>爆料站</a>
+								<a>故事站</a>
+								<a>游戏壁纸</a>
+							</li>
+							<li>
+								<a>攻略中心</a>
+								<a>英雄攻略</a>
+								<a>视频中心</a>
+							</li>
+							<li>
+								<a>KPL职业联赛</a>
+								<a>KCC王者冠军杯</a>
+								<a>KOC王者城市赛</a>
+								<a>QGC夏季联赛</a>
+								<a>TGA大奖赛</a>
+								<a>WGC精英赛</a>
+								<a>王者高校联赛</a>
+							</li>
+							<li>
+								<a>周边商城</a>
+								<a>王者信用卡</a>
+								<a>王者文化站</a>
+							</li>
+							<li>
+								<a>官方助手</a>
+								<a>手Q部落</a>
+								<a>微信圈子</a>
+								<a>官方微博</a>
+								<a>微信公众号</a>
+								<a>手Q订阅号</a>
+							</li>
+							<li>
+								<a><i class="icon-guard"></i>成长守护平台</a>
+								<a><i class="icon-health"></i>健康系统</a>
+								<a>客服专区</a>
+								<a>礼包兑换</a>
+								<a>自助服务</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+	
+	
+		<div class="weixin-login hide"></div>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/pop.js"></script>
+	</body>
+
+</html>

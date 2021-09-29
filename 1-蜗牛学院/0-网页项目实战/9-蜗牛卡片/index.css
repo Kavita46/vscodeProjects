@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+    height: 800px;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    background: #f5f7fa;
+    justify-content: center;
+    align-items:center;
+}
+
+body {
+    font-family: "Microsoft Yahei", "楷体";
+}
+
+.box {
+    text-align: center;
+    border-radius: 2%;
+    width: 230px;
+    height: 340px;
+    margin: 10px 10px;
+    border: 1px solid red;
+    transition: all 1s ease;
+    flex-shrink:1;
+}
+
+.box p {
+    line-height: 100px;
+}
+
+/* 悬停变色 */
+
+.color:hover {
+    background: #cc5bd6;
+}
+
+@keyframes wiggle {
+    20%  { transform: translateX(4px);  }
+    40%  { transform: translateX(-4px); }
+    60%  { transform: translateX(2px);  }
+    80%  { transform: translateX(-1px); }
+    100% { transform: translateX(0);    }
+  }
+
+.wiggle:hover {
+    animation: wiggle 1s ease;
+    animation-iteration-count: 1;
+}
+
+.box img {
+    border-radius: 3% 3% 3% 3%;
+    ;
+    width: 100%;
+    height: 128px;
+}
+
+/* .box:hover{
+    transform: scale(102%);
+} */

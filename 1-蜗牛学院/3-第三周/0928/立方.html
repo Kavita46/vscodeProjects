@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.cube:hover {
+transform:rotate3d(1,1,0, 300deg);
+}
+
+
+/* .container{
+    width:200px;
+    height:200px;
+    margin:100px;
+} */
+.cube{
+    margin:300px;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    transition:6s;
+
+    border:1px solid red;
+    /* 景深设置在外部容器 */
+    perspective: 700px;
+    width:200px;
+    height:200px;
+/* 设置灭点 */
+
+    perspective-origin:150% 150%;
+    transform-style:preserve-3d;
+}
+
+.face{
+    /* display:block; */
+    position:absolute;
+    width:100px;
+    height:100px;
+
+}
+.front {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateZ(50px);
+  }
+  
+  .back {
+    background: rgba(0, 255, 0, 1);
+    color: black;
+    transform:  translateZ(-50px);
+  }
+  
+  .right {
+    background: rgba(196, 0, 0, 0.7);
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  
+  .left {
+    background: rgba(0, 0, 196, 0.7);
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  
+  .top {
+    background: rgba(196, 196, 0, 0.7);
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  
+  .bottom {
+    background: rgba(196, 0, 196, 0.7);
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+  
+
+</style>
+
+</head>
+<body>
+    <div class ="container">
+        <div class ="cube">
+<div class ="face front"></div>
+ <div class ="face back"></div>
+ <div class ="face left"></div>
+ <div class ="face right"></div>
+ <div class ="face top"></div>
+ <div class ="face bottom"></div>
+
+
+</div>
+    </div>
+</body>
+</html>
