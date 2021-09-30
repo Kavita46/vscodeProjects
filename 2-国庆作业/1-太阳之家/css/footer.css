@@ -1,0 +1,116 @@
+/* 公共组件footer,包含friends 和 copyright */
+.footer {
+    height: 210px;
+    width: 100%;
+}
+
+.footer-friends {
+    height: 170px;
+    width: 100%;
+    background-color: #f6f4f5;
+}
+
+.friends-section {
+    width: 140px;
+    height: 70px;
+    display: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto auto;
+}
+
+.friends-text {
+    /* width: 140px; */
+    line-height:40px;
+    text-align:center;
+    height: 40px;
+    border-bottom: 2px solid #c3ac89;
+}
+
+.friends-logos {
+    margin-top:10px;
+    height: 30px;
+    width: 140px;
+}
+
+.friends-logos img{
+    width:30px;
+    height:30px;
+    display:inline-block;
+}
+/* 最后一部分  */
+.footer-copyright {
+    width: 100%;
+    height: 40px;
+    background: #fae0cc;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* 雪碧图 */
+
+
+
+[class*=sprite]{
+    display:inline-block;
+}
+.sprite1 {
+	background: url('/2-国庆作业/1-太阳之家/images/social.png') no-repeat -109px -5px;
+	width: 32px;
+	height: 32px;
+}
+
+.sprite1:hover{
+    width: 32px;
+	height: 32px;
+    background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -109px -47px;
+}
+
+.sprite2 {
+	background: url('/2-国庆作业/1-太阳之家/images/social.png') no-repeat -151px -5px;
+	width: 32px;
+	height: 32px;
+}
+.sprite2:hover{
+    width: 32px;
+	height: 32px;
+    background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -151px -47px;
+}
+.sprite3 {
+	background: url('/2-国庆作业/1-太阳之家/images/social.png') no-repeat -193px -5px;
+	width: 32px;
+	height: 32px;
+}
+.sprite3:hover{
+    background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -193px -47px;
+}
+.sprite4 {
+	background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -235px -5px;
+	width: 32px;
+	height: 32px;
+}
+.sprite4:hover{
+    background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -235px -47px;
+}
+.sprite5 {
+	
+	width: 32px;
+	height: 32px;
+}
+.sprite6 {
+	
+	width: 32px;
+	height: 32px;
+}
+.sprite7 {
+	background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -193px -47px;
+	width: 32px;
+	height: 32px;
+}
+.sprite8 {
+	background: url(  '/2-国庆作业/1-太阳之家/images/social.png') no-repeat -235px -47px;
+	width: 32px;
+	height: 32px;
+}

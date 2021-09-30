@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border:1px solid red;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+        .banner{
+            width: 500%;
+            height: 450px;
+            background-color: violet;
+            border:3px solid black;
+            display: flex;
+            animation: move 10s infinite linear ;
+            /* overflow: hidden; */
+        }
+        .images{
+            width:20%;
+            height: 450px;
+            /* overflow: hidden; */
+
+        }
+        .images img{
+            width: 100%;
+            height: 100%;
+        }
+        @keyframes move {
+            0%{
+               margin-left: 0%; 
+            }10%{
+                margin-left: 0%;
+            }25%{
+                margin-left: -100%;
+            }35%{
+                margin-left: -100%;
+            }50%{
+                margin-left: -200%;
+            }60%{
+                margin-left: -200%;
+            }75%{
+                margin-left: -300%;
+            }85%{
+                margin-left: -300%;
+            }100%{
+                margin-left: -400%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="images">
+                <img src="img/class_time_train.png" alt="">
+            </div>
+            <div class="images">
+                <img src="img/double_train.png" alt="">
+            </div>
+            <div class="images">
+                <img src="img/PBET7_train.png" alt="">
+            </div>
+            <div class="images">
+                <img src="img/xian_Web_train.png" alt="">
+            </div>
+            <div class="images">
+                <img src="img/class_time_train.png" alt="">
+            </div>
+            <!-- <div class="images"></div> -->
+        </div>
+      
+    </div>
+</body>
+</html>
