@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .contain {
+            border:1px solid green;
+            margin:100px;
+            height: 300px;
+            width: 400px;
+        }
+
+        .box1 {
+            border:1px solid green;
+            background:red;
+            height: 50px;
+            width: 200px;
+transform-origin: center bottom;
+transform:skewX(30deg);
+        }
+
+        .box2{
+            border:1px solid green;
+            background:red;
+            height: 50px;
+            width: 200px;
+transform-origin: center bottom;
+transform:skewX(-30deg);
+        }
+    </style>
+</head>
+
+<body>
+<div class ="contain">
+    <div class = "box1"></div>
+    <div class = "box2"></div>
+</div>
+</body>
+
+</html>

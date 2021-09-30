@@ -1,0 +1,91 @@
+.container {
+    border: 1px solid red;
+    width: 100%;
+    height: 540px;
+    background: url("img/bg1.jpg") no-repeat;
+    position: relative;
+}
+
+
+[class*=star]{
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background: url("img/flash.png");
+    animation: 3s shiny infinite ;
+}
+.star1 {top: 100px;
+    left: 50px;
+    animation-delay:0.5s;
+}
+
+.star2 {
+    top: 60px;
+    left: 120px;
+   
+    animation-delay:1s;
+}
+
+.star3 {
+    top: 130px;
+    left: 150px;
+    
+    animation-delay:1.5s;
+}
+
+.star4 {
+    top: 160px;
+    left: 80px;
+   
+    animation: 3s shiny infinite;
+}
+
+ .star5{
+    top:100px;
+    left:10px;
+} 
+
+.section {
+    position: absolute;
+    right: 100px;
+    top: 60px;
+    height: 345px;
+    width: 350px;
+}
+
+.diamond {
+    position: absolute;
+    height: 345px;
+    width: 350px;
+    /* background:url("img/logo_3ie.png"); */
+}
+
+.diamond img {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    width: 60%;
+    height: 60%;
+}
+.outer {
+    position: absolute;
+    height: 345px;
+    width: 350px;
+    background: url("img/logo_1ie.png") no-repeat;
+    animation:eastern 4s infinite linear;
+    transition:10s;
+}
+
+.outer img {
+    width: 100%;
+}
+
+.inner {
+    position: absolute;
+    height: 345px;
+    width: 350px;
+    background: url("img/logo_2ie.png");
+    animation:clockwise 4s infinite linear;
+    transition:10s;
+}
+
