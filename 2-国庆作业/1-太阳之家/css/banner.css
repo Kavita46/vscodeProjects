@@ -1,0 +1,130 @@
+.banner-container {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-text {
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #66806446;
+    width: 700px;
+    height: 400px;
+    left: 300px;
+    top: 0px;
+    position: absolute;
+}
+
+.banner {
+    width: 500%;
+    height: 450px;
+    /* background-color: violet; */
+    border: 3px solid black;
+    display: flex;
+    animation: move 5s infinite linear;
+    /* overflow: hidden; */
+}
+
+.images {
+    width: 20%;
+    height: 450px;
+    /* overflow: hidden; */
+}
+
+.images img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes move {
+    0% {
+        margin-left: 0%;
+    }
+    10% {
+        margin-left: 0%;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    60% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    85% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -400%;
+    }
+}
+
+.banner-tail {
+    background: rgb(191, 167, 135);
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* 呼吸灯 */
+
+.light-box {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right:0;
+    margin:auto;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    margin: 0 20px 0 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: shine1 3s infinite;
+}
+
+.circle1 {
+    animation-delay: 0;
+}
+
+.circle2 {
+    animation-delay: 1s;
+}
+
+.circle3 {
+    animation-delay: 2s;
+}
+
+@keyframes shine1 {
+    0% {
+        transform: scale(1.0);
+        background-color: transparent;
+    }
+    33% {
+        transform: scale(1.2);
+        background-color: white;
+        ;
+    }
+    100% {
+        transform: scale(1.0);
+        background-color: transparent;
+    }
+}

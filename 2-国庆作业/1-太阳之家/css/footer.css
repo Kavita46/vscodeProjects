@@ -1,11 +1,11 @@
 /* 公共组件footer,包含friends 和 copyright */
 .footer {
-    height: 210px;
+    height: 200px;
     width: 100%;
 }
 
 .footer-friends {
-    height: 170px;
+    height: 100px;
     width: 100%;
     background-color: #f6f4f5;
 }
