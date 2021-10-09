@@ -1,0 +1,50 @@
+$public-border:1px solid red;
+
+.container{
+
+    *{
+        border:$public-border;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+        }
+        // 兄弟选择器
+        +.box2{
+            width:100px;
+            height:100px;
+            background-color: yellowgreen;
+        }
+        +.box2::before{
+            content:"before";
+        }
+        +.box2::after{
+            content:"after";
+        }
+        ~div{
+            background-color: red;
+        }
+        // 子元素选择器
+        >div{
+            background-color: rosybrown;
+        }
+        // 伪类或者伪元素
+        // &代表当前的父选择器（清除选择器之间默认的空格），指代.box
+        &:hover{
+            background-color: royalblue;
+        }
+        &::before{
+            content: "周二";
+        }
+        &::after{
+            content:"周三"
+        }
+    }
+    
+}
