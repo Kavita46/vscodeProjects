@@ -31,6 +31,7 @@ header section{
 }
 header section .logo{
     background-image: url(../img/logo.png);
+    background-size:180px 75px;
     width: 180px;
     height: 75px;
     background-size: cover;
