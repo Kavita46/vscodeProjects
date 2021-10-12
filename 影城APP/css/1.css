@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+
+header{
+    width: 100vw;
+    height: 23.125rem;
+    background-color: #0b193f;
+    position: relative;
+}
+header .icon1{
+    width: 2.5rem;                      
+    height: 2.125rem;
+    background: url(../pic/电影票务app_06.png) center/100% 100%;
+    float: left;
+    margin: 12.0625rem 0px 0px 2.75rem;
+}
+header .icon1::after{
+    content: "试试我们最好的影院";
+    display: block;
+    width: 22.375rem;
+    height: 2.5rem;
+    font-size: 2.25rem;
+    color: #f2f2f2;
+    margin-left: 4.0625rem;
+    margin-top: -0.5rem;
+}
+header .icon2{
+    width: 11.25rem;
+    height: 14.5rem;
+    background: url(../pic/电影票务app_03.png) center/100% 100%;
+    float: right; 
+}
+header .header-bt{
+    width: 100%;
+    height: 5.625rem;
+    background-color: #233052;
+    position: absolute;
+    bottom: 0rem;
+}
+header .header-bt .icon3{
+    width: 1.875rem;
+    height: 2.5rem;
+    float: left;
+    background: url(../pic/电影票务app_11.png) center/100% 100%;
+    margin-top: 1.5625rem;
+    margin-left: 3.0625rem;
+}
+header .header-bt .icon3::after{
+    content: "成都";
+    display: block;
+    width: 3.5625rem;
+    height: 1.875rem;
+    margin-left: 3.625rem;
+    font-size: 1.75rem;
+    color: #f2f2f2;
+}
+header .header-bt .icon4{
+    width: 1.5625rem;
+    height: 1.25rem;
+    float: right;
+    background: url(../pic/123.png) center/100% 100%;
+    margin-top: 2.1875rem;
+    margin-right: 3.3125rem;
+}
+main{
+    width: 100vw;
+    overflow: hidden;
+    padding-top: 3.6875rem;
+    padding-left: 2.4375rem;
+}
+main [class*=box]{
+    width: 40.625rem;
+    height: 7.625rem;
+    /* background-color: blueviolet; */
+    margin-bottom: 2.875rem;
+}
+main .box1 [class*=pic]{
+    width: 12.125rem;
+    height: 7.625rem;
+    border-radius: .1875rem;
+    float: left;
+}
+main .box1 .pic1{   
+    background: url(../pic/image2.jpg);
+}
+main .box1 .pic2{   
+    background: url(../pic/image3.jpg);
+}
+main .box1 .pic3{   
+    background: url(../pic/image4.jpg);
+}
+main .box1 .pic4{   
+    background: url(../pic/image5.jpg);
+}
+main .box1 .pic5{   
+    background: url(../pic/image6.jpg);
+}
+main .box1 .pic6{   
+    background: url(../pic/image7.jpg);
+}
+main .box1 .content{
+    width: 25rem;
+    height: 4.6875rem ;
+    float: left;
+    margin-top: 1.5625rem;
+    margin-left: 1.875rem;
+    /* background-color: chocolate; */
+}
+main .box1 .content .word1{
+    display:block;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    font-size: 1.75rem;
+    color: #000018;
+    font-weight: bold;
+}
+main .box1 .content .icon{
+    width: 1.25rem;
+    height: 1.625rem;
+    margin-top: 1.25rem;
+    background: url(../pic/电影票务app_22.png) center/100% 100%;
+}
+main .box1 .content .icon::after{
+    content: "1km";
+    display: block;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    color: #141337;
+    margin-left: 1.875rem;
+}
+
+
+
+/* footer */
+footer{
+    height: 6.0625rem;
+    width: 100vw;
+    background-color: white;
+    position: fixed;
+    bottom: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .wraper{
+    width: 35.5rem;
+    height: 4.375rem;
+    /* background-color: darkorange; */
+    display: flex;
+    justify-content: space-between;
+}
+footer .wraper [class*=item]{
+    width: 2.625rem;
+    height: 2.4375rem;
+    /* background-color: darksalmon; */
+}
+footer .wraper [class*=item]::after{
+    content: "";
+    display: block;
+    width: 3.125rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 1.25rem;
+    color: #b6bac5;
+    margin-top: 3.125rem;
+}
+footer .wraper .item1{
+    background: url(../pic/电影票务app_27.png) center/100% 100%;
+}
+footer .wraper .item2{
+    background: url(../pic/电影票务app_29.png) center/100% 100%;
+}
+footer .wraper .item3{
+    background: url(../pic/电影票务app_31.png) center/100% 100%;
+}
+footer .wraper .item4{
+    background: url(../pic/电影票务app_34.png) center/100% 100%;
+}
+footer .wraper .item1::after{
+    content: "首页";
+}
+footer .wraper .item2::after{
+    content: "影院";
+}
+footer .wraper .item3::after{
+    content: "影片";
+}
+footer .wraper .item4::after{
+    content: "我的";
+}

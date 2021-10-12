@@ -1,0 +1,94 @@
+body {
+  border: 1px solid red;
+}
+
+.page {
+  width: 47rem;
+  height: 78rem;
+  position: relative;
+}
+
+.page .header {
+  width: 47rem;
+  height: 23rem;
+  background: #0b193f;
+  position: relative;
+}
+
+.page .header .star {
+  width: 11rem;
+  height: 13rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.page .header .star img {
+  width: 100%;
+}
+
+.page .header .yellow-star {
+  position: absolute;
+  left: 2rem;
+  top: 12rem;
+  width: 3rem;
+  height: 2rem;
+}
+
+.page .header .yellow-star img {
+  width: 100%;
+}
+
+.page .header .text-1 {
+  position: absolute;
+  left: 4rem;
+  top: 12rem;
+  width: 22rem;
+  height: 2rem;
+  font-family: SourceHanSansCN-Bold;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1rem;
+  letter-spacing: 0rem;
+  color: #f2f2f2;
+}
+
+.page .header .location {
+  width: 47rem;
+  height: 6rem;
+  background-color: #233052;
+  position: absolute;
+  bottom: 0;
+  line-height: 1rem;
+  font-size: 2rem;
+}
+
+.page .header .location .i1 {
+  positon: absolute;
+  left: 3rem;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rem;
+  color: #f2f2f2;
+}
+
+.page .header .location .i2 {
+  position: absolute;
+  right: 3rem;
+}
+
+.page .main {
+  width: 47rem;
+  height: 72rem;
+  background: #fff;
+}
+
+.page .footer {
+  width: 47rem;
+  height: 6rem;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid red;
+}
