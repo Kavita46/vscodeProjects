@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href = "site.min.css" rel = "stylesheet">
+    <script src="/00-Librarys/三件套/jquery-3.5.1.js"></script>
+    <script src="/00-Librarys/三件套/bootstrap.js"></script>
+    <link href="/00-Librarys/三件套/bootstrap.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <!-- 导航 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">BootStrap中文网</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Bootstrap3中文文档 <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bootstrap4中文文档</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sass教程</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Less教程</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">jQuery API</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link reddot" href="#">网站实例</a>
+          </li>
+          <li class="nav-item" id = "li-about">
+            <a class="nav-link"  href="#">关于</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron masthead">
+      <div class="container">
+        <h1>Bootstrap</h1>
+        <h2>简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</h2>
+        <p class="masthead-button-links">
+          <a
+            class="btn btn-lg btn-primary btn-shadow"
+            href="https://v3.bootcss.com/"
+            target="_blank"
+            role="button"
+            onclick="_hmt.push(['_trackEvent', 'masthead', 'click', 'masthead-Bootstrap3中文文档'])"
+            >Bootstrap3中文文档(v3.4.1)</a
+          >
+        </p>
+        <ul class="masthead-links">
+          <li>
+            <a
+              href="https://v2.bootcss.com/"
+              target="_blank"
+              role="button"
+              onclick="_hmt.push(['_trackEvent', 'masthead', 'click', 'masthead-Bootstrap2中文文档'])"
+              >Bootstrap2中文文档(v2.3.2)</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="container projects">
+
+        <div class="projects-header page-header">
+          <h2>Bootstrap相关优质项目推荐</h2>
+          <p>这些项目或者是对Bootstrap进行了有益的补充，或者是基于Bootstrap开发的</p>
+        </div>
+    
+        <div class="row">
+    
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.youzhan.org/" title="Bootstrap 优站精选" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'youzhan-tile'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/expo.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/expo.png" alt="Bootstrap 优站精选" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.youzhan.org/" title="Bootstrap 优站精选" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'youzhan-tile'])">优站精选<br><small> Bootstrap 网站实例</small></a>
+                  </h3>
+                  <p>Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.webpackjs.com/" title="Webpack 是前端资源模块化管理和打包工具" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/webpack.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/webpack.png" alt="Webpack 是前端资源模块化管理和打包工具" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.webpackjs.com/" title="Webpack 是前端资源模块化管理和打包工具" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">Webpack<br><small>是前端资源模块化管理和打包工具</small></a>
+                  </h3>
+                  <p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://typescript.bootcss.com/" title="TypeScript 中文手册" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'typescript'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/typescript.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/typescript.png" alt="TypeScript 中文手册" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://typescript.bootcss.com/" title="TypeScript 中文手册" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'typescript'])">TypeScript <br><small>中文手册</small></a>
+                  </h3>
+                  <p>TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.sveltejs.cn/" title="Svelte" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'svelte'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/svelte.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/svelte.png" alt="Svelte" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.sveltejs.cn/" title="Svelte" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'svelte'])">Svelte<br><small>中文网</small></a>
+                  </h3>
+                  <p>Svelte 是构建 Web 应用程序的一种新方法。Svelte 是一个编译器，它将声明性组件转换成高效的 JavaScript 代码，并像做外科手术一样细粒度地更新 DOM。</p>
+                </div>
+              </div>
+            </div>
+
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.lernajs.cn/" title="Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'lernajs'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/lernajs.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/lernajs.png" alt="Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.lernajs.cn/" title="Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'lernajs'])">Lerna <br><small>中文文档</small></a>
+                  </h3>
+                  <p>Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://vuejs.bootcss.com/" title="Vue.js - 渐进式 JavaScript 框架" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'vuejs'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/vuejs.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/vuejs.png" alt="Vue.js - 渐进式 JavaScript 框架" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://vuejs.bootcss.com/" title="Vue.js - 渐进式 JavaScript 框架" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'vuejs'])">Vue.js<br><small> 中文文档。</small></a>
+                  </h3>
+                  <p>Vue.js - 是一套构建用户界面的渐进式框架。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.nuxtjs.cn/" title="Nuxt.js 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'nuxtjs'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/nuxtjs.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/nuxtjs.png" alt="Nuxt.js 中文文档" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.nuxtjs.cn/" title="Nuxt.js 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'nuxtjs'])">Nuxt.js <br><small>中文文档</small></a>
+                  </h3>
+                  <p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 UI渲染。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.recoiljs.cn/" title="Recoil 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'recoil'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/recoil.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/recoil.png" alt="Recoil 中文文档" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.recoiljs.cn/" title="Recoil 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'recoil'])">Recoil<br><small> React 状态管理库</small></a>
+                  </h3>
+                  <p>Recoil 是一个针对 React 应用程序的状态管理库。 它提供了仅使用 React 难以实现的几种功能，同时与 React 的最新功能兼容。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.reduxjs.cn/" title="Redux 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'redux'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/redux.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/redux.png" alt="Redux 中文文档" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.reduxjs.cn/" title="Redux 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'redux'])">Redux <br><small>中文文档</small></a>
+                  </h3>
+                  <p>Redux 是 JavaScript 状态容器，提供可预测化的状态管理、构建一致化的应用，运行于不同的环境（客户端、服务器、原生应用），并且易于测试。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.parceljs.cn/" title="Parcel - 极速、零配置的 web 应用打包工具。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'parcel'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/parcel.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/parcel.png" alt="Parcel - 极速、零配置的 web 应用打包工具。" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.parceljs.cn/" title="Parcel - 极速、零配置的 web 应用打包工具。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'parcel'])">Parcel <br><small>中文文档</small></a>
+                  </h3>
+                  <p>Parcel - 极速、零配置的 web 应用打包工具。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.lodashjs.com/" title="Lodash 是最流行的 JavaScript 工具库。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'lodash'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/lodash.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/lodash.png" alt="Lodash 是最流行的 JavaScript 工具库。" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.lodashjs.com/" title="Lodash 是最流行的 JavaScript 工具库。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'lodash'])">Lodash<br><small>JavaScript 工具库</small></a>
+                  </h3>
+                  <p>Lodash 是一个具有一致接口、模块化、高性能等特性的 JavaScript 工具库。比相同功能的 Underscore.js 使用更广泛。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.progit.cn/" title="Pro Git 中文版（第二版）让你从 Git 初学者成为 Git 专家" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'progit'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/progit.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/progit.png" alt="Pro Git 中文版（第二版）让你从 Git 初学者成为 Git 专家" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.progit.cn/" title="Pro Git 中文版（第二版）让你从 Git 初学者成为 Git 专家" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'progit'])">Pro Git <br><small>Git 入门到专家指南</small></a>
+                  </h3>
+                  <p>Pro Git 中文版（第二版）是一本详细的 Git 指南，主要介绍了 Git 的使用基础和原理，让你从 Git 初学者成为 Git 专家。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://icons.bootcss.com/" title="专为 Bootstrap 打造的 SVG 图标（icons）集" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'bootstrap-icons'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/bootstrap-icons.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/bootstrap-icons.png" alt="专为 Bootstrap 打造的 SVG 图标（icons）集" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://icons.bootcss.com/" title="专为 Bootstrap 打造的 SVG 图标（icons）集" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'bootstrap-icons'])">Bootstrap Icons<br><small>Bootstrap 专用 SVG 图标集</small></a>
+                  </h3>
+                  <p>Bootstrap Icons 的设计初衷是与 Bootstrap 组件配合使用。Bootstrap Icons 全部是 SVG 文件，因此能够轻松快捷地进行缩放，并可以通过 CSS 设置样式。虽然 Bootstrap Icons 是为 Bootstrap 而开发的，但它也可以应用于任何项目。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.rollupjs.com/" title="rollup.js 是新一代的 JavaScript 模块打包工具。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'rollup'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/rollup.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/rollup.png" alt="rollup.js 是新一代的 JavaScript 模块打包工具。" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.rollupjs.com/" title="rollup.js 是新一代的 JavaScript 模块打包工具。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'rollup'])">Rollup <br><small>新一代的 JavaScript 模块打包工具</small></a>
+                  </h3>
+                  <p>Rollup 是一个 JavaScript 模块打包工具，可以将小块代码编译成大块复杂的代码。Rollup 对 JavaScript 代码模块使用新的 ES6 标准化格式，如 CommonJS 和 AMD。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.preactjs.com.cn/" title="Preact - 一个只有 3kB 大小的 React 替代品，拥有与 React 相同的 API、组件和虚拟 DOM。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'preact'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/preact.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/preact.png" alt="Preact - 一个只有 3kB 大小的 React 替代品，拥有与 React 相同的 API、组件和虚拟 DOM。" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.preactjs.com.cn/" title="Preact - 一个只有 3kB 大小的 React 替代品，拥有与 React 相同的 API、组件和虚拟 DOM。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'preact'])">Preact<br><small>React 轻量替代方案。</small></a>
+                  </h3>
+                  <p>Preact - 一个只有 3kB 大小的 React 替代品，拥有与 React 相同的 API、组件和虚拟 DOM。</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+              <div class="thumbnail" style="height: 336px;">
+                <a href="https://www.purgecss.cn/" title="PurgeCSS 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'purgecss'])">
+                  <img class="lazy" src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/purgecss.png" data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/purgecss.png" alt="PurgeCSS 中文文档" width="300" height="150">
+                </a>
+                <div class="caption">
+                  <h3>
+                      <a href="https://www.purgecss.cn/" title="PurgeCSS 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'purgecss'])">PurgeCSS <br><small>中文网</small></a>
+                  </h3>
+                  <p>PurgeCSS 是一个用来删除未使用的 CSS 代码的工具，能够减小 CSS 文件的体积。例如可以用来减小 Bootstrap 等前端框架的文件体积，提升加载速度。</p>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+    
+        </div>
+      </div>
+
+      <footer class="footer ">
+        <div class="container">
+          <div class="row footer-top">
+            <div class="col-md-6 col-lg-6">
+              <h4>
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.50/dist/img/logo.png">
+              </h4>
+              <p>我们一直致力于为广大开发者提供更多的优质技术文档和辅助开发工具！</p>
+            </div>
+            <div class="col-md-6  col-lg-6">
+              <div class="row about">
+                <div class="col-sm-3">
+                  <h4>关于</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="/about/">关于我们</a></li>
+                    <li><a href="/ad/">广告合作</a></li>
+                    <li><a href="/links/">友情链接</a></li>
+                    <li><a href="/hr/">招聘</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <h4>联系方式</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://weibo.com/bootcss" title="Bootstrap中文网官方微博" target="_blank">新浪微博</a></li>
+                    <li><a href="mailto:admin@bootcss.com">电子邮件</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <h4>旗下网站</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.bootcdn.cn/" target="_blank">BootCDN</a></li>
+                    <li><a href="https://pkg.phpcomposer.com/" target="_blank">Packagist中国镜像</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <h4>特别致谢</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.maoyun.com/" target="_blank">猫云</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+          <hr>
+          <div class="row footer-bottom">
+            <ul class="list-inline text-center">
+              <li><a href="https://beian.miit.gov.cn/" target="_blank">京ICP备11008151号-6</a></li><li>京公网安备11010802014853</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
