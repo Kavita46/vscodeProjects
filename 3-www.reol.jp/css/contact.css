@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/*==========================
+    CONTACT
+    途中で切り分けたのでこっちが本物
+    _lower.scssの中の記述は消したい
+==========================*/
+/* ========================================
+
+- easing
+
+======================================== */
+#contact .row {
+  background-color: transparent;
+  background: linear-gradient(315deg, transparent 50px, #fff 50px);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  margin-bottom: 130px;
+}
+
+#contact .contact_cont {
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#contact input, #contact textarea {
+  padding: 3px;
+  width: 100%;
+  border: 1px solid #000;
+  height: 26px;
+}
+
+#contact textarea {
+  height: 100px;
+}
+
+#contact input.button {
+  background-color: #a50000;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+}
+
+#contact input[name="name"] {
+  width: 30%;
+}
+
+#contact input[name="email"], #contact input[name="email2"] {
+  width: 60%;
+}
+
+#contact .grid_3 {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+#contact .align-center {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#contact .red {
+  color: #a50000;
+}
+
+#contact .list__body {
+  margin-bottom: 15px;
+}
+
+#contact .list__body .conf-text {
+  font-size: 1.4em;
+  padding: 5px;
+  word-break: break-all;
+}
+
+#contact .button__gray {
+  margin-left: 60px;
+}
+
+#contact .fanletter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-top: 60px;
+}
+
+#contact .fanletter__info {
+  width: 155px;
+  margin-right: 10px;
+}
+
+#contact .fanletter__info p {
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+}
+
+#contact .fanletter__address {
+  width: 320px;
+  padding-left: 30px;
+  border-left: solid 1px #000;
+  letter-spacing: 0.2em;
+  position: relative;
+}
+
+#contact .fanletter__address::before {
+  content: "";
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #000;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+#contact .fanletter__address p {
+  text-align: left;
+  font-size: 0.9em;
+}
+
+#contact .fanletter__address p .large {
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 1000px) {
+  #contact {
+    /* iOSでのデフォルトスタイルをリセット */
+  }
+  #contact .contact_cont {
+    width: 90%;
+  }
+  #contact .row {
+    background: linear-gradient(315deg, transparent 20px, #fff 20px);
+  }
+  #contact input[type="submit"],
+  #contact input[type="button"] {
+    border-radius: 0;
+    -webkit-box-sizing: content-box;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+         appearance: button;
+    border: none;
+    box-sizing: border-box;
+  }
+  #contact input[type="submit"]::-webkit-search-decoration,
+  #contact input[type="button"]::-webkit-search-decoration {
+    display: none;
+  }
+  #contact input[type="submit"]::focus,
+  #contact input[type="button"]::focus {
+    outline-offset: -2px;
+  }
+  #contact input[type="text"],
+  #contact input[type="button"],
+  #contact input[type="email"],
+  #contact input[type="submit"],
+  #contact textarea {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  #contact .fanletter__info {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  #contact .fanletter__info p {
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+  }
+  #contact .fanletter__address {
+    width: 100%;
+    border-left: none;
+    border-top: solid 1px #000;
+    padding-left: 0;
+    padding-top: 15px;
+  }
+  #contact .fanletter__address p {
+    font-size: 0.9em;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    line-height: 1.6em;
+  }
+  #contact .fanletter__address p .large {
+    padding-top: 5px;
+    display: block;
+  }
+  #contact .fanletter__address::before {
+    border-top: 10px solid #000;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: none;
+    top: 0;
+    left: 45%;
+  }
+  .grecaptcha-badge {
+    bottom: 80px !important;
+  }
+  input.button {
+    width: 37% !important;
+  }
+  input[value="Confirmation"] {
+    width: 80% !important;
+  }
+  .button__gray {
+    margin-left: 30px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #contact textarea,
+  #contact input[type="text"] {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+}

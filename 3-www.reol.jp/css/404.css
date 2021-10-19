@@ -1,0 +1,20 @@
+/* ========================================
+
+- easing
+
+======================================== */
+#nff .row {
+  background: linear-gradient(315deg, transparent 20px, #fff 20px);
+}
+
+#nff .nff_text {
+  min-height: 300px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  #nff .nff_text {
+    min-height: inherit;
+    padding-top: 30px;
+  }
+}

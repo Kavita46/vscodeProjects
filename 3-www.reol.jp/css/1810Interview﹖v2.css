@@ -1,0 +1,532 @@
+@charset "UTF-8";
+/* ========================================
+
+- easing
+
+======================================== */
+/*==========================
+    このページの基本設定・共通
+==========================*/
+@media screen and (max-width: 840px) {
+  .sp-elem {
+    display: block;
+  }
+  .pc-elem {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 841px) {
+  .pc-elem {
+    display: block;
+  }
+  .sp-elem {
+    display: none !important;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.fx {
+  display: flex;
+}
+
+html {
+  overflow: auto;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrapper {
+  background: #000;
+}
+
+@media screen and (max-width: 840px) {
+  .content {
+    margin-top: 0%;
+  }
+}
+
+a {
+  color: #fff;
+}
+
+.font-01 {
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.font-02 {
+  font-family: 'Radley', serif;
+}
+
+.my-small {
+  font-size: 1.6em;
+  padding-left: 6px;
+}
+
+@media screen and (max-width: 840px) {
+  .my-small {
+    padding-top: 4px;
+  }
+}
+
+/*==========================
+    メインエリア（シャドウ枠）
+==========================*/
+body {
+  color: white;
+  font-family: 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 1.7em;
+}
+
+.special-wrapper {
+  background: url("../images/special/1810Interview/main_bg.jpg") no-repeat center top;
+  background-size: 1400px;
+  box-shadow: 0px -50px 60px 26px #000 inset;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 840px) {
+  .special-wrapper {
+    background: url("../images/special/1810Interview/bg_sp.jpg") no-repeat center top;
+    background-size: contain;
+  }
+}
+
+.special-contents {
+  width: 80%;
+  max-width: 875px;
+  margin: 0 auto;
+  background: #000;
+}
+
+@media screen and (max-width: 840px) {
+  .special-contents {
+    margin-top: 170px;
+    width: 100%;
+    padding: 0 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .special-contents {
+    margin-top: 14%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .special-contents::before {
+    content: '';
+    display: block;
+    height: 260px;
+    position: relative;
+    top: -240px;
+    background: url(../images/special/1810Interview/border.png) repeat-x top center;
+  }
+}
+
+.main_article {
+  padding: 22px 0 100px 0;
+  box-shadow: 0 0 51px #ffffff4f;
+}
+
+@media screen and (max-width: 840px) {
+  .main_article {
+    box-shadow: none;
+    padding: 0px 0 100px 0;
+    margin-top: -300px;
+  }
+}
+
+.main_article-inner {
+  max-width: 786px;
+  margin: 0 auto;
+}
+
+.main-copy_sp {
+  z-index: 10000;
+  position: relative;
+}
+
+.main-ttl {
+  text-align: center;
+  padding-top: 200px;
+  margin: 0px auto 44px;
+}
+
+@media screen and (max-width: 840px) {
+  .main-ttl {
+    margin: 0px auto 16px;
+    padding-top: 40%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .main-ttl img {
+    width: 100px;
+  }
+}
+
+.sub-ttl {
+  margin-bottom: 50px;
+  display: inline;
+}
+
+@media screen and (max-width: 840px) {
+  .sub-ttl {
+    width: 200px;
+    margin: 0 auto 50px;
+    display: block;
+  }
+}
+
+.main-copy {
+  margin: 50px auto 44px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  float: auto;
+  left: 50%;
+  width: 1400px;
+  margin-left: -700px;
+}
+
+.lede {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  line-height: 2.4em;
+  padding-bottom: 40px;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 840px) {
+  .lede {
+    margin-top: 0px;
+  }
+}
+
+.lede-name {
+  text-align: right;
+}
+
+@media screen and (max-width: 840px) {
+  .lede-name {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .lede-name-small {
+    font-size: 0.8em;
+  }
+}
+
+.lede-name .tw-link:hover {
+  opacity: 0.7;
+  transition: ease 0.3s;
+}
+
+.movie {
+  position: relative;
+  margin: 50px auto 0;
+}
+
+.movie-waku {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 840px) {
+  .movie-waku {
+    width: 100%;
+  }
+}
+
+.movie-waku img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 840px) {
+  .movie-waku img {
+    width: 100%;
+  }
+}
+
+.movie-content {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.movie-content iframe {
+  position: absolute;
+  top: 3%;
+  bottom: 3%;
+  left: 3%;
+  right: 3%;
+  width: 94%;
+  height: 94%;
+}
+
+/*==========================
+    インタビュー記事
+==========================*/
+.article {
+  margin: 63px 0 0;
+}
+
+@media screen and (max-width: 840px) {
+  .article {
+    margin: 0px 0 0;
+  }
+}
+
+.article__ttl {
+  letter-spacing: 0.05em;
+  font-size: 1.7em;
+  line-height: 1.4;
+}
+
+.article__after {
+  height: 14px;
+  background: linear-gradient(-135deg, #4b060a, #751d19, #e83627);
+  z-index: 1;
+  margin-top: -14px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 840px) {
+  .article__after {
+    width: 110%;
+    height: 56px;
+    margin-top: -51px;
+  }
+}
+
+.article__list-dt {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding-bottom: 12px;
+}
+
+.article__list-dt .line {
+  letter-spacing: -2px;
+}
+
+.article__list-dd {
+  margin-bottom: 38px;
+  display: flex;
+}
+
+@media screen and (max-width: 840px) {
+  .article__list-dd {
+    display: block;
+  }
+}
+
+.article__list-dd .name {
+  font-size: 1.5em;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 840px) {
+  .article__list-dd .name {
+    display: block;
+    padding-bottom: 5px;
+  }
+}
+
+.article__list-dd.no-fx {
+  display: inline-block;
+}
+
+.movie-sub {
+  position: relative;
+}
+
+.movie-sub-waku {
+  position: absolute;
+  top: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 840px) {
+  .movie-sub-waku {
+    width: 100%;
+  }
+}
+
+.movie-sub-waku img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 840px) {
+  .movie-sub-waku {
+    width: 100%;
+  }
+}
+
+.movie-sub-content {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.movie-sub-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.list-item {
+  width: 50%;
+  float: left;
+}
+
+@media screen and (max-width: 840px) {
+  .list-item {
+    float: none;
+    width: 100%;
+  }
+}
+
+.list-item:nth-child(odd) {
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 840px) {
+  .list-item:nth-child(odd) {
+    padding-right: 0px;
+  }
+}
+
+.list-item:nth-child(even) {
+  padding-right: 8px;
+}
+
+@media screen and (max-width: 840px) {
+  .list-item:nth-child(even) {
+    margin: 3% 0;
+  }
+}
+
+.list-item.list-item-m {
+  padding: 20px;
+}
+
+@media screen and (max-width: 840px) {
+  .list-item.list-item-m {
+    margin: 3% 0;
+  }
+}
+
+/*==========================
+    ページ共通
+==========================*/
+.right-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 840px) {
+  .right-top {
+    width: 25%;
+  }
+}
+
+.right-top-deco {
+  position: relative;
+  top: 0;
+  z-index: 1001;
+}
+
+.right-top-line {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 23px;
+  height: 100%;
+  padding-bottom: 90px;
+  padding-bottom: 0px;
+  border-right: 1px solid #e83627;
+  text-align: right;
+}
+
+@media screen and (max-width: 840px) {
+  .right-top-line {
+    right: 0px;
+  }
+}
+
+.right-top-link .right-top-btn {
+  position: fixed;
+  right: 23px;
+  bottom: 8vh;
+  z-index: 10000;
+  transition: ease 0.3s;
+}
+
+@media screen and (max-width: 840px) {
+  .right-top-link .right-top-btn {
+    transition: ease 0.3s;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.right-top-link .right-top-btn:hover {
+  opacity: 0.7;
+}
+
+.right-top-link img {
+  padding-right: 15px;
+  border-right: 6px solid #e83627;
+}
+
+@media screen and (max-width: 840px) {
+  .right-top-btn.active {
+    right: -90px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .page-top {
+    text-align: right;
+    display: block;
+    margin: 40px 0 80px;
+  }
+}
+
+.page-top img {
+  width: 120px;
+}
+
+.page-top-btn {
+  text-align: center;
+  margin: 80px auto 100px;
+  display: block;
+  width: 80%;
+}
