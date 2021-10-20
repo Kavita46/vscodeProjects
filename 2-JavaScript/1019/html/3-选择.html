@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var chinese = Number.parseInt(prompt("语文成绩是?"));
+        var math = Number.parseInt(prompt("数学成绩是?"
+        ));
+        var english = Number.parseInt(prompt("英语是?"));
+
+        var average = (chinese + math + english) / 3;
+
+        document.write(chinese);
+        document.write(math);
+        document.write(english);
+        document.write(average);
+        if(average == 90){
+            document.write("你真棒!")
+       
+        }
+        else if (average < 90) {
+            document.write("小笨蛋")
+            
+           
+        }
+    </script>
+</body>
+</html>

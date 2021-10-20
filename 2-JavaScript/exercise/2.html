@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var initial = Number.parseInt(prompt("请输入一个数字"));
+
+      var result1 = (initial * 10 + 5) / 2 + 3.14159;
+      var result = Math.round(result1);
+
+      document.write("加密结果是" + result);
+    </script>
+  </body>
+</html>
+
+<!-- 实现一个数字加密器，加密规则是加密结果 = （整数 * 10 + 5）/ 2 + 3.14159
+要求加密结果仍为一整数
+用户输入一个整数 获取其加密后的结果 -->

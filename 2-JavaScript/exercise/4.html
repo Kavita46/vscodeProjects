@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 4.今天是周二，用户随意输入一个天数 求这些天以后是周几？
+
+      var days = Number.parseInt(prompt("距离星期二,过了多少天?"));
+      document.write(days);
+      var temp = days % 7;
+      document.write(temp);
+      var result = "";
+      switch (temp) {
+        case 6:
+          result = "Monday";
+          break;
+        case 0:
+          result = "Tuesday";
+          break;
+        case 1:
+          result = "Wednsday";
+          break;
+        case 2:
+          result = "Thursday";
+          break;
+        case 3:
+          result = "Friday";
+          break;
+        case 4:
+          result = "Saturday";
+          break;
+        case 5:
+          result = "Sunday";
+          break;
+      }
+      document.write("这些天后是" + result);
+    </script>
+  </body>
+</html>
