@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 2.加油站退出优惠活动，92号汽油原价6元/升，
+        如果加油超过20升则打9折,
+        97号汽油7元/如果加油超过30升则打8.9折，
+        请输入汽油类型和加油数量计算出总价格。 -->
+
+    <script>
+      var gasType = prompt("汽油类型? 请输入92 或者97");
+      var amount = Number.parseInt(prompt("多少升? 请输入数字"));
+      var totalPrice = 0;
+      if (gasType == "92") {
+        if (amount >= 20) {
+          totalPrice = 6 * 0.9 * amount;
+        } else totalPrice = 6 * amount;
+      } else if (gasType == "97") {
+        if (amount >= 30) {
+          totalPrice = 7 * 0.89 * amount;
+        } else {
+          totalPrice = 7 * amount;
+        }
+      }
+
+      document.write(totalPrice + "是总价格");
+    </script>
+  </body>
+</html>

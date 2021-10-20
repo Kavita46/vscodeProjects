@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var num1 = Number.parseInt(prompt("第1个数?"));
+      var num2 = Number.parseInt(prompt("第2个数?"));
+      var num3 = Number.parseInt(prompt("第3个数?"));
+
+      var max = 0;
+      if (num1 >= num2) {
+        if (num1 >= num3) {
+          max = num1;
+        } else if (num1 < num3) {
+          max = num3;
+        }
+      }else if (num1 < num2){
+        if (num2 >= num3) {
+          max = num2;
+        } else if (num1 < num3) {
+          max = num3;
+        }
+
+      }
+
+      document.write("num1是" +  num1 + "<br>");
+      document.write("num2是" +  num2 + "<br>");
+      document.write("num3是" +  num3 + "<br>");
+      document.write("max是" +  max + "<br>");
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var deposit = Number.parseInt(prompt("有多少存款"));
+
+      if (deposit <= 10000 && deposit > 0) {
+        document.write("可以买自行车");
+      } else if (deposit <= 50000 && deposit > 10000) {
+        document.write("可以买QQ车");
+      } else if (deposit <= 200000 && deposit > 50000) {
+        document.write("可以买本田思域");
+      } else if (deposit <= 500000 && deposit > 200000) {
+        document.write("可以买特斯拉");
+      } else if (deposit > 500000) {
+        document.write("可以买奔驰");
+      }
+      
+    </script>
+  </body>
+</html>
