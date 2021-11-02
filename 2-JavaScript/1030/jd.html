@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jd.css">
+</head>
+
+<body>
+    <!--大盒子容器 -->
+    <div class="cart-body">
+        <!-- 第一个：商品购物车 -->
+        <div class="cart-main">
+            <!-- 盒子1 -->
+            <div class="cart-thead">
+                <div class="column">
+                    <div class="jdcheckbox">
+                        <input class="all" type="checkbox" onclick="allChecked(this)">
+                    </div>
+                    全选
+                </div>
+                <div class="column">商品</div>
+                <div class="column">单价</div>
+                <div class="column">数量</div>
+                <div class="column">小计</div>
+                <div class="column">操作</div>
+            </div>
+            <!--盒子2  -->
+            <div class="shop">
+                <div class="checkbox">
+                    <input type="checkbox">
+                </div>
+                <a href="">奢也旗舰店</a>
+                <div class="box"></div>
+                <div class="coupon"></div>
+            </div>
+            <!-- 盒子3 -->
+            <div class="goods-list">
+                <!-- <div class="cart-tbody">
+                    <div class="cell">
+                        <input type="checkbox">
+                    </div>
+                    <div class="cell">
+                        <a href="" class="p-img">
+                            <img src="img/watch.jpg" alt="" width="100%">
+                        </a>
+                        <div class="p-introduce">
+                            <a href="" class="introduce-goods">
+                                <span>阿玛尼(Emporio Armani) 满天星女士手表 女生时尚休闲镶钻小表盘石英表小圆盘女式腕表 店长推荐 经典款AR1764</span>
+                            </a>
+                            <div class="item"></div>
+                            <a href="">选服务</a>
+
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <span class="">店长推荐 经典款AR1764</span>
+                    </div>
+                    <div class="cell">
+                        <span class="p-price-cont">￥2,870.00</span>
+                    </div>
+                    <div class="cell">
+                        <div class="quantity-box">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                        </div>
+                        <p>有货</p>
+                    </div>
+                    <div class="cell">
+                        <span>￥2870.00</span>
+                    </div>
+                    <div class="cell">
+                        <a href="">删除</a>
+                        <a href="">移入关注</a>
+                    </div>
+                </div> -->
+            </div>
+            <!-- 盒子4：结算框 -->
+            <div class="options-box">
+                <div class="left">
+                    <input class="all" type="checkbox" onclick="allChecked(this)">
+                    <span>全选</span>
+                    <a href="">删除选中的商品</a>
+                    <a href="">移入关注</a>
+                    <a href="">清理购物车</a>
+                </div>
+                <div class="right">
+                    <div class="price-sum">
+                        <span>已选择<em class="em">0</em>件商品</span>
+                        <div class="up-down"></div>
+                        <span>总价：</span>
+                        <font class="money">￥0</font>
+                        <div class="light"></div>
+                    </div>
+                    <a href="">去结算</a>
+                </div>
+            </div>
+        </div>
+        <!-- 第二个：智能推荐 -->
+        <div class="smart-main">
+            <!-- 盒子1 -->
+            <div class="item-main">
+                <a href="">
+                    <img src="img/watch.jpg" alt="" width="100%">
+                </a>
+                <div class="item-cont">
+                    <a href="">阿玛尼(Emporio Armani) 满天星女士手表 女生时尚休闲镶钻小表盘石英表小圆盘女式腕表<br> 店长推荐 经典款AR1764</a>
+                    <p></p>
+                    <span>¥2870.00</span>
+                </div>
+            </div>
+            <!-- 盒子2 -->
+            <div class="smart-items">
+                <ul>
+                    <li data-id="wnsc00001">
+                        <a class="items-pic-box">
+                            <img src="img/pic1.png" class="pic" alt="" width="150px">
+                        </a>
+                        <div class="items-introduce">
+                            <a class="goodsname" href="">Armani阿玛尼手表女士时尚石英腕表银色欧美女表 小表盘 生日情人节礼物送女友老婆 贝母盘AR1803礼盒款a</a>
+                        </div>
+                        <div class="items-price">
+                            <span class="price">￥1590.00</span>
+                            <a href="">满减</a>
+                        </div>
+                        <div class="items-cart">
+                            <span>
+                                <font>862人</font>已购买
+                            </span>
+                            <a href="javascript:" class="cart" onclick="addShopping(this)"></a>
+                        </div>
+                    </li>
+                    <li data-id="wnsc00002">
+                        <a class="items-pic-box">
+                            <img src="img/pic2.jpg" class="pic" alt="" width="150px">
+                        </a>
+                        <div class="items-introduce">
+                            <a href="" class="goodsname">丹尼尔惠灵顿Danielwellington手表男40mm织纹石英表生日表白礼物送男友
+                                40mm男表-蓝白双色尼龙带/DW004 小表盘 生日情人节礼物送女友老婆
+                                贝母盘AR1803礼盒款a</a>
+                        </div>
+                        <div class="items-price">
+                            <span class="price">￥1450.00</span>
+                            <a href="">满减</a>
+                        </div>
+                        <div class="items-cart">
+                            <span>
+                                <font>105人</font>已购买
+                            </span>
+                            <a href="javascript:" class="cart" onclick="addShopping(this)"></a>
+                        </div>
+                    </li>
+                    <li data-id="wnsc00003">
+                        <a class="items-pic-box">
+                            <img src="img/pic3.jpg" alt="" class="pic" width="150px">
+                        </a>
+                        <div class="items-introduce">
+                            <a href="" class="goodsname"> 阿玛尼(Emporio Armani)满天星手表女士皮带腕表石英表防水经典镶钻商务钢带生日礼物送女友 AR1841 假一赔十
+                                限时秒杀 小表盘
+                                生日情人节礼物送女友老婆 贝母盘AR1803礼盒款a</a>
+                        </div>
+                        <div class="items-price">
+                            <span class="price">￥1550.00</span>
+                            <a href="">满减</a>
+                        </div>
+                        <div class="items-cart">
+                            <span>
+                                <font>626人</font>已购买
+                            </span>
+                            <a href="javascript:" class="cart" onclick="addShopping(this)"></a>
+                        </div>
+                    </li>
+                    <li data-id="wnsc00004">
+                        <a class="items-pic-box">
+                            <img src="img/pic4.jpg" class="pic" alt="" width="150px">
+                        </a>
+                        <div class="items-introduce">
+                            <a href="" class="goodsname">【明星代言】马克华菲（FAIRWHALE）小绿表手表女时尚防水满天星石英女表运动学生方形表情人节礼物 方形-钢带绿表 小表盘
+                                生日情人节礼物送女友老婆
+                                贝母盘AR1803礼盒款a</a>
+                        </div>
+                        <div class="items-price">
+                            <span class="price">￥238.00</span>
+                            <a href="">满减</a>
+                        </div>
+                        <div class="items-cart">
+                            <span>
+                                <font>635人</font>已购买
+                            </span>
+                            <a href="javascript:" class="cart" onclick="addShopping(this)"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        //定义addShopping函数用于添加商品到购物车
+        function addShopping(a) {
+            //a参数表示点击加入购物车图表时触发点击事件的这个a标签
+            const li = a.parentNode.parentNode;
+            //获取li标签中的data-id属性值这表示了商品的编号
+            let goodsId = li.getAttribute("data-id");
+            //取出商品名称
+            let goodsName = li.querySelector(".goodsname").innerHTML;
+            //取出商品价格
+            let price = li.querySelector(".price").innerHTML.substring(1);
+            //取出商品图片
+            let img = li.querySelector(".pic").getAttribute("src");
+            //先判断当前点击的这个商品，是否存在于购物车中
+            //使用属性选择器从所有cart-tbody的div中查找data-id的值等于goodsId的div
+            let goods = document.querySelector(".cart-tbody[data-id='" + goodsId + "']");
+            if (goods == null) {
+                //将一件新商品添加到购物车中
+                let html = "";
+                html += `
+            <div data-id="${goodsId}" class="cart-tbody">
+                    <div class="cell">
+                        <input  type="checkbox" onclick="singleChecked()">
+                    </div>
+                    <div class="cell">
+                        <a href="" class="p-img">
+                            <img src="${img}" alt="" width="100%">
+                        </a>
+                        <div class="p-introduce">
+                            <a href="" class="introduce-goods">
+                                <span>${goodsName}</span>
+                            </a>
+                            <div class="item"></div>
+                            <a href="">选服务</a>
+
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <span class="">店长推荐 经典款AR1764</span>
+                    </div>
+                    <div class="cell">
+                        <span class="p-price-cont">￥${price}</span>
+                    </div>
+                    <div class="cell">
+                        <div class="quantity-box">
+                            <button onclick="sub(this)">-</button>
+                            <input  onblur="changeNum(this)" type="text" value="1">
+                            <button onclick="add(this)">+</button>
+                        </div>
+                        <p>有货</p>
+                    </div>
+                    <div class="cell">
+                        <span class="total">￥${price}</span>
+                    </div>
+                    <div class="cell">
+                        <a href="javascript:" onclick="deleteGoods(this)">删除</a>
+                        <a href="">移入关注</a>
+                    </div>
+                </div> 
+            `;
+                //获取goods-list的div，这个div就是用于保存购物车信息的
+                const goodsList = document.querySelector(".goods-list");
+                goodsList.innerHTML += html;//追加到原有内容中
+            } else {
+                //修改数量
+                let newNum = goods.querySelector("input[type='text']").value - (-1);
+                goods.querySelector("input[type='text']").setAttribute("value", newNum);
+                let total = newNum * price;
+                goods.querySelector(".total").innerHTML = "￥" + total;
+            }
+            //计算总价
+            setTotal();
+        }
+        //定义全选函数
+        function allChecked(all) {
+            const cks = document.querySelectorAll("input[type='checkbox']");
+            for (let i = 0; i < cks.length; i++) {
+                cks[i].checked = all.checked;
+            }
+            setTotal();
+        }
+        //定义单选函数
+        function singleChecked() {
+            //取出goods-list中所有多选框
+            //取出goods-list中选中的所有多选框
+            //获取goods-list div
+            let goodsList = document.querySelector(".goods-list");
+            let checkboxLength = goodsList.querySelectorAll("input[type='checkbox']").length;
+            let checkedCheckboxLength = goodsList.querySelectorAll("input:checked").length;
+            //获取2个全选框
+            const all = document.querySelectorAll(".all");
+            for (let i = 0; i < all.length; i++) {
+                all[i].checked = checkboxLength == checkedCheckboxLength;
+            }
+            setTotal();
+        }
+        //定义函数用于设置选中商品数量和选中商品的总价
+        function setTotal() {
+            //设置选中商品数量
+            //获取goods-list div
+            let goodsList = document.querySelector(".goods-list");
+            //从input中筛选出选中的多选框
+            let checkedCheckBox = goodsList.querySelectorAll("input:checked");
+            //遍历多选框找到它对应的数量 累加起来
+            let count = 0;
+            let money = 0;
+            for (let i = 0; i < checkedCheckBox.length; i++) {
+                let num = parseInt(checkedCheckBox[i].parentNode.parentNode.querySelector("input[type='text']").value);
+                let price = checkedCheckBox[i].parentNode.parentNode.querySelector(".p-price-cont").innerHTML.substring(1);
+                count += num;
+                money += price * num;
+            }
+            document.querySelector(".em").innerHTML = count;
+            document.querySelector(".money").innerHTML = "￥" + money;
+        }
+        //定义删除函数
+        function deleteGoods(a) {
+            const goods = a.parentNode.parentNode;
+            if (confirm("确定删除该商品吗?")) {
+                goods.parentNode.removeChild(goods);
+            }
+            setTotal();
+        }
+        //定义增加数量函数
+        function add(btn) {
+            const inp = btn.previousElementSibling;
+            let number = inp.value - (-1);
+            inp.setAttribute("value", number);
+            //更新小计
+            let price = btn.parentNode.parentNode.previousElementSibling.children[0].innerHTML.substring(1);
+            btn.parentNode.parentNode.nextElementSibling.children[0].innerHTML = "￥" + price * number;
+            setTotal();
+        }
+        //定义减少数量函数
+        function sub(btn) {
+            const inp = btn.nextElementSibling;
+            if (inp.value > 1) {
+                let number = inp.value - 1;
+                inp.setAttribute("value", number);
+                //更新小计
+                let price = btn.parentNode.parentNode.previousElementSibling.children[0].innerHTML.substring(1);
+                btn.parentNode.parentNode.nextElementSibling.children[0].innerHTML = "￥" + price * number;
+                setTotal();
+            }
+        }
+        //定义改变数量的函数
+        function changeNum(inp){
+            let number=inp.value;
+            let price = inp.parentNode.parentNode.previousElementSibling.children[0].innerHTML.substring(1);
+            inp.parentNode.parentNode.nextElementSibling.children[0].innerHTML = "￥" + price * number;
+            setTotal();
+        }
+    </script>
+</body>
+
+</html>

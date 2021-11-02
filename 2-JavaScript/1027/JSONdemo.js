@@ -1,0 +1,5 @@
+var student = {};
+
+student.class = {
+    
+}

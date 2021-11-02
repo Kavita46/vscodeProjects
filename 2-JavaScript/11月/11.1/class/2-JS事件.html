@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <div id="div" style = "height:200px; width:200px; background:red"></div>
+    <script>
+        // 通过对象绑定的匿名函数
+        const div =   document.getElementById("div");
+      document.getElementById("div").onclick = function () {
+        // console.log(this);
+      };
+    div.onmousedown = function (){
+        // alert("你好");
+        // console.log(  div.style);
+          div.style.background = "blue";
+      }
+      div.onmouseup = function (){
+        // alert("你好");
+        // console.log(  div.style);
+          div.style.background = "red";
+      }
+    </script>
+  </body>
+</html>

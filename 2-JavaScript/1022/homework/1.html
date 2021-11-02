@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      var students = [
+        ["嘉顺然", "女", 17, 97],
+        ["向顺晚", "女", 17, 67],
+        ["贝顺拉", "女", 19, 55],
+        ["乃顺琳", "女", 21, 100],
+        ["珈顺乐", "女", 20, 90],
+      ];
+
+      var len = students.length;
+      for (var i = 0; i < len; i++) {
+        var newLen = students[i].length;
+        for (var j = 0; j < newLen; j++) {
+          console.log("students[i][j]" + "---" + students[i][j]);
+        }
+      }
+
+      var inputName = prompt("请输入要删除的成员的名字?");
+
+      var hasStudent = false;
+      for (var i = 0; i < len; i++) {
+
+        if (students[i][0] === inputName) {
+            hasStudent = true;
+          alert("存在该成员:" + inputName);
+          braeak;
+          students.splice(1, 0);
+
+          document.write(students);
+        }
+
+
+      }
+
+      if(!hasStudent){
+        document.write("不存在该成员:" + inputName);
+      }
+    </script>
+  </body>
+</html>

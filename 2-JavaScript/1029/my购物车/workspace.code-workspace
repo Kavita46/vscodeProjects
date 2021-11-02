@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "vscodeProjects",
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../蜗牛家居PC/Crescent.github.io"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "vscodeProjects"
+	}
+}

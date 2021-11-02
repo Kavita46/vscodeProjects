@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+      img{
+          transition:1s;
+          
+      }
+  </style>
+  <body>
+    <img src="flo1.jpg" id="img" width="300" height="300" />
+
+    <script>
+      var sources = [
+        "flo1.jpg",
+        "flo2.jpg",
+        "flo3.jpg",
+        "flo4.jpg",
+        "flo5.jpg",
+      ];
+
+      var nodes = document.getElementById("img");
+
+      var i = 0;
+      var slick = setInterval(
+        () => {
+          nodes.setAttribute("src", sources[i]);
+          i++;
+          if (i == 5) {
+            i = 0;
+          }
+        },
+
+        1000
+      );
+
+      slick();
+    </script>
+  </body>
+</html>

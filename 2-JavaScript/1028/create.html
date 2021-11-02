@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id = "ck">
+        <h1>第一行</h1>
+    </div>
+    <script>
+// var node1 = document.createElement("<h2>这是第二行</h2>");
+var nodes = document.getElementById("ck");
+// nodes.appendChild(node1);
+
+// console.node(nodes);
+
+let newDiv = document.createElement("div");
+let newContent = document.createTextNode("This is new div");
+newDiv.appendChild(newContent);
+
+document.body.insertBefore(newDiv, ck);
+
+
+
+
+    </script>
+</body>
+</html>

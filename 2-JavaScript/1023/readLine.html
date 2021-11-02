@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var readline = require("readline");
+
+      var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+
+      rl.question("What do you think of node.js? ", function (answer) {
+        // TODO: Log the answer in a database
+        console.log("Thank you for your valuable feedback:", answer);
+
+        rl.close();
+      });
+    </script>
+  </body>
+</html>

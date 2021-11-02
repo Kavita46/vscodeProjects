@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 最外层orders,里面有order, order里有foods 和名字等信息,foods里有很多food;
+  
+      var nextOrder = "Y";
+      var orders = [];
+      // var oLen = orders.length ;
+      while ((nextOrder == "Y" || nextOrder == "y" ) && orders.length < 4) {
+        nextOrder = prompt(
+          "已经有" + orders.length + "单, 还需要下订单吗? Y/N"
+        );
+
+        if (nextOrder == "N" || nextOrder == "n") {
+          document.write("下单完成");
+          break;
+        }
+
+        //   创建新订单
+        var order = [];
+        // 询问个人信息
+        var userName = prompt("你的名字是 ?");
+        var userAddr = prompt("你的地址是 ?");
+        var time = prompt("送餐时间是 ?");
+
+        // 单个order点菜
+        var nextFood = "Y";
+        var foods = [];
+        while ((nextFood == "Y" || nextFood == "y")) {
+          nextFood = prompt(
+            "已经点了" + foods.length + "道菜,  还需要点菜吗? Y/N"
+          );
+          if (nextFood == "N" || nextFood == "n") {
+            document.write("点菜完成");
+            break;
+          } else if (nextFood == "Y" || nextFood == "y") {
+            var food = [];
+            var foodNum = prompt("点菜的编号 ?");
+            var foodCount = prompt("点菜的数量 ?");
+            food.push(foodNum, foodCount);
+            console.log(food);
+            foods.push(food);
+            console.log(foods);
+          }
+        }
+
+        order.push(foods, userName, userAddr, time);
+        console.log(order);
+        orders.push(order);
+        console.log(orders);
+
+        document.write("<br>");
+        document.write(orders.length + "个订单已经点好");
+
+        //   点好菜之后填充进order
+      }
+    </script>
+  </body>
+</html>

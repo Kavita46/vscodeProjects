@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="img/3-0000.jpg" id = "img"/>
+
+    <script>
+             var sources = [
+        ];
+      function makeArr() {
+
+        for (let i = 1; i < 76; i++) {
+          //   console.log("00" + i);
+
+          sources.push("imgs/"+ i + ".jpg");
+        }
+        return sources;
+      }
+
+      makeArr();
+
+      var nodes = document.getElementById("img");
+
+      var i = 0;
+      var slick = setInterval(
+        () => {
+          nodes.setAttribute("src", sources[i]);
+          i++;
+          if (i == 76) {
+            i = 0;
+          }
+        },
+
+        50
+      );
+
+      slick();
+    </script>
+  </body>
+</html>

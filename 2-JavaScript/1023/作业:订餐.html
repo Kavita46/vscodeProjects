@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 初始化区
+      var foodId = 0;
+      var nextOrder = "Y";
+      var orders = [];
+      // var oLen = orders.length ;
+
+      var menu = [
+        [1, "鱼香肉丝", 10],
+        [2, "回锅肉", 12],
+        [3, "青椒肉丝", 11],
+        [4, "泡椒猪肝", 15],
+        [5, "麻婆豆腐", 7],
+        [6, "炒莲白", 5],
+        [7, "番茄炒蛋", 9],
+        [8, "小菜豆腐汤", 10],
+      ];
+      var unfinishedNumber = 0;
+
+      // 功能0,检测未签收
+
+      function searchunfinished() {
+        unfinishedNumber = 0;
+        for (let i = 0; i < orders.length; i++) {
+          if (orders[i][orders[i].length - 1] == 0) {
+            unfinishedNumber++;
+          }
+        }
+        return unfinishedNumber;
+      }
+      // 功能1:展示菜单
+      function showMenu() {
+        document.write("<br>");
+        document.write("----以下是菜单----<br>");
+        document.write("<h3 style = 'color:red'>编号-菜名-价格(元)</h3> <br>");
+        for (let i = 0; i < menu.length; i++) {
+          let item = menu[i].join("-");
+          document.write(item);
+          document.write("<br>");
+        }
+        document.write("----菜单完毕----");
+      }
+
+      //   功能2:点餐
+
+      // function makeOrder() {
+      //   document.write("<h4 style = 'color:blue'>----选择了点餐---- </h4>");
+
+      //   var isContinue = prompt("是否要点餐? 请输入Y或者N");
+
+      //   if (isContinue == "y" || isContinue == "Y") {
+      //     document.write("选择了Y" + unfinishOrder);
+
+      //     if(unfinishOrder < 4){
+      //       document.write("未完成订单小于四,开始点餐");
+
+      //       var foodNum = prompt("点菜的编号 ?");
+      //       var foodCount = prompt("点菜的编号 ?");
+
+      //       var food;
+      //       food.push(foodNum, foodCount);
+
+      //       document.write(food);
+      //     }else if(unfinishOrder == 4){
+      //       document.write("未完成订单等于四,不能点餐");
+      //     }
+
+      //     // if (unfinishOrder < 4) {
+      //     //
+      //     // } else if (unfinishOrder == 4) {
+      //     //
+      //     // }
+      //   } else if (isContinue == "N" || isContinue == "n") {
+      //     document.write("退出点餐");
+      // }
+      // }
+
+      function makeOrder() {
+        if (searchunfinished() == 4) {
+          alert("未签收的订单超过四个,不能继续点餐");
+        }
+
+        while (
+          (nextOrder == "Y" || nextOrder == "y") &&
+          searchunfinished() < 4
+        ) {
+          nextOrder = prompt(
+            "已经有" + orders.length + "单, 还需要下订单吗? Y/N"
+          );
+
+          if (nextOrder == "N" || nextOrder == "n") {
+            document.write("下单完成");
+            break;
+          }
+
+          //   创建新订单
+          var order = [];
+          // 询问个人信息
+          var userName = prompt("你的名字是 ?");
+          var userAddr = prompt("你的地址是 ?");
+          var time = prompt("送餐时间是 ?");
+
+          // 单个order点菜
+          var nextFood = "Y";
+          var foods = [];
+          while (nextFood == "Y" || nextFood == "y") {
+            nextFood = prompt(
+              "已经点了" + foods.length + "道菜,  还需要点菜吗? Y/N"
+            );
+            if (nextFood == "N" || nextFood == "n") {
+              document.write("点菜完成");
+              break;
+            } else if (nextFood == "Y" || nextFood == "y") {
+              var food = [];
+
+              var foodFlag = true;
+              while (foodFlag) {
+                var foodNum = prompt("点菜的编号 ?");
+                if (foodNum > 8 || foodNum < 1) {
+                  alert("请看菜单,`只能输入1-8的数字");
+                } else if (foodNum >= 1 || foodNum <= 8) {
+                  foodFlag = false;
+                }
+              }
+              var foodCount = prompt("点菜的数量 ?");
+              var foodName = "";
+              var foodPrice = "";
+              for (let i = 0; i < menu.length; i++) {
+                if (foodNum == menu[i][0]) {
+                  foodName = menu[i][1];
+                  foodPrice = foodCount * menu[i][2];
+                  foodPriceStr = foodPrice + "元";
+                }
+              }
+
+              food.push(foodNum, foodCount, foodName, foodPrice, foodPriceStr);
+              // console.log(food);
+              foods.push(food);
+              // console.log(foods);
+            }
+          }
+          var signFlag = 0;
+          var orderMoney = 0;
+          for (let i = 0; i < foods.length; i++) {
+            orderMoney += foods[i][3];
+          }
+          if(orderMoney < 50){
+            orderMoney += 5 ;
+          }
+          //           // 计算总价格
+          //           function calcMoney(){
+
+          //           for(let i = 0; i < foods.length; i++){
+          // orderMoney += foods[i]
+          //           }
+          //         }
+
+          order.push(foods, ("总金额" + orderMoney + "元"), userName, userAddr, time, "未签收", signFlag);
+          console.log(order);
+          orders.push(order);
+          console.log(orders);
+
+          document.write("<br>");
+          document.write(orders.length + "个订单已经点好");
+        }
+      }
+
+      //   功能3: 展示订单
+      function showOrder() {
+        document.write("<br>----查看订单----<br>");
+
+        for (let i = 0; i < orders.length; i++) {
+          document.write(orders[i]);
+          document.write("<br>");
+        }
+      }
+
+      // 功能4:签收订单
+      function signOrder() {
+        showOrder();
+        var signNum = Number.parseInt(prompt("以下是订单信息,签收第几个?") - 1);
+        var orderLen = orders.length;
+        var signFlag = false;
+
+        while (!signFlag) {
+          // 数字0-4
+          if (signNum < orderLen && signNum >= 0) {
+            if (orders[signNum][orders[signNum].length - 1] == 0) {
+              orders[signNum][orders[signNum].length - 1] = 1;
+
+              orders[signNum][orders[signNum].length - 2] = "已签收";
+            } else if (orders[signNum][orders[signNum].length - 1] != 0) {
+              alert("订单已经签收,不能重复签收");
+            }
+            showOrder();
+            signFlag = true;
+          } else {
+            alert("只能签收已存在的" + orderLen + "个订单");
+            break;
+          }
+        }
+      }
+
+      // 功能5:删除订单
+      function deleteOrder() {
+        showOrder();
+        var delNum = Number.parseInt(prompt("以下是订单信息,删除第几个?") - 1);
+        var orderLen = orders.length;
+        var deleteFlag = false;
+
+        while (!deleteFlag) {
+          if (delNum < orderLen && delNum >= 0) {
+            if (orders[delNum][orders[delNum].length - 1] == 1) {
+              orders.splice(orders[delNum], 1);
+            } else if (orders[delNum][orders[delNum].length - 1] == 0) {
+              alert("未签收,不能删除");
+            }
+            showOrder();
+            delFlag = true;
+          } else {
+            alert("只能删除已有的" + orderLen + "个订单");
+            break;
+          }
+        }
+      }
+      // 功能7 查菜名
+
+      function searchFoodName(foodId) {
+        for (let i = 0; i < menu.length; i++) {
+          if (menu[i][0] == foodNum) {
+            return menu[i][1];
+          }
+        }
+      }
+
+      function calcMoney() {}
+
+      // 主程序启动
+      window.alert("欢迎来到饿了么家常菜");
+      var choose = 0;
+
+      while (choose != 6) {
+        var choose = Number.parseInt(
+          prompt(
+            "请选择: 1:查看菜单  2:我要点餐 3:查看订单  4:签收订单  5:删除订单   6:我要退出 7.查菜名 8.未完成单数 9 清屏"
+          )
+        );
+
+        switch (choose) {
+          case 1:
+            showMenu();
+            break;
+          case 2:
+            nextOrder = "Y";
+            makeOrder();
+            break;
+          case 3:
+            showOrder();
+            break;
+          case 4:
+            signOrder();
+            break;
+          case 5:
+            deleteOrder();
+            break;
+          case 6:
+            document.write("<h3 style = 'color:red'> ----退出系统----</h3>");
+            break;
+
+          case 7:
+            var foodNum = Number.parseInt(prompt("菜的编号是?"));
+            window.alert(searchFoodName(foodId));
+            break;
+          case 8:
+            window.alert("总订单" + orders.length);
+            window.alert("未完成 " + searchunfinished());
+            break;
+          case 9:
+            document.body.innerHTML = null;
+            break;
+          default:
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

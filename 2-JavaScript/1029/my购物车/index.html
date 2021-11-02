@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css" />
+
+    <script src="1.js"></script>
+  </head>
+  <body>
+    <!-- 1表头,id为car -->
+    <div id="car" class="car">
+      <!-- 2 表头 -->
+      <div class="head_row hid">
+        <div class="check left"><i onclick="checkAll()">√</i></div>
+        <div class="img left">全选</div>
+        <div class="name left">商品名称</div>
+        <div class="price left">单价</div>
+        <div class="number left">数量</div>
+        <div class="subtotal left">小计</div>
+        <div class="ctrl left">操作</div>
+      </div>
+    </div>
+
+    <!-- 结算 总价 -->
+    <div id="sum_area">
+      <div id="pay">去结算</div>
+      <div id="pay_amout">合计：<span id="price_num" class = "total">0</span>元</div>
+    </div>
+
+    <div id="box">
+      <!-- 废话 -->
+      <h2 id="h0" class="box_head"><span>买购物车中商品的人还买了</span></h2>
+      <!-- 这个ul是装商品列表 -->
+      <ul></ul>
+    </div>
+  </body>
+</html>
+
+

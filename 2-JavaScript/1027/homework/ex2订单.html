@@ -1,0 +1,77 @@
+<!-- // 2.使用数组保存多个订单信息，每一个订单信息包含下单用户编号、下
+    单时间、总金额、商品详情数组。商品详情包含商品编号、商品名称、商品单价。
+    遍历订单数组输出订单信息和商品信息。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+         //   calcMoney: function () {
+          //     var totalMoney = 0;
+          //     for (let i = 0; i < goods.length; i++) {
+          //       totalMoney += goods[i].goodPrice * goods[i].goodNum;
+          //     }
+          //     return totalMoney;
+          //   },
+          //   totalMoney: calcMoney(),
+
+      var orders = [
+        {
+          orderId: 1,
+          userId: 001,
+          orderTime: new Date().toLocaleString(),
+          goods: [
+            { goodId: 1, goodName: "牛奶", goodPrice: 4, goodNum: 20 },
+            { goodId: 2, goodName: "蛋糕", goodPrice: 6, goodNum: 10 },
+            { goodId: 3, goodName: "面包", goodPrice: 8, goodNum: 15 },
+          ],
+          totalMoney: 100,
+        },       {
+          orderId: 2,
+          userId: 002,
+          orderTime: new Date().toLocaleString(),
+          goods: [
+            { goodId: 1, goodName: "可乐", goodPrice: 4, goodNum: 2 },
+            { goodId: 2, goodName: "芬达", goodPrice: 4, goodNum: 4 },
+            { goodId: 3, goodName: "雪碧", goodPrice: 4, goodNum: 5 },
+          ],
+          totalMoney: 50,
+        },       {
+          orderId: 3,
+          userId: 001,
+          orderTime: new Date().toLocaleString(),
+          goods: [
+            { goodId: 1, goodName: "曲奇", goodPrice: 4, goodNum: 20 },
+            { goodId: 2, goodName: "蛋糕", goodPrice: 6, goodNum: 10 },
+            { goodId: 3, goodName: "法棍", goodPrice: 8, goodNum: 15 },
+          ],
+          totalMoney: 300,
+        },
+      ];
+
+      console.log(orders.length);
+      console.log(Array.isArray(orders));
+
+      for(let i = 0; i < orders.length; i++){
+          let  item = orders[i];
+          console.log("订单编号:  " +item.orderId + "\t用户ID:  " + item.userId + "\t下单时间:  " + item.orderTime + "\t总价格" + item.totalMoney + "元");
+          console.log("商品信息如下:");
+          for(let i = 0; i < item.goods.length; i++){
+          console.log(item.goods[i].goodName +  item.goods[i].goodNum + "个");
+      }
+    }
+    //   console.log(orders);
+    //   document.write(orders);
+    //   console.log(orders);
+    //   document.write(orders);
+      //   document.write(orders.order1.totalMoney + "元");
+    </script>
+  </body>
+</html>

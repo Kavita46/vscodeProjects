@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="account" onblur="f()" />
+
+<select id = "slct" onblur = "f2()">
+    <option value = "a">请选择省份</option>
+    <option value = "b">北京</option>
+    <option value = "c">上海</option>
+
+    <option value = "d">广州</option>
+    </select>
+    <script>
+
+function f2(){
+    let v = document.getElementById("slct");
+v.value = "c";
+}
+
+      function f() {
+        let account = document.getElementById("account").value;
+       account =  account.trim();
+       document.getElementById("account").value = account;
+      }
+    </script>
+  </body>
+</html>

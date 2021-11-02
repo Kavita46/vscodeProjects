@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    input {
+      margin: 10px;
+    }
+  </style>
+  <body>
+    温度:<span id="wd"></span><br />
+    湿度:<span id="sd"></span><br />
+    风向:<span id="fx"></span><br />
+    pm:<span id="pm"></span><br />
+    天气:<span id="tq"></span>
+
+    <br />
+    <br />
+
+    <table id="tb" border="1px">
+      <tr>
+        <td>温度:</td>
+        <td>湿度:</td>
+        <td>风向:</td>
+        <td>pm:</td>
+        <td>天气:</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <table id="table" border = "1px">
+      <input type="text" id="name" placeholder=" name" />
+      <br />
+
+      <input type="text" id="sex" placeholder=" sex" />
+      <br />
+      <input type="text" id="age" placeholder=" age" />
+      <br />
+      <input type="button" id = "btn" value="添加到表格" />
+    </table>
+    <script>
+      var weather = {
+        now: {
+          wd: "17℃",
+          sd: "82%",
+          fx: "西北风",
+          pm: "11.2",
+          tq: "多云",
+        },
+        future: {
+          0: {
+            wd: "20℃",
+            sd: "82%",
+            fx: "西北风",
+            pm: "11.2",
+            tq: "小雨",
+          },
+          1: {
+            wd: "18℃",
+            sd: "82%",
+            fx: "西北风",
+            pm: "11.2",
+            tq: "多云",
+          },
+          2: {
+            wd: "19℃",
+            sd: "82%",
+            fx: "西北风",
+            pm: "11.2",
+            tq: "晴天",
+          },
+          length: 3,
+        },
+      };
+
+      document.getElementById("wd").innerHTML = weather.now.wd;
+      document.getElementById("sd").innerHTML = weather.now.sd;
+      document.getElementById("fx").innerHTML = weather.now.fx;
+      document.getElementById("pm").innerHTML = weather.now.pm;
+      document.getElementById("tq").innerHTML = weather.now.tq;
+
+      var tb = document.getElementById("tb");
+      for (let i = 0; i < 3; i++) {
+        var inner =
+          "<tr><td>" +
+          weather.future[i].wd +
+          "</td><td>" +
+          weather.future[i].sd +
+          "</td><td>" +
+          weather.future[i].fx +
+          "</td><td>" +
+          weather.future[i].pm +
+          "</td><td>" +
+          weather.future[i].tq +
+          "</td></tr>";
+
+        tb.innerHTML += inner;
+        // var tds= tb.getElementsByTagName("td");
+
+        //   var td1 = tds[0];
+        //   var td2 = tds[1];
+        //   var td3 = tds[2];
+        //   var td4 = tds[3];
+        //   var td5 = tds[4];
+        //   td1.innerHTML +=weather.future[i].wd;
+        //   td2.innerHTML +=weather.future[i].sd;
+        //   td3.innerHTML +=weather.future[i].fx;
+        //   td4.innerHTML +=weather.future[i].pm;
+        //   td5.innerHTML +=weather.future[i].tq;
+      }
+
+      var table = document.getElementById("table");
+      var btn = document.getElementById("btn");
+      btn.setAttribute("onclick", "myfun()");
+     
+      function myfun() {
+        var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var sex = document.getElementById("sex").value;
+
+        if (name.length > 0 && sex.length > 0 && age.length > 0) {
+          var inner =
+            "<tr><td>" +
+            name +
+            "</td><td>" +
+            age +
+            "</td><td>" +
+            sex +
+            "</td></tr>";
+          table.innerHTML += inner;
+          document.getElementById("name").value = "";
+          document.getElementById("sex").value = "";
+          document.getElementById("age").value = "";
+        }
+        else{
+            alert("请输入完整的数据");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .div {
+      border: 1px solid red;
+    }
+
+    .shadow {
+      box-shadow: 10px 10px 10px 10px blue;
+    }
+  </style>
+  <body>
+    <div id="div" class ="div"></div>
+
+    <script>
+      const div = document.getElementById("div");
+console.log(div);
+      div.style.height = "200px";
+      div.style.width = "200px";
+
+      div.style.backgroundcolor = "red";
+
+      console.log(siv.style);
+
+      div.className = "div";
+      div.classList.add("shadow");
+
+     console.log(window.getComputedStyle(div));
+    </script>
+  </body>
+</html>

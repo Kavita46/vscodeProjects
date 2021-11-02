@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+    <meta charset="utf-8">  
+    <title>huanglw笔记之web storage</title>  
+    <link type="text/css" rel="stylesheet" href="demo.css"
+</head>  
+<body>  
+    <h3>huanglw学习笔记--JavaScript localStorage实现简单购物车</h3>
+    <div id="addgoods_Div"> 
+        <div id = "add_frame">
+            <label for="price">商 品：</label>  
+            <input type="text" id="price" name="price" class="text"/>  
+            <br/>  
+            <label for="goods">价 格：</label>  
+            <input type="text" id="goods" name="goods"/>
+                
+            <input id = "btn1" type="button" onclick="save()" value="添加商品"/> 
+        </div>
+    </div>
+        <br/>
+    <div id="search_goods">
+        <label for="search_phone">输入商品名称：</label>  
+        <input type="text" id="search_price" name="search_price"/>  
+        <input id = "btn2" type="button" onclick="find()" value="查找购物车商品"/>  
+        <p id="find_result"><br/></p>  
+    </div>  
+    <br/>  
+    <div id="list">  
+        
+    </div>  
+    <script>
+    // 载入所有存储在localStorage的数据
+    loadAll();     
+        
+    //保存数据  
+    function save(){  
+        var goods = document.getElementById("goods").value;  
+        var price = document.getElementById("price").value;  
+        localStorage.setItem(price, goods);
+        loadAll();        
+        alert("添加成功");
+    }
+    //查找数据  
+    function find(){  
+        var search_price = document.getElementById("search_price").value;  
+        var price = localStorage.getItem(search_price);  
+        var find_result = document.getElementById("find_result");  
+        find_result.innerHTML = search_price + "的价格是：" + price;  
+    }
+    //将所有存储在localStorage中的对象提取出来，并展现到界面上
+    function loadAll(){  
+        var list = document.getElementById("list");  
+        if(localStorage.length>0){  
+            var result = "<table>";  
+            result += "<tr><td>商品</td><td>价格</td><td>操作</td></tr>";  
+            for(var i=0;i<localStorage.length;i++){  
+                var price = localStorage.key(i);  
+                var goods = localStorage.getItem(price);  
+                result += "<tr><td>"+price+"</td><td>"+goods+"</td><td><button id = 'btn3' onclick='deleteGoods(this)'>删除</button></td></tr>";  
+            }  
+            result += "</table><br/><strong><label>总价格：</label><span id='amount'></span></strong>";  
+            list.innerHTML = result;  
+        }else{  
+            list.innerHTML = "购物车空空如也哦……";  
+        }  
+        //每次加载商品信息同时刷新总价格
+        Count();
+    }      
+    //删除购物车商品
+    function deleteGoods(item){
+        var val = item.parentNode.parentNode;
+        var children1 = val.children[0].innerText;
+        var children2 = val.children[1].innerText;
+        localStorage.removeItem(children1);
+        loadAll();    
+    }
+    
+    //计算总价
+    function Count(){
+        var goodsNum = document.getElementsByTagName('tr');
+        var amount = 0;
+        for(var i=1; i < goodsNum.length; i++){
+            //alert(parseInt(goodsNum[i].children[1].innerText));
+            //amount += parseInt(goodsNum[i].children[1].innerText);
+            amount += parseInt(goodsNum[i].children[1].innerText);
+            
+        }
+        //alert("总价是："+amount);
+        //alert("amount.toString:"+amount.toString());
+        
+        document.getElementById('amount').innerHTML = amount;
+    }
+    
+    </script>
+</body>  
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var users = {
+        user1: {
+          name: "嘉然",
+          pswd: "11111111",
+          mobile: "13388979999",
+          email: "4389524@126.com",
+        },
+        user2: {
+          name: "向晚",
+          pswd: "22222222",
+          mobile: "13388979999",
+          email: "4389524@126.com",
+        },
+        user3: {
+          name: "乃琳",
+          pswd: "33333333",
+          mobile: "13388979999",
+          email: "4389524@126.com",
+        },
+        user4: {
+          name: "珈乐",
+          pswd: "12345678",
+          mobile: "13388979999",
+          email: "4389524@126.com",
+        },
+        user5: {
+          name: "贝拉",
+          pswd: "12345678",
+          mobile: "13388979999",
+          email: "4389524@126.com",
+        },
+      };
+
+      var flag = true;
+      while (flag) {
+        // 输入
+        var userName = prompt("请输入您的用户名?");
+        var userPass = prompt("请输入您的密码?");
+
+        // 验证
+        Object.keys(users).forEach(function (key) {
+          var item = users[key].name;
+          var itemPass = users[key].pswd;
+          if (item == userName && itemPass == userPass) {
+            alert("用户名和密码正确  " + item + "  登陆成功");
+            flag = false;
+          }
+        });
+        if (flag == true) {
+          alert("用户名或密码输入错误, 请重输");
+        }
+      }
+    </script>
+  </body>
+</html>

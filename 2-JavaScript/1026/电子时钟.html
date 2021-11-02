@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<h1 id = "h1"></h1>
+<script>
+  function getTime() {
+    var time = new Date();
+    // alert(time);
+    var year = time.getFullYear();
+    var month = time.getMonth();
+    var date = time.getDate();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+    var text =
+      year +
+      "年" +
+      month +
+      "月" +
+      date +
+      "日" +
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds;
+
+      document.getElementById("h1").innerHTML=text;
+}
+
+setInterval("getTime()", 1000);
+</script>
+
+<!-- var t = 3;
+setInterval("refer()", 1000);
+function refer() {
+  if (t == 0) {
+    location.href = "..//4-userCenter-myOrder.html";
+  }
+  document.getElementById("show").innerHTML =
+    "支付成功," + t + "秒后跳转到订单页";
+  t--;
+} -->

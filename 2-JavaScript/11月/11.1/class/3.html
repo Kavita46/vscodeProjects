@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="ac" />
+    <span id="accountS">用户名</span>
+    <br>
+    <input type="password" id="ps" />
+    <span id="pswdS">密码</span>
+
+    <script>
+      document.getElementById("ac").onfocus = function () {
+        const span1 = document.getElementById("accountS");
+        span1.innerHTML = "用户名只能是6-16位的数字,字母,和下划线";
+        span1.style.color = "gray";
+      };
+      document.getElementById("ac").onblur = function () {
+        const span1 = document.getElementById("accountS");
+        span1.innerHTML = "";
+        // span1.style.color = "gray";
+      };
+
+      document.getElementById("ps").onfocus = function () {
+       var span2= document.getElementById("pswdS");
+        span2.innerHTML = "密码8位数";
+        span2.style.color = "red";
+      };
+      document.getElementById("ps").onblur = function () {
+        // const span2= document.getElementById("accountS");
+        var span2= document.getElementById("pswdS");
+        span2.innerHTML = "";
+        console.log("lose blur");
+        // span1.style.color = "gray";
+      };
+    </script>
+  </body>
+</html>

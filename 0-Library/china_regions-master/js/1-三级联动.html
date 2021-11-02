@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="province.js"></script>
+    <script src="city.js"></script>
+    <script src = "county.js"></script>
+  </head>
+  <body>
+    <select id="provinces">
+      <option value="0">省份</option>
+    </select>
+    <select id="citys">
+      <option value="1">市</option>
+    </select>
+    <select id="countys">
+      <option value="2">区</option>
+    </select>
+
+    <script>
+      //    import province from 'province.js';
+
+      var provinces = document.getElementById("provinces");
+      var citys = document.getElementById("citys");
+      var countys = document.getElementById("countys");
+
+      //   初始化省份列表
+      for (let i = 0; i < province.length; i++) {
+        provinces.innerHTML +=
+          "<option value ='" +
+          province[i].id +
+          "'>  " +
+          province[i].name +
+          "</option>";
+      }
+
+      //   使用onchange事件去级联
+
+      provinces.onchange = function () {
+        //   每次点击都先清空
+        citys.innerHTML = "";
+        countys.innerHTML = ""
+
+        //   不知道哪里来的空格,恶心到我了
+        var proValue = this.value;
+        //
+        console.log(proValue);
+        console.log(proValue.length);
+
+        // 每次点击都能获得一个市级列表
+        var cityList = city[proValue];
+        console.log(cityList);
+
+        if (proValue != "0") {
+          for (let i = 0; i < cityList.length; i++) {
+            citys.innerHTML +=
+              "<option value =' " +
+              cityList[i].id +
+              " '>  " +
+              cityList[i].name +
+              "</option>";
+          }
+        }
+      };
+
+      citys.onchange = function () {
+          console.log("changed");
+        countys.innerHTML = "";
+        // 长度多了两个空格?不知道为什么
+        var cityValue = this.value;  
+        cityValue = cityValue.trim();
+        //
+        // console.log(cityValue);
+        // console.log(cityValue.length);
+
+        var countyList = county[cityValue];
+
+        for(let i = 0; i < countyList.length; i++){
+            countys.innerHTML+=    "<option value ='" +
+            countyList[i].id +
+              "'>  " +
+              countyList[i].name +
+              "</option>";
+        }
+      };
+    </script>
+  </body>
+</html>

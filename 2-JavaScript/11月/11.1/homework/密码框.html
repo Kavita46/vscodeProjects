@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .bg {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("on.png") no-repeat center/100%;
+        }
+
+        /* .bg2 {
+        display: inline-block;
+        background: url(off.png) no-repeat center/100%;
+      } */
+    </style>
+</head>
+
+<body>
+    <form action="www.baidu.com" id="myform">
+        <input type="text" id="ac" />
+        用户名
+        <br>
+        <span id="accountS"></span>
+        <br />
+        <input type="password" id="ps" />
+        密码 <div class="bg bg2" id="eye"></div>
+        <br><span id="pswdS"></div></span>
+
+        <input type="button" value="登录" id="btn">
+
+    </form>
+    <script>
+
+        var isAccountLegal = false;
+        var isPassLegal = false;
+        //   用户名的得焦和失焦
+        document.getElementById("ac").onfocus = function () {
+            const span1 = document.getElementById("accountS");
+            let timer = setInterval(() => {
+                if (ac.value.length < 6 || this.value.length > 16) {
+                    span1.innerHTML = "用户名只能是6-16位的数字,字母,和下划线";
+                    span1.style.color = "red";
+                    isAccountLegal = false;
+                } else {
+                    span1.innerHTML = "用户名可用";
+                    span1.style.color = "blue";
+                    isAccountLegal = true;
+                }
+                console.log("isAccountLegal :  " + isAccountLegal);
+            }, 100);
+
+        };
+
+        document.getElementById("ac").onblur = function () {
+            const span1 = document.getElementById("accountS");
+            span1.innerHTML = "";
+            // span1.style.color = "gray";
+        };
+
+        //   密码的得焦和失焦
+        document.getElementById("ps").onfocus = function () {
+            var span2 = document.getElementById("pswdS");
+
+            let timer2 = setInterval(() => {
+                if (ps.value.length != 8) {
+                    span2.innerHTML = "密码8位数";
+                    span2.style.color = "red";
+                    isPassLegal = false;
+                }
+                else {
+                    span2.innerHTML = "密码合法";
+                    span2.style.color = "green";
+                    isPassLegal = true;
+
+                }
+                console.log("isPassLegal:  " + isPassLegal);
+            }, 100);
+
+            // timer2();
+
+        };
+        document.getElementById("ps").onblur = function () {
+            // const span2= document.getElementById("accountS");
+            var span2 = document.getElementById("pswdS");
+            span2.innerHTML = "";
+            // console.log("lose blur");
+            // span1.style.color = "gray";
+        };
+
+        // 眼睛特效
+        document.getElementById("eye").onmousedown = function () {
+            document.getElementById("ps");
+            ps.setAttribute("type", "text");
+            this.style.background = "url('off.png') no-repeat center/100%"
+        };
+
+        document.getElementById("eye").onmouseup = function () {
+            document.getElementById("ps");
+            ps.setAttribute("type", "password");
+            this.style.background = "url('on.png') no-repeat center/100%"
+        };
+
+
+        document.getElementById("btn").onclick = function () {
+
+            console.log(1);
+            if (isPassLegal && isAccountLegal) {
+                document.getElementById("myform").submit();
+            } else {
+                alert("提交失败");
+            }
+        }
+
+
+    </script>
+</body>
+</body>
+
+</html>

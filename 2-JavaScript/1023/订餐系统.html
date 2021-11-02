@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.alert("欢迎来到饿了么");
+      window.alert
+      var choose = Number.parseInt(prompt("请选择: 1:查看菜单  2:我要点餐 3:查看订单  4:签收订单  5:删除订单   6:我要退出 "));
+
+      switch (choose) {
+        case 1:
+          showMenu();
+          break;
+
+        case 2:
+          makeOrder();
+          break;
+      }
+
+      var menu = [
+        [1, "鱼香肉丝", 10],
+        [2, "回锅肉", 12],
+        [3, "青椒肉丝", 11],
+        [4, "泡椒猪肝", 15],
+        [5, "麻婆豆腐", 7],
+        [6, "炒莲白", 5],
+        [7, "番茄炒蛋", 9],
+        [8, "小菜豆腐汤", 10],
+      ];
+
+      var userOrder = [];
+
+      // 展示菜单
+      function showMenu() {
+        document.write("----以下是菜单----<br>");
+        document.write("编号-菜名-价格(元) <br>");
+        for (let i = 0; i < menu.length; i++) {
+          let item = menu[i].join("-");
+          document.write(item);
+          document.write("<br>");
+        }
+      }
+
+      function showOrder() {
+        for (let i = 0; i < orders.length; i++) {
+          document.write(orders[i]);
+          document.write("<br>");
+        }
+      }
+
+      var orders = [
+        [0, 0, "朝阳 "],
+        [0, 0, " 朝阳"],
+        [0, 0, " 朝阳"],
+        [0, 0, " 朝阳"],
+      ];
+
+      var unfinishOrder = 0;
+
+      var isContinue = true;
+
+      function start() {
+        while (isContinue) {
+          //   询问是否下单
+          let choose = prompt("请问是否需要下订单? 请输入Y / N");
+          if (choose == "N" || choose == "n") {
+            isContinue = false;
+            window.alert("退出点单.");
+            showOrder();
+          } else if (choose == "Y" || choose == "y") {
+            isContinue = true;
+            if (orderNum == 4) {
+              window.alert("订单已经满了四个,不能继续点单.");
+              break;
+            } else if (orderNum < 4) {
+              showMenu();
+              makeOrder();
+              orderNum++;
+            }
+          }
+        }
+      }
+
+      showOrder();
+      start();
+
+      function makeOrder() {
+        var dishNum = prompt("请输入菜品编号");
+        var dishCount = prompt("请输入菜品份数");
+        var dishAddr = prompt("请输入送餐地址");
+        for (var i = 0; i < orders.length; i++) {
+          // 遇到的第一个
+
+          if (orders[i][0] == 0) {
+            orders[i][0] = dishNum;
+            orders[i][1] = dishCount;
+            orders[i][2] = dishAddr;
+            break;
+          }
+        }
+      }
+
+      var totalMoney = 0;
+      function calculateMoney() {
+        for (let i = 0; i < orders.length; i++) {
+          for (let j = 0; j < menu.length; j++) {
+            if (orders[i][0] == menu[j][0]) {
+              totalMoney += orders[i][1] * menu[j][2];
+            }
+          }
+        }
+      }
+      calculateMoney();
+      document.write("订单总价格是" + totalMoney);
+    </script>
+  </body>
+</html>

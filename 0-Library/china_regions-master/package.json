@@ -1,0 +1,39 @@
+{
+  "name": "china_regions",
+  "version": "3.1.0",
+  "files": [
+    "js/*",
+    "json/*"
+  ],
+  "description": "最全最新中国省，市，地区数据",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wecatch/china_regions.git"
+  },
+  "keywords": [
+    "china",
+    "regions",
+    "datasource"
+  ],
+  "author": "wecatch.me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wecatch/china_regions/issues"
+  },
+  "homepage": "https://github.com/wecatch/china_regions#readme",
+  "devDependencies": {
+    "bluebird": "^3.5.3",
+    "iconv-lite": "^0.4.24",
+    "jquery": "^3.4.0",
+    "jsdom": "^13.2.0",
+    "log4js": "^4.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "system-sleep": "^1.3.6",
+    "tracer": "^0.9.8"
+  }
+}
