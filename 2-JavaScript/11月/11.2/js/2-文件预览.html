@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #img-box {
+      width: 300px;
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+  <body>
+    <input type="file" multiple id="myfile" />
+
+    <div id="img-box">
+      <img id="img" width="300" height="200" />
+    </div>
+
+    <script>
+            const selectedFile = document.getElementById("myfile");
+          //   console.log(selectedFile);
+
+          //   console.log(typeof(selectedFile));
+
+          for(let i = 0; i < selectedFile.files.length; i++){
+            let reader = new FileReader();
+            reader.readAsDataURL(selectedFile);
+            
+            reader.onload = function () {
+              console.log(this.result);
+
+             var box =  document.getElementById("img-box");
+      box.innerHTML +="<img id =img'"+i +"'>";
+
+              document.getElementById(("img" + i)).src= this.result;
+            };
+
+         
+          }
+    </script>
+  </body>
+</html>

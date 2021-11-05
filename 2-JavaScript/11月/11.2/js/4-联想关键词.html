@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="keyboards" />
+
+    <ul id="ul"></ul>
+
+    <script>
+      const keys = [
+        "java",
+        "java正则表达式",
+        "java教程",
+        "java从入门到入土",
+        "EDG冠军",
+        "edge浏览器",
+        "EDG微博",
+        "为什么是神",
+        "为什么会流鼻血",
+        "EDWARD",
+        "为什么不开大",
+        "为什么不ban皇子",
+      ];
+
+      document.getElementById("keyboards").oninput = function () {
+          ul.innerHTML =null;
+        let key = this.value;
+console.log(key);
+        for (let i = 0; i < keys.length; i++) {
+          if (keys[i].toUpperCase().startsWith(key.toUpperCase())) {
+            document.getElementById("ul");
+
+            ul.innerHTML += "<li>" + keys[i] + "</li>";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

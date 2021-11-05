@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        /* border:0; */
+        padding: 0;
+        text-align: center;
+        list-style: none;
+      }
+      .menu {
+        transition: 0.2s;
+        display: none;
+        width: 100px;
+        height: 120px;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: aliceblue;
+        border: 1px solid red;
+      }
+
+      .menu ul {
+        width: 100px;
+        height: 120px;
+        box-sizing: border-box;
+      }
+
+      .menu ul li {
+        box-sizing: border-box;
+        width: 100px;
+        height: 30px;
+        border-bottom: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <ul>
+        <li><a href="">删除</a></li>
+        <li><a href="">增加</a></li>
+        <li><a href="">减少</a></li>
+        <li><a href="">结账</a></li>
+      </ul>
+    </div>
+    <script>
+      const menu = document.querySelector(".menu");
+
+      console.log(menu);
+
+      window.oncontextmenu = function (e) {
+        console.log(e.button);
+        //取消默认的浏览器自带右键 很重要！！
+        e.preventDefault();
+
+        //获取我们自定义的右键菜单
+
+        //根据事件对象中鼠标点击的位置，进行定位
+        if (!e) {
+          e = event;
+          console.log(e);
+        }
+        if (e.button == 2) {
+          console.log(e);
+          let x = e.clientX;
+          let y = e.clientY;
+          menu.style.left = x + "px";
+          menu.style.top = y + "px";
+          menu.style.display = "block";
+          //    menu.style.width = '100px';
+        }
+      };
+
+      //   function showMenu(e) {
+      //     if (!e) {
+      //       e = event;
+      //     }
+      //     if (e.button == 2) {
+      //       let x = e.clientX;
+      //       let y = e.clientY;
+      //       menu.style.left = x + "px";
+      //       menu.style.top = y + "px";
+
+      //       menu.style.display = "block";
+      //     }
+      //   }
+
+      // console.log(window.onclick());
+
+      window.onclick = function (e) {};
+      //   showMenu();
+    </script>
+  </body>
+</html>

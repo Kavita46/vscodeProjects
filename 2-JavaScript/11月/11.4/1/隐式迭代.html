@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "/0-Library/jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <script>
+        const lis2 = $("li");
+        lis2.css = ("color", red);
+
+        const els = document.querySelectorAll(cssName);
+
+        const jqueryElement = {};
+
+        for(let i =0; i< els.length; i++){
+            jqueryElement[i] = els[i];
+
+        }
+        jqueryElement.length = els.length;
+
+        jqueryElement.css = function(cssStyle, cssValue){
+            for(let i = 0; i < this.length; i++){
+                this[i].style[cssStyle] = cssValue;
+            }
+            return this;
+        }
+        return jqueryElement;
+    </script>
+</body>
+</html>

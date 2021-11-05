@@ -10,6 +10,9 @@
     <script src="1.js"></script>
   </head>
   <body>
+    <!-- 右键菜单 -->
+
+
     <!-- 1表头,id为car -->
     <div id="car" class="car">
       <!-- 2 表头 -->
@@ -27,7 +30,9 @@
     <!-- 结算 总价 -->
     <div id="sum_area">
       <div id="pay">去结算</div>
-      <div id="pay_amout">合计：<span id="price_num" class = "total">0</span>元</div>
+      <div id="pay_amout">
+        合计：<span id="price_num" class="total">0</span>元
+      </div>
     </div>
 
     <div id="box">
@@ -36,7 +41,86 @@
       <!-- 这个ul是装商品列表 -->
       <ul></ul>
     </div>
+
+
+    <div class="menu" id="menu">
+      <ul>
+        <li id = "menu1"><h2>删除</h2></li>
+        <li id = "menu2"><h2>增加</h2></li>
+        <li id = "menu3"><h2>减少</h2></li>
+        <li id = "menu4"><h2>取消</h2></li>
+      </ul>
+    </div>
+    <script>
+const menu = document.querySelector(".menu");
+window.oncontextmenu = function (e) {
+  // console.log(e.button);  
+  // 这里e.button是2,左键是0
+  //取消默认的浏览器自带右键 很重要！！
+  e.preventDefault();
+
+  //获取我们自定义的右键菜单
+
+  //根据事件对象中鼠标点击的位置，进行定位
+  if (!e) {
+    e = event;
+    // console.log(e);
+  }
+  if (e.button == 2) {
+    menu.style.visibility = "visible";
+    // console.log(e);
+    let x = e.clientX;
+    let y = e.clientY;
+    menu.style.left = x + "px";
+    menu.style.top = y + "px";
+    menu.style.display = "block";
+    //    menu.style.width = '100px';
+  }
+};
+// 删除
+
+var del = document.getElementById("menu1");
+console.log(del);
+del.onclick = function(e){
+
+  console.log("Clicked Delete");
+console.log(e.target);
+console.log(e.currentTarget);
+
+
+// console.log(oCar);
+// console.log(oDiv);
+// oCar.removeChild(oDiv);
+//                     number--;
+//                     console.log("number = " + number);
+//                     getAmount();
+}
+
+//2.增减 
+var increase = document.getElementById("menu2");
+var decrease = document.getElementById("menu3");
+
+increase.onclick = function(e){
+  console.log("Clicked increase");
+}
+
+decrease.onclick = function(e){
+  console.log("Clicked decrease");
+}
+// 取消
+var cancel =document.getElementById("menu4");
+cancel.onclick = function(e){
+  console.log(e.target); 
+  // 这个是h2
+console.log(e.currentTarget);
+// 这个是li id = xxx; 
+  menu.style.visibility = "hidden";
+}
+
+// window.onclick = function(){
+ 
+// }
+
+    </script>
   </body>
 </html>
-
-

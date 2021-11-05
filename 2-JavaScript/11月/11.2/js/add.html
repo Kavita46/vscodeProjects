@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id = "province">
+        <option value = "113" id = "123">----上海----</option>
+        <option value = "100" id = "123">----北京----</option>
+        <option value = "200" id = "123">----广州----</option>
+    </select>
+
+    <script>
+        let pro = document.getElementById("province");
+
+pro.onchange = function(){
+console.log(pro.value);
+}
+
+        pro.add(new Option("河南", "1"));
+        pro.add(new Option("河南", "2"));
+        pro.add(new Option("河南", "3"));
+
+        console.log(pro.option.value);
+    </script>
+</body>
+</html>

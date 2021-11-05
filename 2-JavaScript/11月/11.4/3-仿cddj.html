@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #menu {
+        width: 130px; /*设置为0 隐藏自定义菜单*/
+        height: 125px;
+        overflow: hidden; /*隐藏溢出的元素*/
+        box-shadow: 0 1px 1px #888, 1px 0 1px #ccc;
+        position: absolute; /*自定义菜单相对与body元素进行定位*/
+      }
+      .menu {
+        width: 130px;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <div class="menu">功能1</div>
+      <div class="menu">功能2</div>
+      <div class="menu">功能3</div>
+      <div class="menu">功能4</div>
+      <div class="menu">功能5</div>
+    </div>
+
+    <script>
+      window.oncontextmenu = function () {
+        //   console.log(点击了右键);
+        // console.log(e.button);
+        //取消默认的浏览器自带右键 很重要！！
+        return false;
+      };
+
+      var menu = document.querySelector("#menu");
+
+      window.onclick = function (e) {
+        console.log(e);
+        //用户触发click事件就可以关闭了，因为绑定在window上，按事件冒泡处理，不会影响菜单的功能
+        // document.querySelector("#menu").style.height = 0;
+
+        if (e.button == 2) {
+          console.log("点击了右键");
+          //根据事件对象中鼠标点击的位置，进行定位
+          menu.style.left = e.clientX + "px";
+          menu.style.top = e.clientY + "px";
+
+          //改变自定义菜单的高宽，让它显示出来
+          menu.style.height = "125px";
+        } else if (e.button == 0) {
+          console.log("点击了左键");
+          var num = e.detail;
+          var count = 25 * num;
+
+          menu.style.height = count + "px";
+        }
+      };
+
+      //获取我们自定义的右键菜单
+
+      //关闭右键菜单，很简单
+    </script>
+  </body>
+</html>
