@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = '/0-Library/jquery-3.6.0.min.js'></script>
+</head>
+<body>
+    
+    <script>
+        $(function(){
+            console.log("工厂函数1");
+        })
+
+        $(function(){
+            console.log("工厂函数2");
+        })
+
+        // 储存在div[0]里面, div是对象
+        $(function(){
+           var div=$("<div><div><ul id = 'ul'><li id = 'li1' >1</li><li id = 'li2'>2</li><li>3</li><li>4</li></ul></div></div>");
+              $("body").append(div);
+           console.log(div);
+           $("#li1").css("background-color", "red");
+  });
+
+// 执行顺序的问题,后执行函数
+  $("#ul").css("background-color", "red");
+  document.write(div);
+
+    </script>
+</body>
+</html>

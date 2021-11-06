@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="/0-Library/jquery-3.6.0.min.js"></script>
-  </head>
-  <body>
-    <table id="tb">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="/0-Library/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <table id="tb" border="1" width="500">
+    <tr id="first">
+      <th>学号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>学历</th>
+    </tr>
+    <tr id="last">
+      <td colspan="4">班级人数20人</td>
+    </tr>
+  </table>
+
+  <script>
+    for (let i = 0; i < 3; i++) {
+      let name = prompt("姓名?");
+      // var num = prompt("学号");
+      let age = prompt("年龄");
+      let  education = prompt("学历");
+
+      var iStr = i.toString();
+      console.log(i);
+      console.log(iStr);
+      console.log(name);
+      let tr = `
       <tr>
-        <td>姓名</td>
-        <td>学号</td>
-        <td>年龄</td>
-      </tr>
-    </table>
+          <td>${i}</td>
+          <td>${name}</td>
+          <td>${age}</td>
+          <td>${education}</td>
+          </tr > `;
 
-    <script>
-      for (let i = 0; i < 3; i++) {
-        var name = prompt("姓名?");
-        var num = prompt("学号");
-        var age = prompt("年龄");
 
-        $("")
-      }
-    </script>
-  </body>
+          // $("th").before(tr);
+      $("#last").before(tr);
+
+    }
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div style="font-size: 50px">样式20</div>
+
+    <button></button>
+    <script>
+      $(function () {
+        console.log($("div").css("font-size"));
+      });
+
+      var div = $(
+        "<div><div><ul id = 'ul'><li id = 'li1' >1</li><li id = 'li2'>2</li><li>3</li><li>4</li></ul></div></div>"
+      );
+      //   $("body").append(div);
+
+      $("button").css({
+        "background-color": "red",
+        color: "white",
+        "font-size": "50px",
+        width: "100px",
+        height: "100px",
+      });
+
+      $("button").click(function () {
+        console.log(div);
+        console.log($("li"));
+        $("li").each(function () {
+          alert($(this).text());
+        });
+      });
+
+      $("div").css({
+        "font-size": "50px",
+        color: "red",
+        "background-color": "yellow",
+        width: "200px",
+        "  height": "100px",
+        border: "1px solid red",
+      });
+    </script>
+  </body>
+</html>
