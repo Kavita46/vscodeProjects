@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/moviesDetails.min.css">
+    <script src="js/moviesDetails.js"></script>
+    <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div>
+                <div class="header-left"><a href="">下载APP</a></div>
+                <div class="header-right">
+                    <span><button id="showLoginDiv">登录</button></span>
+                    <span><button style="display: none;" id="name"></button></span>
+                    <span><button id="showRegisterDiv">注册</button></span>
+                    <span><button style="display: none;color: red;" id="esc">注销</button></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div>
+                <div class="left">
+                    <div></div>
+                    <select name="" id="">
+                        <option value="全国">全国</option>
+                        <option value="成都">成都</option>
+                        <option value="上海">上海</option>
+                    </select>
+                </div>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="cinima.html">影片</a></li>
+                    <li><a href="cinema_list.html">影城</a></li>
+                    <li><a href="Information.html">影城咨询</a></li>
+                    <li><a href="center.html">会员中心</a></li>
+                </ul>
+                <div class="right">
+                    <input type="text" placeholder="佩奇 白蛇2 我是猫" list="searchipt" id="searchipt1">
+                    <datalist id="searchipt">
+                        <!-- <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera"> -->
+                    </datalist>
+                    <button id="searchbtn"><img src="" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="zhanshi">
+            <div class="banner">
+                <!-- <div class="mains">
+                    <div class="left">
+                        <img src="./images/xq.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <h3>盛夏未来</h3>
+                        <h5>Upcoming Summer</h5>
+                        <h6>剧情 青春</h6>
+                        <p>中国大陆 / 115分钟</p>
+                        <p>2021-07-30 08:00中国大陆上映</p>
+                        <div class="koubei">
+                            <div class="btn">
+                                 改变i标签的class属性中color可以改变颜色 
+                                <button><i class="fa fa-heart"></i><a href="">想看</a></button>
+                                <button><i class="fa fa-star"></i><a href="">评分</a></button>
+                                <button><a href="">特惠购票</a></button>
+                            </div>
+                            <div class="word">
+                                <p>蜗牛口碑</p>
+                                <div class="xingji">
+                                    <div class="pingfen">
+                                        <h2>9.1</h2>
+                                    </div>
+                                    <div class="renshu">
+
+                                    </div>
+                                    <span><img src="./images/xingji .jpg" alt=""><br>13.3万人评分</span>
+                                </div>
+                                <p>累计票房</p>
+                                <h3>2.38<span>亿</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+        <div class="xiangqing">
+            <!-- 面包屑导航 -->
+            <div class="mianbao">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">蜗牛电影</a></li>
+                        <li class="breadcrumb-item"><a href="#">电影</a></li>
+                        <!-- <li class="breadcrumb-item active" aria-current="page">盛夏未来</li> -->
+                    </ol>
+                </nav>
+            </div>
+            <!-- 介绍及演职人员 -->
+            <div class="jianjie">
+                <div class="left">
+                    <ul class="nav" id="tab">
+                        <li class="nav-item">
+                            <p class="nav-link" id="home-tab">介绍</p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link" id="profile-tab">演职人员</p>
+                        </li>
+                    </ul>
+                    <div class="btm"></div>
+                    <div class="tab-content" id="tabContent">
+                        <!-- 控制table切换 -->
+                        <div class="tab-pane active" id="home">
+                            <div class="juqing">
+                                <h3>剧情简介</h3>
+                                <!-- <p>即将高考的陈辰（张子枫 饰）因发现妈妈（郝蕾 饰）与王叔叔（祖峰 饰）的“外遇”而心情低落，却在这时与校园网红郑宇星（吴磊
+                                    饰）因为一个谎言意外相识。两人在未解的青春里，携手面对成长的种种难题，勇敢地面对真实的自
+                                    己，亦在这个夏天过去后，见证了彼此的成长和蜕变……</p> -->
+                            </div>
+                            <div class="nei">
+                                <div class="left">
+                                    <div class="actor">
+                                        <h3>演职人员<span>全部<img src="./images/jiantou_03.jpg" alt=""></span></h3>
+                                        <div class="zhaopian">
+                                            <p>导演</p>
+                                            <p>演员</p>
+                                        </div>
+                                        <ul id="actors">
+                                            <!-- <li><img src="./images/yz1.jpg" alt="">
+                                                <p>陈正道</p>
+                                            </li>
+                                            <li><img src="./images/yz2.jpg" alt="">
+                                                <p>张子枫</p><span>饰：陈辰</span>
+                                            </li>
+                                            <li><img src="./images/yz3.jpg" alt="">
+                                                <p>吴磊</p><span>饰：郑宇星</span>
+                                            </li>
+                                            <li><img src="./images/yz4.jpg" alt="">
+                                                <p>赫蕾</p><span>饰：陈辰妈妈</span>
+                                            </li>
+                                            <li><img src="./images/yz5.jpg" alt="">
+                                                <p>祖峰</p><span>饰：王叔叔</span>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                    <div class="pinglun">
+                                        <h3>热门短评
+                                            <button id="comment">写短评</button>
+                                        </h3>
+                                        <!-- <div class="ping1">
+                                            <div class="left">
+                                                <img src="./images/tx1.jpg" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <div class="shang">
+                                                    <div class="nicheng">
+                                                        <h2>Hp</h2>
+                                                        <p>23小时前<img src="./images/pinfen_06.jpg" alt=""></p>
+                                                    </div>
+                                                    <div id="goods">
+                                                         改变fa颜色 
+                                                        <i class="fa fa-thumbs-up">158</i>
+                                                    </div>
+                                                </div>
+                                                <div class="xia">
+                                                    <p>郑宇星的孤独太真实了，一个人在家的时候。真的电视要开，手机音乐要大声。有时候我连洗衣机都让它运转。真的会沉寂的让人害怕。生活太苦，如果剧中的结尾是新的开始我就圆满了。弟弟妹妹演技不错！希望以后能拍出更好的剧！
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ping1">
+                                            <div class="left">
+                                                <img src="./images/tx2.jpg" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <div class="shang">
+                                                    <div class="nicheng">
+                                                        <h2>Tenten</h2>
+                                                        <p>23小时前<img src="./images/pinfen_06.jpg" alt=""></p>
+                                                    </div>
+                                                    <div id="goods">
+                                                         改变fa颜色 
+                                                        <i class="fa fa-thumbs-up">158</i>
+                                                    </div>
+                                                </div>
+                                                <div class="xia">
+                                                    <p>二刷 真的是一部很有余韵的电影 郑宇星和陈辰最后没有在一起 但是他们都是陪伴彼此成长 一起变得更勇敢 他们都是彼此珍贵的存在
+                                                        说被骗的 是没有理解这部电影想表达的内涵</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ping1">
+                                            <div class="left">
+                                                <img src="./images/tx3.jpg" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <div class="shang">
+                                                    <div class="nicheng">
+                                                        <h2>Ming</h2>
+                                                        <p>23小时前<img src="./images/pinfen_06.jpg" alt=""></p>
+                                                    </div>
+                                                    <div id="goods">
+                                                         改变fa颜色 -
+                                                        <i class="fa fa-thumbs-up">158</i>
+                                                    </div>
+                                                </div>
+                                                <div class="xia">
+                                                    <p>这部剧真的特别喜欢，特别推荐 “我们都要学会接受喜欢的人不喜欢自己” “如果你喜欢的人刚好也喜欢你的话，那么现在就是未来”
+                                                        “如果我也能喜欢你就好了” “不是不甘心，只是接受不了我还喜欢她但她已经不喜欢我这个事实”
+                                                        郑宇星尝试过喜欢陈辰，但是不行，吻是将club的吻和自尊还给陈辰~ “希望在未来喜欢的人能够喜欢自己，希望我们都能更勇敢”
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ping1">
+                                            <div class="left">
+                                                <img src="./images/tx4.jpg" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <div class="shang">
+                                                    <div class="nicheng">
+                                                        <h2>Hp</h2>
+                                                        <p>23小时前<img src="./images/pinfen_06.jpg" alt=""></p>
+                                                    </div>
+                                                    <div id="goods">
+                                                         改变fa颜色 
+                                                        <i class="fa fa-thumbs-up">158</i>
+                                                    </div>
+                                                </div>
+                                                <div class="xia">
+                                                    <p>郑宇星的孤独太真实了，一个人在家的时候。真的电视要开，手机音乐要大声。有时候我连洗衣机都让它运转。真的会沉寂的让人害怕。生活太苦，如果剧中的结尾是新的开始我就圆满了。弟弟妹妹演技不错！希望以后能拍出更好的剧！
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ping1">
+                                            <div class="left">
+                                                <img src="./images/tx5.jpg" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <div class="shang">
+                                                    <div class="nicheng">
+                                                        <h2>Tenten</h2>
+                                                        <p>23小时前<img src="./images/pinfen_06.jpg" alt=""></p>
+                                                    </div>
+                                                    <div id="goods">
+                                                         改变fa颜色 
+                                                        <i class="fa fa-thumbs-up">158</i>
+                                                    </div>
+                                                </div>
+                                                <div class="xia">
+                                                    <p>二刷 真的是一部很有余韵的电影 郑宇星和陈辰最后没有在一起 但是他们都是陪伴彼此成长 一起变得更勇敢 他们都是彼此珍贵的存在
+                                                        说被骗的 是没有理解这部电影想表达的内涵</p>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="nav-right1">
+                                        <ul>
+                                            <li>
+                                                <p>预告片</p>
+                                            </li>
+                                            <li>
+                                                <p>相关资讯</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btm"></div>
+                                    <div class="yugao">
+                                        <h3>预告片</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/yg1.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》张子枫吴磊交换...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <img src="./images/yg2.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》电影《盛夏未来...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <img src="./images/yg3.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》电影《盛夏未来...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="xiangguan">
+                                        <h3>相关电影</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/xg1.jpg" alt="">
+                                                <h5>怒火·重案</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg2.jpg" alt="">
+                                                <h5>兔子暴力</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg3.jpg" alt="">
+                                                <h5>1921</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg4.jpg" alt="">
+                                                <h5>拯救甜甜圈：时...</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg5.jpg" alt="">
+                                                <h5>五个扑水的少年</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg6.jpg" alt="">
+                                                <h5>二哥来了怎么办</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg7.jpg" alt="">
+                                                <h5>当男人恋爱时</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg8.jpg" alt="">
+                                                <h5>你好世界</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg9.jpg" alt="">
+                                                <h5>西游记之再世...</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="profile">
+                            <div class="nei">
+                                <div class="left">
+                                    <div class="yanzhi">
+                                        <h4>导演 <span>(1)</span></h4>
+                                        <img src="./images/yz1.jpg" alt="">
+                                        <p>陈正道</p>
+                                    </div>
+                                    <div class="yanyuan">
+                                        <h4>演员 <span>(8)</span></h4>
+                                        <ul style="display: flex; flex-wrap: wrap; list-style: none;">
+                                            <li>
+                                                <img src="./images/yz2.jpg" alt="">
+                                                <p>张子枫</p><span>饰：陈辰</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz3.jpg" alt="">
+                                                <p>吴磊</p><span>饰：郑宇星</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz4.jpg" alt="">
+                                                <p>赫蕾</p><span>饰：陈辰妈妈</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz5.jpg" alt="">
+                                                <p>祖峰</p><span>饰：王叔叔</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz6.jpg" alt="">
+                                                <p>柳小海</p><span>饰：陈辰爸爸</span>
+                                            </li>
+                                            <li>
+                                                <img src="./images/yz7.jpg" alt="">
+                                                <p>刘丹</p><span>饰：班主任</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz8.jpg" alt="">
+                                                <p>周铁</p><span>饰：郑宇星爸爸</span>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <img src="./images/yz9.jpg" alt="">
+                                                <p>马乐</p><span>饰：夜店李哥</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="nav-right">
+                                        <ul>
+                                            <li>
+                                                <p>预告片</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btm"></div>
+                                    <div class="yugao">
+                                        <h3>预告片</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/yg1.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》张子枫吴磊交换...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <img src="./images/yg2.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》电影《盛夏未来...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <img src="./images/yg3.jpg" alt="">
+                                                <span>
+                                                    <h5>《盛夏未来》电影《盛夏未来...</h5>
+                                                    <p>179.9万</p>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="xiangguan">
+                                        <h3>相关电影</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/xg1.jpg" alt="">
+                                                <h5>怒火·重案</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg2.jpg" alt="">
+                                                <h5>兔子暴力</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg3.jpg" alt="">
+                                                <h5>1921</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg4.jpg" alt="">
+                                                <h5>拯救甜甜圈：时...</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg5.jpg" alt="">
+                                                <h5>五个扑水的少年</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg6.jpg" alt="">
+                                                <h5>二哥来了怎么办</h5>
+                                                <p>暂无评分</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg7.jpg" alt="">
+                                                <h5>当男人恋爱时</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg8.jpg" alt="">
+                                                <h5>你好世界</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/xg9.jpg" alt="">
+                                                <h5>西游记之再世...</h5>
+                                                <p class="xie">8.<span>8</span></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 写短评的模块 -->
+        <div class="comment">
+            <div class="da">
+                <div class="nei">
+                    <div class="text">
+                        <p>请点击星星评分</p>
+                        <ul id="star" class="item-0 item active">
+                            <li><i onclick="clickStar(1)" class="fa fa-star "></i></li>
+                            <li><i onclick="clickStar(2)" class="fa fa-star"></i></li>
+                            <li><i onclick="clickStar(3)" class="fa fa-star "></i></li>
+                            <li><i onclick="clickStar(4)" class="fa fa-star "></i></li>
+                            <li><i onclick="clickStar(5)" class="fa fa-star "></i></li>
+                        </ul>
+                        <div id="score" style="display: none;"></div>
+                        <!-- <ul class="item-1 item">
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                        </ul>
+                        <ul class="item-2 item">
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                        </ul>
+                        <ul class="item-3 item">
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                        </ul>
+                        <ul class="item-4 item">
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                        </ul>
+                        <ul class="item-5 item">
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                            <li><i class="fa fa-star "></i></li>
+                        </ul> -->
+                    </div>
+                    <div class="wenbenyu">
+                        <!-- <input type="text" placeholder="快来说说你的看法吧"> -->
+                        <textarea placeholder="快来说说你的看法吧"></textarea>
+                        <button onclick="clickRelease()" id="release">发布</button>
+                    </div>
+                    <button class="close"><img src="./images/guanbi_03.jpg" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="top">
+            <div>
+                <div>
+                    <h3>新手上路</h3>
+                    <span></span>
+                    <ul>
+                        <li>注册登录问题</li>
+                        <li>用户绑定会员卡问题</li>
+                        <li>影票相关问题</li>
+                        <li>票价和支付问题</li>
+                        <li>取票凭证和取票问题</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>购票指南</h3>
+                    <span></span>
+                    <ul>
+                        <li>用户购票流程</li>
+                        <li>取票观影指南</li>
+                        <li>会员卡支付相关说明</li>
+                        <li>网银支付相关说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>会员权益</h3>
+                    <span></span>
+                    <ul>
+                        <li>会员订票权益</li>
+                        <li>取票积分权益</li>
+                        <li>入会资格</li>
+                        <li>会员卡折扣说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>联系我们</h3>
+                    <span></span>
+                    <ul>
+                        <li>手机客服端介绍与下载</li>
+                        <li>影片信息查询</li>
+                        <li>手机自助购票</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div>
+                <p>公司介绍 · 合作咨询 · 友情链接 · 网站地图 · 站长统计 · 网站声明</p>
+                <p>Copyright @ 2021 ed by woniuxy</p>
+            </div>
+        </div>
+    </footer>
+    <div id="bg"></div>
+    <div id="login">
+        <div class="title">
+            <span class="cutLogin">登录</span>
+            <span class="cutRegister">注册</span>
+        </div>
+        <input id="lphone" class="input username" type="text" placeholder="请输入11位手机号">
+        <p id="loginphoneMsg">&nbsp;</p>
+        <input id="lpass" class="input userpass" type="text" placeholder="请输入6-12位,以字母开头密码"> <a id="a3" class="eyes"
+            href="javascript:show3()"><i class="fa fa-eye"></i></a>
+        <p id="loginpassMsg">&nbsp;</p>
+        <input type="text" id="loginCode" placeholder="请输入验证码">
+        <div id="loginCodeBox"></div><span id="loginSx">点击刷新</span>
+        <p id="loginCodeMsg"></p>
+        <button id="lbtn"><a id="la" href="javascript:" onclick="login()">登录</a></button>
+        <div class="autologin">
+            <span><input type="checkbox">下次自动登录</span>
+            <span><a href="">忘记密码</a></span>
+        </div>
+        <div class="agree">
+            <input type="checkbox">我已阅读《服务设计启发式线上工具服务协议》
+        </div>
+        <div id="close"><span>×</span></div>
+    </div>
+    <div id="register">
+        <div class="title">
+            <span class="cutLogin">登录</span>
+            <span class="cutRegister">注册</span>
+        </div>
+        <input id="rphone" class="input username" type="text" placeholder="请输入11位手机号">
+        <p id=rphoneMsg>&nbsp;</p>
+        <input id="rpass" class="input userpass" type="text" placeholder="请输入6-12位,以字母开头密码"><a id="a1" class="eyes"
+            href="javascript:show()"><i class="fa fa-eye"></i></a>
+        <p id=rpassMsg>&nbsp;</p>
+        <input id="rrpass" class="input confirmuserpass" type="text" placeholder="请确认密码"><a id="a2" class="eyes"
+            href="javascript:show1()"><i class="fa fa-eye"></i></a>
+        <p id=rrpassMsg>&nbsp;</p>
+        <input id="code" type="text" name="" placeholder="请输入验证码">
+        <div id="codeBox"></div><span id="sx">点击刷新</span>
+        <p id="codeMsg">&nbsp;</p>
+        <button id="rbtn"><a id="ra" href="javascript:" onclick="register()">立即注册</a></button>
+        <div class="gologin">
+            <span>立即登录</span>
+        </div>
+        <div id="close1"><span>×</span></div>
+    </div>
+</body>
+</html>

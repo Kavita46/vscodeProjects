@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=1.0&type=webgl&ak=mvjXbiNug38EPG6sTqd1OBWr0t9kj0Rv"
+    ></script>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+
+    <style>
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      var container = $("#container");
+      var map = new BMapGL.Map("container"); // 创建地图实例
+      var point = new BMapGL.Point(116.404, 39.915); // 通过地理位置的经纬度创建点坐标
+      map.centerAndZoom(point, 18); // 初始化地图，设置中心点坐标和地图级别
+      var scaleCtrl = new BMapGL.ScaleControl(); // 添加比例尺控件
+      map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+      map.addControl(scaleCtrl);
+      var zoomCtrl = new BMapGL.ZoomControl(); // 添加缩放控件
+      map.addControl(zoomCtrl);
+      var cityCtrl = new BMapGL.CityListControl(); // 添加城市列表控件
+      map.addControl(cityCtrl);
+      var locationControl = new BMapGL.LocationControl(); // 添加定位控件
+      map.addControl(locationControl);
+
+      //创建切换地图显示类型的控件
+      var mapTypeCon = new BMap.MapTypeControl({
+        mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
+      });
+      //添加切换地图显示类型的控件
+      map.addControl(mapTypeCon);
+
+      //  经纬度定位
+
+      var geolocation = new BMapGL.Geolocation(); //创建
+      geolocation.getCurrentPosition(
+        function (r) {
+          map.panTo(r.point);
+          var mk = new BMapGL.Marker(r.point);
+
+          if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMapGL.Marker(r.point);
+            map.addOverlay(mk);
+            map.panTo(r.point);
+            alert("您的位置：" + r.point.lng + "," + r.point.lat);
+          } else {
+            alert("failed" + this.getStatus());
+          }
+        },
+        { enableHighAccuracy: true }
+      );
+
+      //给地图添加点击事件
+      map.addEventListener("click", function (e) {
+        //形参名称e地图点击事件的事件源
+        //console.log(e.latlng.lng+","+e.latlng.lat);
+        var mk = new BMapGL.Marker(e.latlng); //创建标记,r是定位结果,r.point就是当前定位的地点
+        mk.addEventListener("click", function () {
+          //给标记添加点击事件
+          console.log(this); //this指代标记
+          //由于标记属于地图对象map的子标签，所以当我们点击标记时，会出现冒泡，map的点击事件也会触发
+          //可以使用事件源对象的stopPropagation函数组织后续的事件冒泡
+          event.stopPropagation();
+        });
+        map.addOverlay(mk); //将标记对象添加到地图上
+      });
+    </script>
+  </body>
+</html>

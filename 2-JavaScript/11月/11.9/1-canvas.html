@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+    //   更改原点位置
+      ctx.translate(100, 150);
+
+      ctx.beginPath(); //开始绘制路径
+    //   轮廓的颜色/样式?
+      ctx.strokeStyle = "blue";
+    //   轮廓的线宽
+      ctx.lineWidth = 1;
+    //   轮廓的线型
+      ctx.strokeRect(10, 10, 300, 300); 
+      //绘制矩形轮廓，需要指定矩形左上角坐标和
+
+      ctx.fillStyle = "purple";
+        ctx.fillRect(100, 100, 100, 100);
+       
+       ctx.font = "30px Arial";
+         ctx.fillText("Hello", 12, 52);
+            ctx.strokeText("Hello", 10, 50);
+        //绘制矩形内部，需要指定矩形左上角坐标和宽高
+      ctx.closePath(); //结束路径
+    </script>
+  </body>
+</html>

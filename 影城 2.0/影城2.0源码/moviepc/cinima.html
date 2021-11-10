@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cinima.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/cinima.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div>
+                <div class="header-left"><a href="">下载APP</a></div>
+                <div class="header-right">
+                    <span><button id="showLoginDiv">登录</button></span>
+                    <span><button style="display: none;" id="name"></button></span>
+                    <span><button id="showRegisterDiv">注册</button></span>
+                    <span><button style="display: none;color: red;" id="esc">注销</button></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div>
+                <div class="left">
+                    <div></div>
+                    <select name="" id="">
+                        <option value="全国">全国</option>
+                        <option value="成都">成都</option>
+                        <option value="上海">上海</option>
+                    </select>
+                </div>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="cinima.html">影片</a></li>
+                    <li><a href="cinema_list.html">影城</a></li>
+                    <li><a href="Information.html">影城咨询</a></li>
+                    <li><a href="center.html">会员中心</a></li>
+                </ul>
+                <div class="right">
+                    <input type="text" placeholder="佩奇 白蛇2 我是猫" list="searchipt" id="searchipt1">
+                    <datalist id="searchipt">
+                        <!-- <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera"> -->
+                    </datalist>
+                    <button id="searchbtn"><img src="" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    
+        <header class="cinemaNav">
+            <ul>
+                <li><a href="#" class="nav-a on">正在热映</a>
+                    <div></div></li>
+                <li><a href="#" class="nav-a">即将上映</a></li>
+                <li><a href="#" class="nav-a">经典影片</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="cinema-select">
+                <div class="select-line select-line-row1">
+                    <span>类型:</span>
+                    <div>
+                        <a href="" class="select-a select-on">全部</a>
+                        <a href="" class="select-a">爱情</a>
+                        <a href="" class="select-a">喜剧</a>
+                        <a href="" class="select-a">动画</a>
+                        <a href="" class="select-a">剧情</a>
+                        <a href="" class="select-a">恐怖</a>
+                        <a href="" class="select-a">惊悚</a>
+                        <a href="" class="select-a">科幻</a>
+                        <a href="" class="select-a">动作</a>
+                        <a href="" class="select-a">悬疑</a>
+                        <a href="" class="select-a">犯罪</a>
+                        <a href="" class="select-a">冒险</a>
+                        <a href="" class="select-a">战争</a>
+                        <a href="" class="select-a">奇幻</a>
+                        <a href="" class="select-a">运动</a>
+                        <a href="" class="select-a">家庭</a>
+                        <a href="" class="select-a">古装</a>
+                        <a href="" class="select-a">武侠</a>
+                        <a href="" class="select-a">西部</a>
+                        <a href="" class="select-a">历史</a>
+                        <a href="" class="select-a">传记</a>
+                        <a href="" class="select-a">歌舞</a>
+                        <a href="" class="select-a">黑色电影</a>
+                    </div>
+                </div>
+                <div class="select-line select-line-row2">
+                    <span>区域:</span>
+                    <div>
+                        <a href="" class="select-a select-on" >全部</a>
+                        <a href="" class="select-a">大陆</a>
+                        <a href="" class="select-a">美国</a>
+                        <a href="" class="select-a">韩国</a>
+                        <a href="" class="select-a">日本</a>
+                        <a href="" class="select-a">中国香港</a>
+                        <a href="" class="select-a">中国台湾</a>
+                        <a href="" class="select-a">泰国</a>
+                        <a href="" class="select-a">印度</a>
+                        <a href="" class="select-a">法国</a>
+                        <a href="" class="select-a">英国</a>
+                        <a href="" class="select-a">俄罗斯</a>
+                        <a href="" class="select-a">意大利</a>
+                        <a href="" class="select-a">西班牙</a>
+                        <a href="" class="select-a">德国</a>
+                        <a href="" class="select-a">波兰</a>
+                        <a href="" class="select-a">澳大利亚</a>
+                        <a href="" class="select-a">伊朗</a>
+                        <a href="" class="select-a">其他</a>
+                    </div>
+                </div>
+                <div class="select-line select-line-row3">
+                    <span>年代:</span>
+                    <div>
+                        <a href="" class="select-a select-on">全部</a>
+                        <a href="" class="select-a">2021</a>
+                        <a href="" class="select-a">2020</a>
+                        <a href="" class="select-a">2019</a>
+                        <a href="" class="select-a">2018</a>
+                        <a href="" class="select-a">2017</a>
+                        <a href="" class="select-a">2016</a>
+                        <a href="" class="select-a">2015</a>
+                        <a href="" class="select-a">2014</a>
+                        <a href="" class="select-a">2013</a>
+                        <a href="" class="select-a">2012</a>
+                        <a href="" class="select-a">2011</a>
+                        <a href="" class="select-a">2000-2010</a>
+                        <a href="" class="select-a">90年代</a>
+                        <a href="" class="select-a">80年代</a>
+                        <a href="" class="select-a">70年代</a>
+                        <a href="" class="select-a">更早</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cinema-list">
+                <div class="list-radio">
+                    <input class="input input-on" type="radio" id="hot">按热门排序   
+                    <input class="input input-on" type="radio" id="time">按时间排序   
+                </div>
+
+                <div class="cinemaAll">
+                     <!-- <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-1.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">怒火·重案</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                     <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-2.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">盛夏未来</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>   
+                      <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-3.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">白蛇2：青蛇劫起</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-4.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">中国医生</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-5.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">贝肯熊2：金牌特工</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-6.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">新大头儿子和小头...</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                     <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-7.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">兔子暴力</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                     <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-8.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">1921</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-9.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">拯救甜甜圈：时空大...</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-10.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">五个扑水的少年</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-11.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">二哥来了怎么办</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-12.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">当男人恋爱时</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-13.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">你好世界</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                     <div class="list">
+                        <div class="d3">3D</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-14.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">西游记之再世妖王</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-15.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">革命者</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-16.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">甬之城</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-17.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">皮皮鲁与鲁西西之罐...</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-18.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">燃野少年的天空</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-19.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">深爱</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-20.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">深潜日</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-21.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">流浪猫鲍勃2：鲍勃...</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-22.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">大学</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-23.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">哆啦A梦:伴我同行2</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="cinema-link"><img src="images/cinima-24.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">济公之降龙降世</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-25.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">我的父亲焦裕禄</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-26.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">我的爸爸是森林之王II</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-27.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">测谎人</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div> 
+                    <div class="list">
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-28.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">白蛇传·情</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-29.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">战狼2</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>
+                    <div class="list">
+                        <div class="d2imax">2DIMAX</div>
+                        <a href="" class="pay-link">购票</a>
+                        <a href="" class="cinema-link"><img src="images/cinima-30.jpg" alt="" class="cinema-p"></a>
+                        <a href="" class="cinema-name-link"><span class="cinema-name">巧虎魔法岛历险记</span></a>
+                        <p class="cinema-think">9.5</p>
+                    </div>  -->
+                </div>
+            </div>
+            <div class="page-inner">
+                <a href="" class="page-a page-on">1</a>
+                <a href="" class="page-a">2</a>
+                <a href="" class="page-a page-next">下一页</a>
+    
+            </div>
+        </div>
+        <footer>
+            <div class="top">
+                <div>
+                    <div>
+                        <h3>新手上路</h3>
+                        <span></span>
+                        <ul>
+                            <li>注册登录问题</li>
+                            <li>用户绑定会员卡问题</li>
+                            <li>影票相关问题</li>
+                            <li>票价和支付问题</li>
+                            <li>取票凭证和取票问题</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>购票指南</h3>
+                        <span></span>
+                        <ul>
+                            <li>用户购票流程</li>
+                            <li>取票观影指南</li>
+                            <li>会员卡支付相关说明</li>
+                            <li>网银支付相关说明</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>会员权益</h3>
+                        <span></span>
+                        <ul>
+                            <li>会员订票权益</li>
+                            <li>取票积分权益</li>
+                            <li>入会资格</li>
+                            <li>会员卡折扣说明</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>联系我们</h3>
+                        <span></span>
+                        <ul>
+                            <li>手机客服端介绍与下载</li>
+                            <li>影片信息查询</li>
+                            <li>手机自助购票</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div>
+                    <p>公司介绍 · 合作咨询 · 友情链接 · 网站地图 · 站长统计 · 网站声明</p>
+                    <p>Copyright @ 2021 ed by woniuxy</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

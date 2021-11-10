@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+    <ul id = "list">
+        <li sort="1" src="./music/阿梓-海海海.mp3">阿梓-海海海</li>
+        <li sort="2" src="./music/How do you like that.mp3">How do you like that</li>
+        <li sort="3" src="./music/medemede-事実上-Remix.mp3">事実上-Remix</li>
+    </ul>
+    <div class="player-bar">
+        <div class="player-btn">
+            <div class="prev"></div>
+            <div class="play"></div>
+            <div class="next"></div>
+        </div>
+        <div class="progress-div">
+            <div class="progress">
+                <div class="progress-bar"></div>
+                <div class="pointer"></div>
+            </div>
+        </div>
+        <div class="time">
+            <span class="current">00:00</span>
+            <span class="duration">/00:00</span>
+        </div>
+    </div>
+    <video id="video"></video>
+
+    <script>
+        const video = document.getElementById("video");
+        //记录当前播放的歌曲序号
+        let sort;
+        let length = 3;
+        $("ul").on("click", "li", function () {
+            let src = $(this).attr("src");
+            video.setAttribute("src", src);
+            sort = $(this).attr("sort"); 
+            // 当前编号
+            //播放
+            video.play();
+            // 按钮更换为暂停
+            $(".play").removeClass("play").addClass("pause");
+
+        });
+        
+        $(".player-bar").on("click", ".play", function () {
+            //播放
+            video.play();
+            $(this).removeClass("play").addClass("pause");
+        });
+        $(".player-bar").on("click", ".pause", function () {
+            //暂停
+            video.pause();
+            $(this).removeClass("pause").addClass("play");
+        });
+        $(".next").click(function () {
+            if (sort == length) {
+                sort = 1;
+            } else {
+                sort++;
+            }
+            let src = $(`li[sort=${sort}]`).attr("src");
+            console.log(src);
+            video.setAttribute("src", src);
+            video.play();
+        });
+        //video和audio都有一个事件ontimeupdate
+        video.ontimeupdate = function () {
+            //播放时间发生改变时
+            let current = video.currentTime;
+            let duration = video.duration;
+            let bfb = current / duration * 100 + "%";
+            $(".progress-bar").css("width", bfb);
+            $(".pointer").css("left", current / duration * 466 - 4 + "px");
+            //计算时间
+            let currentTimeMinute = parseInt(current / 60) > 9 ? parseInt(current / 60) : "0" + parseInt(current / 60);
+            let currentTimeSecond = parseInt(current % 60) > 9 ? parseInt(current % 60) : "0" + parseInt(current % 60);
+            $(".current").html(currentTimeMinute + ":" + currentTimeSecond);
+            let durationTimeMinute = parseInt(duration / 60) > 9 ? parseInt(duration / 60) : "0" + parseInt(duration / 60);
+            let durationTimeSecond = parseInt(duration % 60) > 9 ? parseInt(duration % 60) : "0" + parseInt(duration % 60);
+            $(".duration").html(durationTimeMinute + ":" + durationTimeSecond);
+        }
+        //先给外层进度条添加事件
+        $(".progress").click(function (e) {
+            if (!e) {
+                e = event;
+            }
+            let x = e.offsetX;
+            let bfb = x / 466;
+            $(".progress-bar").css("width", bfb * 100 + "%");
+            $(".pointer").css("left", bfb * 466 - 4 + "px");
+            //改变目前的播放时间
+            console.log(video.currentTime);
+            // video.currentTime = video.duration * bfb;
+            console.log("点击")
+        })
+        //给pointer添加按下事件，给进度条添加鼠标移动事件
+        $(".pointer").mousedown(function () {
+            $(".progress").unbind("click");
+            window.onmousemove = function (e) {
+                if (!e) {
+                    e = event;
+                }
+                if(e.clientX<580||e.clientX>580+466){
+                    return;
+                }
+                let x = e.clientX - 580;
+                let bfb = x / 466;
+                console.log(bfb);
+                $(".progress-bar").css("width", bfb * 100 + "%");
+                $(".pointer").css("left", bfb * 466 - 4 + "px");
+                // //改变目前的播放时间
+                video.currentTime = video.duration * bfb;
+            }
+        });
+        window.onmouseup = function (e) {
+            window.onmousemove = null;
+            setTimeout(function(){
+                $(".progress").click(function (e) {
+                if (!e) {
+                    e = event;
+                }
+                let x = e.offsetX;
+                let bfb = x / 466;
+                $(".progress-bar").css("width", bfb * 100 + "%");
+                $(".pointer").css("left", bfb * 466 - 4 + "px");
+                //改变目前的播放时间
+                video.currentTime = video.duration * bfb;
+                console.log("点击")
+            })
+            },500);    
+        };
+
+    </script>
+</body>
+
+</html>

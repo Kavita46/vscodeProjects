@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "/0-Library/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+
+    <table id = "tb" border = "1px ">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>密码</td>
+            <td>手机号</td>
+</tr>
+       
+
+            </table>
+    </table>
+    <script>
+
+        $.ajax({
+            url: 'http://192.168.90.189/user/search',
+            dataType: 'json',
+            success: function(data){
+                var myData = data;
+                console.log(myData.list.length);
+                for(let i  = 0;i < myData.list.length; i++){
+                   let html = `<tr>
+                                <td>${myData.list[i].name}</td>
+                                <td>${myData.list[i].age}</td>
+                                <td>${myData.list[i].sex }</td>
+                                <td> ${ myData.list[i].password}</td>
+                                <td>${myData.list[i].phone}</td>
+                                <td><a href = "">查看详情</a></td>
+                                </tr>`
+
+                                $('#tb').append(html);
+                }
+                console.log(data);
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div>
+                <div class="header-left"><a href="">下载APP</a></div>
+                <div class="header-right">
+                    <span><button id="showLoginDiv">登录</button></span>
+                    <span><button style="display: none;" id="name"></button></span>
+                    <span><button id="showRegisterDiv">注册</button></span>
+                    <span><button style="display: none;color: red;" id="esc">注销</button></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div>
+                <div class="left">
+                    <div></div>
+                    <select name="" id="">
+                        <option value="全国">全国</option>
+                        <option value="成都">成都</option>
+                        <option value="上海">上海</option>
+                    </select>
+                </div>
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="cinima.html">影片</a></li>
+                    <li><a href="cinema_list.html">影城</a></li>
+                    <li><a href="Information.html">影城咨询</a></li>
+                    <li><a href="center.html">会员中心</a></li>
+                </ul>
+                <div class="right">
+                    <input type="text" placeholder="佩奇 白蛇2 我是猫" list="searchipt" id="searchipt1">
+                    <datalist id="searchipt">
+                        <!-- <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera"> -->
+                    </datalist>
+                    <button id="searchbtn"><img src="" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/banner01.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner02.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner03.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner04.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
+            </div>
+            <!-- <img src="images/banner01.png" alt="">
+            <div class="choose">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div> -->
+        </div>
+        <div class="search">
+            <button><a href="">快速购票</a></button>
+            <select name="" id="cinemas">
+                <option value="">选择影院</option>
+            </select>
+            <select name="" id="chosseCinemas">
+                <option value="">选择电影</option>
+            </select>
+            <select name="" id="">
+                <option value="">选择时间</option>
+            </select>
+            <select name="" id="">
+                <option value="">选择场次</option>
+            </select>
+            <button><a href="">立即购票</a></button>
+        </div>
+        <div class="container">
+            <div class="left">
+                <div class="title reying">
+                    <div>
+                        <h2>正在热映</h2>
+                        <span>(8部)</span>
+                    </div>
+                    <div><a href="">查看更多>></a></div>
+                </div>
+                <div class="content-reying">
+                    <!-- <div>
+                        <div>
+                            <img src="images/movie01-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>怒火·重案</span>
+                            <span>9.5</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie02-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>盛夏未来</span>
+                            <span>9.3</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie03-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>白蛇2：青蛇...</span>
+                            <span>9.2</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie04-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>中国医生</span>
+                            <span>9.8</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie05-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>贝肯熊2：金...</span>
+                            <span>9.0</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie06-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>新大头儿子和...</span>
+                            <span>9.5</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie07-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>1921</span>
+                            <span>8.9</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie08-img.jpg" alt="">
+                            <div class="buy"><a href="">立即购票</a></div>
+                        </div>
+                        <div>
+                            <span>长津湖</span>
+                            <span>9.6</span>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="title shangying">
+                    <div>
+                        <h2>即将上映</h2>
+                        <span>(13部)</span>
+                    </div>
+                    <div><a href="">查看更多>></a></div>
+                </div>
+                <div class="content-shangying">
+                    <!-- <div>
+                        <div>
+                            <img src="images/movie09-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>流浪猫鲍勃2：鲍...</span>
+                        </div>
+                        <span>八月6日上映</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie10-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>深潜日</span>
+                        </div>
+                        <span>
+                            八月5日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie11-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>我的父亲焦裕禄</span>
+                        </div>
+                        <span>
+                            八月16日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie12-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>危险记忆</span>
+                        </div>
+                        <span>
+                            八月26日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie13-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>我的爸爸是森林...</span>
+                        </div>
+                        <span>
+                            八月15日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie14-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>长津湖</span>
+                        </div>
+                        <span>
+                            八月14日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie15-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>我的初恋十八岁</span>
+                        </div>
+                        <span>
+                            八月10日上映
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/movie16-img.jpg" alt="">
+                            <div class="buy"><span><a href="">预告片</a></span><span><a href="">预售</a></span></div>
+                        </div>
+                        <div>
+                            <span>深爱</span>
+                        </div>
+                        <span>
+                            八月23日上映
+                        </span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span>影城活动</span>
+                    <span><a href="">查看更多>></a></span>
+                </div>
+                <div class="changjinhu">
+                    <div>
+                        <img src="images/movie17-img.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>长津湖</p>
+                        <p>上映时间：2021-08-12</p>
+                        <p>400840想看</p>
+                    </div>
+                </div>
+                <div class="towmovie">
+                    <div>
+                        <div><img src="images/movie18-img.jpg" alt=""></div>
+                        <div>
+                            <p>流浪猫鲍勃2：鲍...</p>
+                            <p>2020年8月16日上映</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="images/movie19-img.jpg" alt=""></div>
+                        <div>
+                            <p>最后一间房</p>
+                            <p>2020年8月26日上映</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="title">
+                    <span>娱乐热点</span>
+                </div>
+                <div class="first">
+                    <div><img src="images/movie20-img.jpg" alt=""></div>
+                    <p><a href="">《兔子暴力》发布“青春兔子帮”版 海报 万茜李庚希放飞心愿</a></p>
+                </div>
+                <div class="redian">
+                    <p><span class="orange">2</span><a href="">《怒火·重案》4天蝉联单日票房冠军 2021华语动作...</a> </p>
+                    <p><span class="orange">3</span><a href="" class="orange">《我的父亲焦裕禄》曝终极海报预告 雪中一跪母子...</a> </p>
+                    <p><span>4</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a> </p>
+                    <p><span>5</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                    <p><span>6</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                    <p><span>7</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                    <p><span>8</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                    <p><span>9</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                    <p><span>10</span><a href="">下半年最值得期待超英电影《毒液2》曝新预告 最...</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="top">
+            <div>
+                <div>
+                    <h3>新手上路</h3>
+                    <span></span>
+                    <ul>
+                        <li>注册登录问题</li>
+                        <li>用户绑定会员卡问题</li>
+                        <li>影票相关问题</li>
+                        <li>票价和支付问题</li>
+                        <li>取票凭证和取票问题</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>购票指南</h3>
+                    <span></span>
+                    <ul>
+                        <li>用户购票流程</li>
+                        <li>取票观影指南</li>
+                        <li>会员卡支付相关说明</li>
+                        <li>网银支付相关说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>会员权益</h3>
+                    <span></span>
+                    <ul>
+                        <li>会员订票权益</li>
+                        <li>取票积分权益</li>
+                        <li>入会资格</li>
+                        <li>会员卡折扣说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>联系我们</h3>
+                    <span></span>
+                    <ul>
+                        <li>手机客服端介绍与下载</li>
+                        <li>影片信息查询</li>
+                        <li>手机自助购票</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div>
+                <p>公司介绍 - 合作咨询 - 友情链接 - 网站地图 - 站长统计 - 网站声明</p>
+                <p>Copyright @ 2021 ed by woniuxy</p>
+            </div>
+        </div>
+    </footer>
+    <div id="bg"></div>
+    <div id="login">
+        <div class="title">
+            <span class="cutLogin">登录</span>
+            <span class="cutRegister">注册</span>
+        </div>
+        <input id="lphone" class="input username" type="text" placeholder="请输入11位手机号">
+        <p id="loginphoneMsg">&nbsp;</p>
+        <input id="lpass" class="input userpass" type="text" placeholder="请输入6-12位,以字母开头密码"> <a id="a3" class="eyes"
+            href="javascript:show3()"><i class="fa fa-eye"></i></a>
+        <p id="loginpassMsg">&nbsp;</p>
+        <input type="text" id="loginCode" placeholder="请输入验证码">
+        <div id="loginCodeBox"></div><span id="loginSx">点击刷新</span>
+        <p id="loginCodeMsg"></p>
+        <button id="lbtn"><a id="la" href="javascript:" onclick="login()">登录</a></button>
+        <div class="autologin">
+            <span><input type="checkbox">下次自动登录</span>
+            <span><a href="">忘记密码</a></span>
+        </div>
+        <div class="agree">
+            <input type="checkbox">我已阅读《服务设计启发式线上工具服务协议》
+        </div>
+        <div id="close"><span>×</span></div>
+    </div>
+    <div id="register">
+        <div class="title">
+            <span class="cutLogin">登录</span>
+            <span class="cutRegister">注册</span>
+        </div>
+        <input id="rphone" class="input username" type="text" placeholder="请输入11位手机号">
+        <p id=rphoneMsg>&nbsp;</p>
+        <input id="rpass" class="input userpass" type="text" placeholder="请输入6-12位,以字母开头密码"><a id="a1" class="eyes"
+            href="javascript:show()"><i class="fa fa-eye"></i></a>
+        <p id=rpassMsg>&nbsp;</p>
+        <input id="rrpass" class="input confirmuserpass" type="text" placeholder="请确认密码"><a id="a2" class="eyes"
+            href="javascript:show1()"><i class="fa fa-eye"></i></a>
+        <p id=rrpassMsg>&nbsp;</p>
+        <input id="code" type="text" name="" placeholder="请输入验证码">
+        <div id="codeBox"></div><span id="sx">点击刷新</span>
+        <p id="codeMsg">&nbsp;</p>
+        <button id="rbtn"><a id="ra" href="javascript:" onclick="register()">立即注册</a></button>
+        <div class="gologin">
+            <span>立即登录</span>
+        </div>
+        <div id="close1"><span>×</span></div>
+    </div>
+</body>
+
+</html>

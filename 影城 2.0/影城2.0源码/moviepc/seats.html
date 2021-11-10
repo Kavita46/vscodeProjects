@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.min.css">
+    <link rel="stylesheet" href="css/seats.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/seats.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div>
+                <div class="header-left"><a href="">下载APP</a></div>
+                <div class="header-right">
+                    <span><button id="showLoginDiv">登录</button></span>
+                    <span><button style="display: none;" id="name"></button></span>
+                    <span><button id="showRegisterDiv">注册</button></span>
+                    <span><button style="display: none;color: red;" id="esc">注销</button></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div>
+                <div class="left">
+                    <div></div>
+                    <select name="" id="">
+                        <option value="全国">全国</option>
+                        <option value="成都">成都</option>
+                        <option value="上海">上海</option>
+                    </select>
+                </div>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="cinima.html">影片</a></li>
+                    <li><a href="cinema_list.html">影城</a></li>
+                    <li><a href="Information.html">影城咨询</a></li>
+                    <li><a href="center.html">会员中心</a></li>
+                </ul>
+                <div class="right">
+                    <input type="text" placeholder="佩奇 白蛇2 我是猫" list="searchipt" id="searchipt1">
+                    <datalist id="searchipt">
+                        <!-- <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera"> -->
+                    </datalist>
+                    <button id="searchbtn"><img src="" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="modone container">
+        <div>
+            <div><img src="images/购票流程.png" alt=""></div>
+            <ul>
+                <li>选择影片场次</li>
+                <li>选择座位</li>
+                <li>14分钟内付款</li>
+                <li>影院取票观影</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main container">
+        <div class="main-left">
+            <div class="seats-item">
+                <div> <img src="images/kx.png" alt=""><span>可选座位</span> </div>
+                <div class="seats-ys"> <img src="images/ys.png" alt=""><span>已售座位</span> </div>
+                <div> <img src="images/yx.png" alt=""><span>已选座位</span> </div>
+            </div>
+            <div class="screen">
+                <img src="images/荧幕_03.jpg" alt="">
+                <p>银幕中央</p>
+            </div>
+            <div class="seats">
+                <div class="row row1">
+                    <ul>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+
+                    </ul>
+                </div>
+                <div class="row row2">
+                    <ul>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                    </ul>
+                </div>
+                <div class="row row3">
+                    <ul>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                        <li class="ys"></li>
+                    </ul>
+                </div>
+                <div class="row row4">
+                    <ul>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                    </ul>
+                </div>
+                <div class="row row5">
+                    <ul>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                    </ul>
+                </div>
+                <div class="row row6">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row7">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row8">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row9">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row10">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row11">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="row row12">
+                    <ul>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li class="kx"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="main-right">
+            <div class="movie">
+                <!-- <div>
+                    <img src="images/盛夏.jpg" alt="">
+                </div>
+                <div>
+                    <h6>盛夏未来</h6>
+                    <p><span>类型：</span><span>剧情,青春</span></p>
+                    <p><span>时长：</span><span>115分钟</span></p>
+                </div> -->
+            </div>
+            <div class="movie-details">
+                <!-- <p><span>影院：</span><span>太平洋影城（北欧知识城店）</span></p>
+                <p><span>影厅：</span><span>4号厅</span></p>
+                <p><span>版本：</span><span>国语2D</span></p>
+                <p id="todaytime"><span>场次：</span><span class="movie-time">今天 8月11 19:30</span></p>
+                <p><span>票价：</span><span>￥38/张</span></p> -->
+            </div>
+            <div class="seats-content">
+                <div class="seats-nosit">
+                    <p>座位：座位：一次最多选5个座位</p>
+                    <div class="seats-main">
+                        请<span>点击左侧</span>座位图选择座位
+                    </div>
+                </div>
+
+                <div class="seats-havesit">
+                    <div class="seats-h">座位：</div>
+                    <div class="seats-list">
+                         <ul id="rq">
+                            <!-- <li style="float: left; margin-left: 5px;">5排3座</li>
+                            <li style="float: left; margin-left: 5px;">5排3座</li> -->
+                        </ul>
+                         
+                        
+                    </div>
+                </div>
+                <div class="totalprice">
+                    <div>总价：<span>￥</span><span class="price">0</span></div>
+                </div>
+            </div>
+            <div class="tel">
+                <div class="tel-main">
+                    <input id="seatPhone" type="tel" placeholder="请输入手机号">
+                    <p>
+                        <!-- 请输入正确的手机号 -->
+                    </p>
+                    <input id="yz" type="text" placeholder="填写验证码">     
+                    <button id="code">获取验证码</button>
+                    <p id="codeMsg">
+                        <!-- 请输入正确的验证码 -->
+                    </p>
+                </div>
+
+            </div>
+            <div style="cursor:not-allowed;" class="seats-btn">
+                <button style="pointer-events:none;"  class="gray">确认选座</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="top">
+            <div>
+                <div>
+                    <h3>新手上路</h3>
+                    <span></span>
+                    <ul>
+                        <li>注册登录问题</li>
+                        <li>用户绑定会员卡问题</li>
+                        <li>影票相关问题</li>
+                        <li>票价和支付问题</li>
+                        <li>取票凭证和取票问题</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>购票指南</h3>
+                    <span></span>
+                    <ul>
+                        <li>用户购票流程</li>
+                        <li>取票观影指南</li>
+                        <li>会员卡支付相关说明</li>
+                        <li>网银支付相关说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>会员权益</h3>
+                    <span></span>
+                    <ul>
+                        <li>会员订票权益</li>
+                        <li>取票积分权益</li>
+                        <li>入会资格</li>
+                        <li>会员卡折扣说明</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>联系我们</h3>
+                    <span></span>
+                    <ul>
+                        <li>手机客服端介绍与下载</li>
+                        <li>影片信息查询</li>
+                        <li>手机自助购票</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div>
+                <p>公司介绍 · 合作咨询 · 友情链接 · 网站地图 · 站长统计 · 网站声明</p>
+                <p>Copyright @ 2021 ed by woniuxy</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

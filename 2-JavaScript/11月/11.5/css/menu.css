@@ -1,0 +1,27 @@
+.menu {
+  width: 100px;
+  height: 120px;
+  background-color: aliceblue;
+  border: 1px solid #bbb;
+  border-bottom: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  /* display: none; */
+}
+
+.menu h1 {
+  width: 100px;
+  height: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bbb;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+  color: #333;
+}
+
+.menu h1:hover {
+  background-color: white;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div>
+        <table id="tb" cellspacing="0" cellpadding="0" border="1" width="400"></table>
+        <form id="form">
+            用户名<input type="text" id="username" name="username"><br>
+            密&nbsp;&nbsp;&nbsp;码<input type="text" id="password" name="password"><br>
+            年&nbsp;&nbsp;&nbsp;龄<input type="text" id="age" name="age"><br>
+            电&nbsp;&nbsp;&nbsp;话<input type="text" id="phone" name="phone"><br>
+            性&nbsp;&nbsp;&nbsp;别<select id="sex" name="sex">
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select><br>
+            <input id="btn" type="button" value="新增用户">
+        </form>
+        <script>
+            $(function(){
+                select();
+                //发送Ajax请求查询用户数据
+                function select(){
+                    $.ajax({
+                    type:"get",
+                    url:"http://192.168.90.189/user/search",
+                    dataType:"json",
+                    success:function(data){
+                        $("#tb").empty();
+                        //遍历用户数组 渲染
+                        for(let i=0;i<data.list.length;i++){
+                            let html=`
+                                <tr>
+                                    <td>${data.list[i].username}</td>
+                                    <td>${data.list[i].phone}</td>
+                                    <td>${data.list[i].sex==1?"男":"女"}</td>
+                                    <td>
+                                        <a href="userdetail.html?id=${data.list[i].id}">查看详情</a>
+                                        <a href="javascript:" class="del" data-id="${data.list[i].id}">删除</a>
+                                    </td>
+                                </tr>
+                            `;
+                            $("#tb").append(html);
+                        }
+                    }
+                });
+                }
+                //给删除按钮委托点击事件
+                $("#tb").on("click",".del",function(){
+                    let id=$(this).attr("data-id");
+                    $.ajax({
+                        url:"http://192.168.90.189/user/delete",
+                        type:"post",
+                        data:{id:id},
+                        dataType:"json",
+                        success:function(data){
+                            if(data.code==200){
+                                select();
+                            }
+                        }
+                    })
+                })
+                //给新增按钮添加点击事件
+                $("#btn").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.90.189/user/add",
+                        data:$("#form").serialize(),//jquery将表单中的数据组合成为参数,一定要给表单控件添加name属性，name属性的值和参数名称一致
+                        dataType:"json",
+                        success:function(data){
+                            if(data.code==200){
+                                select();
+                            }
+                        }
+                    });
+                });
+            })
+
+        </script>
+    </div>
+</body>
+</html>

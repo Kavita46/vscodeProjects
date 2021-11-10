@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <form id="form">
+        <input type="hidden" id="id" name="id">
+        用户名<input type="text" id="username" name="username"><br>
+        密&nbsp;&nbsp;&nbsp;码<input type="text" id="password" name="password"><br>
+        年&nbsp;&nbsp;&nbsp;龄<input type="text" id="age" name="age"><br>
+        电&nbsp;&nbsp;&nbsp;话<input type="text" id="phone" name="phone"><br>
+        性&nbsp;&nbsp;&nbsp;别<select id="sex" name="sex">
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select><br>
+        <input id="btn" type="button" value="修改用户">
+    </form>
+    <script>
+        $(function(){
+            //取出地址栏上的id数据
+            let id=location.search.split("=")[1];
+            $.ajax({
+                type:"get",
+                url:"http://192.168.90.189/user/searchById",
+                data:{id:id},
+                dataType:"json",
+                success:function(data){
+                    //渲染数据到表单中
+                    $("#id").val(data.object.id);
+                    $("#username").val(data.object.username);
+                    $("#password").val(data.object.password);
+                    $("#age").val(data.object.age);
+                    $("#phone").val(data.object.phone);
+                    $("#sex").val(data.object.sex);
+                }
+            });
+            //给更新按钮绑定点击事件
+            $("#btn").click(function(){
+                //表单数据校验
+                //发送ajax请求更新数据
+                $.ajax({
+                    type:"post",
+                    url:"http://192.168.90.189/user/update",
+                    data:$("#form").serialize(),//jquery将表单中的数据组合成为参数,一定要给表单控件添加name属性，name属性的值和参数名称一致
+                    dataType:"json",
+                    success:function(data){
+                        if(data.code==200){
+                            history.back();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

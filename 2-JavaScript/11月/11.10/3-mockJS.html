@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/0-Library/mock.js"></script>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <script>
+      console.log(
+        Mock.mock({
+          "string|1-10": "★",
+        })
+      );
+
+      console.log(
+        Mock.mock({
+          "string|3": "★",
+        })
+      );
+
+
+      console.log(Mock.mock({
+  "number|+1": 100
+}));
+      console.log(
+        Mock.mock({
+          "number|1-100": 100,
+        })
+      );
+
+      console.log(
+        Mock.mock({
+          "number|+1": 100,
+        })
+      );
+
+      console.log(
+        Mock.mock({
+          "number|1-100.1-10": 1,
+        })
+      );
+      console.log(
+        Mock.mock({
+          "number|123.10": 1.123,
+        })
+      );
+
+      console.log(
+        Mock.mock({
+          "object|2-4": {
+            110000: "北京市",
+            120000: "天津市",
+            130000: "河北省",
+            140000: "山西省",
+          },
+        })
+      );
+    </script>
+  </body>
+</html>

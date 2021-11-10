@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        // 封装AJAX
+        $.ajax({
+            url: 'https://devapi.qweather.com/v7/weather/now?key=d0d0afc8eeba402e97c6fb3bb4590c1a&location=101010100',
+            type: 'get',
+            dataType: 'json',
+            success: function(res){
+                console.log(res);
+            }
+        });
+    </script>
+</body>
+</html>

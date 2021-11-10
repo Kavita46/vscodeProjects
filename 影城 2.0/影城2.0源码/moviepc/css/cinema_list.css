@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  position: sticky;
+  border-bottom: 2px solid #f99135;
+  top: 0px;
+  z-index: 10000;
+}
+
+header .header {
+  background-color: #f0f0f0;
+  width: 100%;
+  min-width: 1100px;
+}
+
+header .header > div {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1200px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+header .header > div .header-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-left a {
+  text-decoration: none;
+  color: #9a9a9a;
+}
+
+header .header > div .header-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-right span {
+  height: 40px;
+  margin: 0 10px;
+}
+
+header .header > div .header-right span:first-child {
+  height: 19px;
+  border-right: 1px solid #9a9a9a;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-right span button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 40px;
+  color: #9a9a9a;
+}
+
+header .nav {
+  height: 90px;
+}
+
+header .nav > div {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div .left {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div .left > div {
+  height: 100%;
+  width: 190px;
+  background-image: url(../images/logo-img.jpg);
+  background-repeat: no-repeat;
+  background-size: 170px;
+  background-position: left center;
+}
+
+header .nav > div .left select {
+  width: 50px;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-image: url(../images/down-icon.jpg);
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: 32px center;
+}
+
+header .nav > div ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div ul li {
+  text-align: center;
+  white-space: nowrap;
+  height: 100%;
+  padding: 0 24px;
+  cursor: pointer;
+  line-height: 90px;
+}
+
+header .nav > div ul li:hover {
+  background-color: #f99135;
+}
+
+header .nav > div ul li:hover a {
+  color: #fff;
+}
+
+header .nav > div ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+}
+
+header .nav > div .right {
+  display: flex;
+  align-items: center;
+}
+
+header .nav > div .right input {
+  color: #bfbfbf;
+  font-size: 16px;
+  padding-left: 20px;
+  width: 300px;
+  height: 38px;
+  outline: none;
+  border: 2px solid #f99135;
+  border-radius: 21px;
+}
+
+header .nav > div .right ::-webkit-input-placeholder {
+  color: #bfbfbf;
+  font-size: 16px;
+}
+
+header .nav > div .right button {
+  margin-left: -36px;
+  width: 70px;
+  height: 42px;
+  background-color: #f99135;
+  outline: none;
+  border: none;
+  border-radius: 21px;
+  background-image: url(../images/search-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header .nav > div .right button a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 42px;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+main .content {
+  height: 274px;
+  border: solid 1px #e5e5e5;
+  margin: 40px auto 0px;
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+
+main .content .brand {
+  height: 65px;
+}
+
+main .content .brand p {
+  width: 58px;
+  font-size: 14px;
+  color: #999999;
+  float: left;
+  margin-top: 3px;
+}
+
+main .content .brand ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+main .content .brand ul li:first-child {
+  width: 46px;
+  height: 28px;
+  background-color: #f99135;
+  border-radius: 14px;
+  color: white;
+  line-height: 28px;
+  text-align: center;
+}
+
+main .content .brand ul li {
+  margin-right: 33px;
+}
+
+main .content .brand ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+main .content hr {
+  width: 1077px;
+  border: dashed 1px #e5e5e5;
+  margin-bottom: 8px;
+}
+
+main .cinemList {
+  margin: 0 auto;
+}
+
+main .cinemList strong {
+  display: inline-block;
+  width: 100%;
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px 0px 23px 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+main .cinemList strong::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: #f99135;
+  position: absolute;
+  left: -10px;
+  top: 3px;
+}
+
+main .cinemList strong span {
+  position: absolute;
+  right: 38px;
+  top: 3px;
+  font-size: 13px;
+  color: #666;
+}
+
+main .cinemList .listDetails {
+  height: 91px;
+  border-bottom: 1px dashed #e5e5e5;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+main .cinemList .listDetails .detailsL {
+  float: left;
+}
+
+main .cinemList .listDetails .detailsL P {
+  font-size: 16px;
+  color: #333333;
+  line-height: 25px;
+}
+
+main .cinemList .listDetails .detailsL span {
+  display: inline-block;
+  font-size: 14px;
+  color: #999999;
+  margin: 4px 0px;
+}
+
+main .cinemList .listDetails .detailsL .ticketChange {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px #509fc9;
+  color: #509fc9;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  margin-right: 6px;
+}
+
+main .cinemList .listDetails .detailsL .discount {
+  width: 42px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px #509fc9;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #509fc9;
+}
+
+main .cinemList .listDetails .detailsR {
+  width: 160px;
+  float: right;
+}
+
+main .cinemList .listDetails .detailsR .price {
+  width: 50px;
+  height: 100%;
+  float: left;
+  margin-top: 11px;
+}
+
+main .cinemList .listDetails .detailsR .price p {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 9px;
+  text-align: right;
+}
+
+main .cinemList .listDetails .detailsR .price p span {
+  color: #f03d37;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+main .cinemList .listDetails .detailsR .btn {
+  float: right;
+  margin-top: 5px;
+}
+
+main .cinemList .listDetails .detailsR .btn button {
+  width: 80px;
+  height: 30px;
+  background-color: #f99135;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+main .cinemList .pageNumber {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 82px;
+}
+
+main .cinemList .pageNumber ul {
+  width: 410px;
+  height: 32px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+
+main .cinemList .pageNumber ul li {
+  width: 35px;
+  height: 32px;
+  border: solid 1px #d8d8d8;
+  margin-right: 13px;
+}
+
+main .cinemList .pageNumber ul li:last-child {
+  width: 74px;
+}
+
+main .cinemList .pageNumber ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #333333;
+  text-decoration: none;
+  line-height: 32px;
+}
+
+main .cinemList .pageNumber ul li .first {
+  background-color: #f99135;
+  color: white;
+}
+
+footer .top {
+  height: 222px;
+  width: 100%;
+  white-space: nowrap;
+  min-width: 1300px;
+  border-top: 1px solid #dbdbdb;
+  background-color: #262526;
+}
+
+footer .top > div {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .top > div div {
+  padding: 0 100px;
+}
+
+footer .top > div div h3 {
+  color: white;
+  font-size: 18px;
+}
+
+footer .top > div div span {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f99135;
+  margin-top: 10px;
+}
+
+footer .top > div div ul {
+  padding-top: 15px;
+}
+
+footer .top > div div ul li {
+  list-style: none;
+  font-size: 12px;
+  padding-bottom: 5px;
+  color: #e2e2e2;
+}
+
+footer .bottom {
+  height: 87px;
+  background-color: #262526;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #545454;
+}
+
+footer .bottom P {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  margin-bottom: 5px;
+}

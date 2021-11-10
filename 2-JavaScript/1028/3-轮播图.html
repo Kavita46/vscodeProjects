@@ -6,15 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <script src = "/0-Library/jquery-3.6.0.min.js"></script>
   <style>
-      img{
-          transition:1s;
-          
-      }
+#box{
+  width:300px;
+  height:300px;
+  border:1px solid red;
+  overflow:hidden;
+}
+
+    img {
+      transition: 1s;
+    }
   </style>
   <body>
+    <div id = "box">
     <img src="flo1.jpg" id="img" width="300" height="300" />
-
+    <!-- <img src="flo2.jpg" id="img" width="300" height="300" />
+    <img src="flo3.jpg" id="img" width="300" height="300" />
+    <img src="flo4.jpg" id="img" width="300" height="300" /> -->
+  </div>
     <script>
       var sources = [
         "flo1.jpg",

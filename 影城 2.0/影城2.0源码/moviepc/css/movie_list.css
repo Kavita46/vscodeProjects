@@ -1,0 +1,547 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  position: sticky;
+  border-bottom: 2px solid #f99135;
+  top: 0px;
+  z-index: 10000;
+}
+
+header .header {
+  background-color: #f0f0f0;
+  width: 100%;
+  min-width: 1100px;
+}
+
+header .header > div {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1200px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+header .header > div .header-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-left a {
+  text-decoration: none;
+  color: #9a9a9a;
+}
+
+header .header > div .header-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-right span {
+  height: 40px;
+  margin: 0 10px;
+}
+
+header .header > div .header-right span:first-child {
+  height: 19px;
+  border-right: 1px solid #9a9a9a;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .header > div .header-right span button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 40px;
+  color: #9a9a9a;
+}
+
+header .nav {
+  height: 90px;
+}
+
+header .nav > div {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div .left {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div .left > div {
+  height: 100%;
+  width: 190px;
+  background-image: url(../images/logo-img.jpg);
+  background-repeat: no-repeat;
+  background-size: 170px;
+  background-position: left center;
+}
+
+header .nav > div .left select {
+  width: 50px;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-image: url(../images/down-icon.jpg);
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: 32px center;
+}
+
+header .nav > div ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+header .nav > div ul li {
+  text-align: center;
+  white-space: nowrap;
+  height: 100%;
+  padding: 0 24px;
+  cursor: pointer;
+  line-height: 90px;
+}
+
+header .nav > div ul li:hover {
+  background-color: #f99135;
+}
+
+header .nav > div ul li:hover a {
+  color: #fff;
+}
+
+header .nav > div ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+}
+
+header .nav > div .right {
+  display: flex;
+  align-items: center;
+}
+
+header .nav > div .right input {
+  color: #bfbfbf;
+  font-size: 16px;
+  padding-left: 20px;
+  width: 300px;
+  height: 38px;
+  outline: none;
+  border: 2px solid #f99135;
+  border-radius: 21px;
+}
+
+header .nav > div .right ::-webkit-input-placeholder {
+  color: #bfbfbf;
+  font-size: 16px;
+}
+
+header .nav > div .right button {
+  margin-left: -36px;
+  width: 70px;
+  height: 42px;
+  background-color: #f99135;
+  outline: none;
+  border: none;
+  border-radius: 21px;
+  background-image: url(../images/search-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header .nav > div .right button a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 42px;
+}
+
+main .iMax {
+  width: 100%;
+  height: 330px;
+  background-image: url(../images/background.png);
+  background-position: center;
+}
+
+main .iMax .cinemaDetails {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+main .iMax .cinemaDetails .screenBox {
+  width: 362px;
+  height: 100%;
+  float: left;
+}
+
+main .iMax .cinemaDetails .screenBox .picture {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.23);
+  margin: 50px 0px 0px 30px;
+}
+
+main .iMax .cinemaDetails .text {
+  width: 500px;
+  margin-top: 38px;
+  float: left;
+  color: #ffffff;
+}
+
+main .iMax .cinemaDetails .text .details strong {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+main .iMax .cinemaDetails .text .details p {
+  font-size: 14px;
+  margin: 5px 0px 5px 0px;
+}
+
+main .iMax .cinemaDetails .text .details p:last-of-type {
+  margin-bottom: 0px;
+}
+
+main .iMax .cinemaDetails .text .details span {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+main .iMax .cinemaDetails .text .details span::after {
+  content: '';
+  display: inline-block;
+  width: 340px;
+  height: 1px;
+  background-color: #ccc4cd;
+  margin: 0 0 3px 14px;
+}
+
+main .iMax .cinemaDetails .text .service > div {
+  margin-bottom: 6px;
+}
+
+main .iMax .cinemaDetails .text .service > div p {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid 1px #ffffff;
+  opacity: 0.6;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+}
+
+main .iMax .cinemaDetails .text .service > div span {
+  font-size: 10px;
+}
+
+main .iMax .cinemaDetails .map {
+  width: 200px;
+  height: 200px;
+  float: right;
+  margin-top: 99px;
+}
+
+main .content {
+  width: 1200px;
+  margin: 66px auto 0;
+}
+
+main .content ul {
+  list-style: none;
+  display: flex;
+  margin-bottom: 26px;
+}
+
+main .content ul li {
+  color: #333333;
+  font-size: 14px;
+}
+
+main .content ul li::after {
+  content: '>';
+  margin: 0 5px;
+}
+
+main .content ul li:last-child::after {
+  content: '';
+}
+
+main .content ul li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+main .content .slide {
+  width: 1200px;
+  height: 280px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-bottom: 27px;
+}
+
+main .content .slide .picBox {
+  width: 140px;
+  text-align: center;
+  background-color: #fff;
+  transition: .3s;
+}
+
+main .content .slide .picBox:hover {
+  transform: scale(1.12);
+  background-color: #f99135;
+  cursor: pointer;
+}
+
+main .content .slide .picBox img {
+  margin-top: 4px;
+}
+
+main .content .slide .arrow > img {
+  position: absolute;
+}
+
+main .content .slide .arrow > img:first-child {
+  left: 0px;
+  top: 125px;
+}
+
+main .content .slide .arrow > img:last-child {
+  right: 0px;
+  top: 125px;
+}
+
+main .content .slide .triangle {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-bottom: 14px solid white;
+  border-right: 14px solid transparent;
+  border-left: 14px solid transparent;
+  border-top: 14px solid transparent;
+  bottom: 0px;
+  left: 76px;
+}
+
+main .content .title {
+  height: 90px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+}
+
+main .content .title h5 {
+  font-size: 26px;
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+main .content .title strong {
+  color: #f99135;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+main .content .title span {
+  color: #f99135;
+  font-size: 14px;
+}
+
+main .content .title P {
+  color: #999999;
+  font-size: 14px;
+  display: inline-block;
+}
+
+main .content .title span {
+  color: #333333;
+  margin-right: 45px;
+}
+
+main .content .time span {
+  color: #999999;
+  font-size: 14px;
+}
+
+main .content .time p {
+  display: inline-block;
+  width: 90px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  text-align: center;
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+main .content .time p:first-of-type {
+  margin-right: 130px;
+  background-color: #f99135;
+  color: white;
+}
+
+main .content .time table {
+  width: 100%;
+  margin-bottom: 69px;
+}
+
+main .content .time table tbody tr {
+  height: 53px;
+}
+
+main .content .time table tbody tr:first-of-type {
+  background-color: #f7f7f7;
+}
+
+main .content .time table tbody tr:nth-child(2n-1) {
+  background-color: #f9f9f9;
+}
+
+main .content .time table tbody tr th {
+  color: #333333;
+  font-size: 16px;
+}
+
+main .content .time table tbody tr td {
+  width: 1200px;
+  height: 82px;
+  text-align: center;
+  color: #333;
+}
+
+main .content .time table tbody tr td:first-of-type {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+main .content .time table tbody tr td:first-of-type span {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+main .content .time table tbody tr td:nth-child(2) {
+  font-size: 14px;
+}
+
+main .content .time table tbody tr td:nth-child(3) {
+  font-size: 14px;
+}
+
+main .content .time table tbody tr td:nth-child(4) {
+  font-size: 14px;
+  color: #f03d37;
+}
+
+main .content .time table tbody tr td:nth-child(4) strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main .content .time table tbody tr td button {
+  width: 80px;
+  height: 30px;
+  background-color: #f99135;
+  box-shadow: 0px 2px 6px 0px rgba(255, 157, 71, 0.65);
+  border-radius: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+footer .top {
+  height: 222px;
+  width: 100%;
+  white-space: nowrap;
+  min-width: 1300px;
+  border-top: 1px solid #dbdbdb;
+  background-color: #262526;
+}
+
+footer .top > div {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .top > div div {
+  padding: 0 100px;
+}
+
+footer .top > div div h3 {
+  color: white;
+  font-size: 18px;
+}
+
+footer .top > div div span {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f99135;
+  margin-top: 10px;
+}
+
+footer .top > div div ul {
+  padding-top: 15px;
+}
+
+footer .top > div div ul li {
+  list-style: none;
+  font-size: 12px;
+  padding-bottom: 5px;
+  color: #e2e2e2;
+}
+
+footer .bottom {
+  height: 87px;
+  background-color: #262526;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #545454;
+}
+
+footer .bottom P {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  margin-bottom: 5px;
+}

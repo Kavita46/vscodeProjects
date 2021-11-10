@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src = '/0-Library/jquery-3.6.0.min.js'></script>
-</head>
-<body>
-<button></button>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+      <div id="div" style = "height:200px; width:300px; border:1px solid red">
+        <ul id="ul"></ul>
+      </div>
+
+
+    <button style = "width :150px; height:30px; position:absolute;top:0; right:300px ">
+    女枪开大</button>
 
     <script>
-$('button').click(function(){
-    console.log("事件1");});
+      $("button").click(function () {
+        // console.log("事件1");
 
-    $('button').click(function(){
-        console.log("事件2");});
 
-        console.log($('button').click);
+        console.log(this);
+      });
+
+
+      $("#div").on("click", "li", function () {
+        // console.log("事件2");
+        $("#ul").append("<li>啊哈哈哈</li>");
+        console.log(this);
+        $(this).css("color", "red");
+      });
+
+      $("button").click(function () {
+        // console.log("事件2");
+      });
+
+      console.log($("button").click);
     </script>
-</body>
+  </body>
 </html>

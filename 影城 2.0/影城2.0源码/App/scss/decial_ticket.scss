@@ -1,0 +1,148 @@
+@function toRem($a) {
+    @return ($a/50) + rem;
+}
+html {
+    font-size: 100vw/750 * 50;
+    background-color: #0b193f;
+}
+header {
+    #head {
+        height: toRem(248);
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            display: block;
+
+            background-image: url("../images/bg1r.png");
+            position: absolute;
+            background-size: cover;
+            right: 0px;
+            top: 0px;
+            width: toRem(179);
+            height: toRem(206);
+        }
+        .wrap {
+            margin-left: toRem(40);
+            margin-top: toRem(125);
+            color: #f2f2f2;
+           
+
+            .back {
+                line-height: toRem(30);
+                a {
+                    display: block;
+                    width: toRem(35);
+                    height: toRem(30);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            h3 {
+                margin-top: toRem(37);
+                font-weight: normal;
+                font-size: toRem(36);
+               
+            }
+        }
+    }
+}
+
+main {
+    padding: 0 toRem(40);
+    box-sizing: border-box;
+    margin-top: toRem(63);
+    #order_main {
+        width: 100%;
+        height: toRem(1134);
+        padding: toRem(40);
+        box-sizing: border-box;
+        background-image: url(../images/sdf.png);
+        background-size: 100% 100%;
+        margin-bottom: toRem(34);
+        .order_pay {
+            display: flex;
+            margin-bottom: toRem(71);
+            .img_p {
+                margin-right: toRem(49);
+                img {
+                    width: toRem(132);
+                    height: toRem(236);
+                    border-radius: toRem(24);
+                }
+            }
+            .orders {
+                font-size: toRem(24);
+                p {
+                    color: #000018;
+                    // margin-top: toRem(41);
+                    margin-bottom: toRem(14);
+                }
+                h3 {
+                    margin-top: toRem(23) ;
+                    font-size: toRem(32);
+                    color: #000018;
+                }
+                #addres_ord {
+                    color: #8890a3;
+                    margin:toRem(18) 0;
+                }
+                .seat {
+                    display: flex;
+                    li {
+                        width: toRem(40);
+                        height: toRem(40);
+                        border-radius: toRem(14);
+                        background-color: #4073ff;
+                        color: #f2f2f2;
+                        font-size: toRem(20);
+                        text-align: center;
+                        line-height: toRem(40);
+                        margin-right: toRem(10);
+                    }
+                }
+            }
+        }
+
+        .data {
+            width: 100%;
+            padding: toRem(6) 0;
+            box-sizing: border-box;
+                h5 {
+                    font-size: toRem(24);
+                    color: #000018;
+                    margin-bottom: toRem(24);
+                    margin-top: toRem(80);
+                    text-align: center;
+                    margin-bottom: toRem(40);
+                }
+               
+                .itecode {
+                    .cod {
+                    
+                        margin: 0 auto;
+                        width: toRem(390);
+                        height:toRem(390);
+                        background-image: url(../images/er.png);
+                        background-size: 100% 100%;
+                        padding: toRem(24);
+                        box-sizing: border-box;
+                        img {
+                            width: toRem(341);
+                            height: toRem(341);
+                        }
+                    }
+                }
+                .dui {
+                    text-align: center;
+                    font-size: toRem(48);
+                }
+            
+            
+        }
+
+    }
+}

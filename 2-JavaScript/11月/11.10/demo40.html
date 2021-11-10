@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/0-Library/mock.js"></script>
+    <script src="data.js"></script>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            font-size: 0px;
+            margin:0;
+        }
+        .goods{
+            width: 480px;
+            border:1px solid #ccc;
+            margin-right: 10px;
+        }
+        .images{
+            display: flex;
+        }
+        .images>img{
+            width: 80px;
+            height: 80px;
+        }
+        .name{
+            text-align: center;
+            font-size: 12px;
+        }
+        .price{
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hot" style="display: flex;flex-wrap: wrap;"></div>
+    <script>
+        $.ajax({
+            type:"get",
+            url:"hot",
+            dataType:"json",
+            success:function(data){
+                for(let i=0;i<data.goods.length;i++){
+                    let html=`
+                        <div class="goods">
+                            <div class="image">
+                                <img src="${data.goods[i].image}">
+                            </div>
+                            <div class="images">
+                                <img src="${data.goods[i].images[0].src}">
+                                <img src="${data.goods[i].images[1].src}">
+                                <img src="${data.goods[i].images[2].src}">
+                                <img src="${data.goods[i].images[3].src}">
+                                <img src="${data.goods[i].images[4].src}">
+                                <img src="${data.goods[i].images[5].src}">
+                            </div>
+                            <div class="name">${data.goods[i].name}</div>
+                            <div class="price">${data.goods[i].price}</div>
+                        </div>
+                    `;
+                    $("#hot").append(html);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

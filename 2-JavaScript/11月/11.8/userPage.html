@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form action="" id="form">
+      <input type="hidden" name="id" id="id" />
+      用户名<input type="text" id="username" name="username" /> <br />
+      密码<input type="text" name="password" id="password" /><br />
+      年龄<input type="text" name="age" id="age" /> <br />
+      电话<input type="text" name="phone" id="phone" /><br />
+
+      性别<select name="" id="sex" name="sex">
+        <option value="1">男</option>
+        <option value="2">女</option></select
+      ><br />
+      <input type="button" id="btn" value="修改信息" name="button" />
+    </form>
+
+    <script>
+      $(function () {
+        // 渲染信息
+        let id = location.search.split("=")[1];
+        console.log(id);
+        $.ajax({
+          type: "get",
+          url: "http://192.168.90.189/user/searchById",
+          data: { id: parseInt(id) },
+          dataType: "json",
+          success: function (data) {
+            console.log("----成功查询个人信息----");
+            console.log($("#btn"));
+            console.log(data);
+            $("#id").val(id);
+            $("#username").val(data.object.username);
+            $("#password").val(data.object.password);
+            $("#age").val(data.object.age);
+            $("#phone").val(data.object.phone);
+            $("#sex").val(data.object.sex);
+          },
+        });
+
+        // 更新信息
+
+        $("#btn").click(function () {
+          // let id = $("#id").val();
+          console.log($("#id").val());
+
+          console.log("点击了新增");
+          console.log( $("#form").serialize());
+          $.ajax({
+            type: "post",
+            url: "http://192.168.90.189/user/update",
+            data:
+              $("#form").serialize(),
+              // {
+              //   id: $("#id").val(),
+              //   username: $("#username").val(),
+              //   password: $("#password").val(),
+              //   phone: $("#phone").val(),
+              //   age: $("#age").val(),
+              //   sex: $("sex").val(),
+              // },
+            dataType: "json",
+            success: function (data) {
+              if (data.code == 200) {
+                history.back();
+                location.reload();
+              }
+            },
+          });
+
+        });
+
+        // 新增
+
+        // 删除
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <table id="tb" border="1px">
+      <tr>
+        <td>id</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>年龄</td>
+        <td>sex</td>
+        <td>性别</td>
+        <td>电话</td>
+        <td>----</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+
+    <form action="" id="form">
+      <input type="hidden" name="id" id="id" />
+      用户名<input type="text" id="username" name="username" /> <br />
+      密码<input type="text" name="password" id="password" /><br />
+      年龄<input type="text" name="age" id="age" /> <br />
+      电话<input type="text" name="phone" id="phone" /><br />
+
+      性别<select name="" id="sex" name="sex">
+        <option value="1">男</option>
+        <option value="2">女</option></select
+      ><br />
+      <input type="button" id="add_btn" value="新增信息" name="button" />
+    </form>
+
+    <script>
+      window.onload = function () {
+        show();
+      };
+      function show() {
+        $.ajax({
+          url: "http://192.168.90.189/user/search",
+          type: "get",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+
+            $("#tb").empty();
+            for (let i = 0; i < data.list.length; i++) {
+              let item = data.list[i];
+
+              if (item.sex == 1) {
+                var sex = "男";
+              } else if (item.sex == 2) {
+                var sex = "女";
+              }
+              let str = `<tr>
+                                <td>${item.id}</td>
+                                <td>${item.username}</td>
+                                <td>${item.password}</td>
+                                <td>${item.age}</td>
+                                <td>${item.sex}</td>
+                                <td>${sex}</td>
+                                <td>${item.phone}</td>
+                                <td><a href  ="userPage.html?id=${item.id}">查看详情</a></td>
+                                <td><input type = "button" value = "删除" id = "del"></td>
+                                </tr>
+                                `;
+
+              let obj = $(str);
+
+              $("#tb").append(obj);
+            }
+          },
+        });
+      }
+
+      //   更新按钮
+      $("#add_btn").click(function () {
+        $.ajax({
+          url: "http://192.168.90.189/user/add",
+          type: "post",
+          dataType: "json",
+          data: {
+            username: $("#username").val(),
+            password: $("#password").val(),
+            phone: $("#phone").val(),
+            age: $("#age").val(),
+            sex: $("#sex").val(),
+          },
+          success: function (data) {
+            if (data.code == 200) {
+              console.log("提交成功");
+              $("#username").val("");
+              $("#password").val("");
+              $("#phone").val("");
+              $("#age").val("");
+              show();
+            }
+          },
+        });
+      });
+
+    //   删除按钮 用了委托事件
+      $("#tb").on("click", "#del", function () {
+        $.ajax({
+          url: "http://192.168.90.189/user/delete",
+          type: "post",
+          dataType: "json",
+          data: {
+            id: Number.parseInt(($(this)
+              .parent()
+                .parent()
+                  .children()
+                    .eq(0)
+                      .text()))
+          },
+          success: function (data) {
+            if (data.code == 200) {
+              console.log("删除成功");
+              show();
+            }
+          },
+        });
+      });
+
+      // show();
+      //   location.reload();
+    </script>
+  </body>
+</html>

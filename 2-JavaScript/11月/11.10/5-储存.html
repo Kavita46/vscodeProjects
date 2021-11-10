@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <script src="/0-Library/mock.js"></script>
+    <script src="user.js"></script>
+</head>
+<body>
+    
+    <form action="" id="register">
+        <input type="text" name="account" id=""><br>
+        <input type="text" name="account" id=""><br>
+        <input type="button" name  ="register" value="注册">
+        
+    </form>
+    <script>
+$(function(){
+    $("#register").click(function(){
+        var account = $("#account").val();
+        var password = $("#password").val();
+        $.ajax({
+            url:"register",
+            type:"post",
+            data:$("register").serialize(),
+            dataType:"json",
+
+            success:function(data){
+                if(data.code == 1){
+                    alert("注册成功");
+                    console.log(data);
+                }else{
+                    alert("注册失败");
+                }
+            }
+})
+
+    })
+})
+        // localStorage.setItem('name','张三');
+        // localStorage.setItem('age',18);
+
+    </script>
+</body>
+</html>

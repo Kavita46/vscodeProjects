@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+    src="http://api.map.baidu.com/api?v=1.0&type=webgl&ak=HG7mhBtwuAgzr3QGdZmdhWT2nco2o4N9"></script>
+    <style>
+        .location-div{
+            display: flex;
+            flex-wrap: wrap;
+            width: 250px;
+            border-radius: 10px;
+            padding: 15px;
+            padding-bottom: 0px;
+            box-sizing: border-box;
+            border:1px solid #3385ff;
+            background-color: rgba(33,85,255,0.3);
+            position: absolute;
+            left:30px;
+            top:30px;
+            z-index:99;
+        }
+        .location-div>input{
+            display: inline-block;
+            width: 220px;
+            box-sizing: border-box;
+            height: 35px;
+            margin-bottom: 15px;
+            outline:none;
+            font-size:16px;
+            color:rgb(48, 46, 46);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" style="height: 100vh;"></div>
+    <div class="location-div">
+        <input type="text" id="start">
+        <input type="text" id="end">
+        <input type="button" id="go" value="出发">
+    </div>
+    <script>
+        var map = new BMapGL.Map("map");
+        const driving = new BMapGL.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true }});
+        var point = new BMapGL.Point(116.404, 39.915);//创建一个坐标点，经纬度
+        map.centerAndZoom(point, 18);
+        map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+        //map.setMapType(BMAP_EARTH_MAP);  //地球模式
+        var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+        map.addControl(scaleCtrl);
+        var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+        map.addControl(zoomCtrl);
+        var cityCtrl = new BMapGL.CityListControl();  // 添加城市列表控件
+        map.addControl(cityCtrl);
+        var locationControl = new BMapGL.LocationControl();  // 添加定位控件
+        map.addControl(locationControl);
+        //定位
+        //获取当前地理位置 将地图中心点移动到定位位置
+        var geolocation = new BMapGL.Geolocation();//创建定位对象
+        geolocation.getCurrentPosition(function (result) {
+            map.panTo(result.point);//移动地图中心
+            var mk = new BMapGL.Marker(result.point);//创建标记,r是定位结果,r.point就是当前定位的地点
+            map.addOverlay(mk);//将标记对象添加到地图上
+            //拼接当前位置数据
+            let address=result.address.city+result.address.district+result.address.street+result.address.street_number;
+            document.getElementById("start").value=address;
+        });
+        var mk;
+        //添加点击标记功能
+        map.addEventListener("click", function (result) {
+            map.removeOverlay(mk);//清除上一个标记
+            mk = new BMapGL.Marker(result.latlng);
+            map.addOverlay(mk);//将标记对象添加到地图上
+            // 创建地理编码实例      
+            var myGeo = new BMapGL.Geocoder();
+            myGeo.getLocation(result.latlng, function (location) {
+                var opts = {
+                    width: 200,     // 信息窗口宽度
+                    height: 100,    // 信息窗口高度
+                    title: "位置信息"  // 信息窗口标题
+                }
+                let infoWindow = new BMapGL.InfoWindow(location.address, opts);
+                map.openInfoWindow(infoWindow, result.latlng);
+                document.getElementById("end").value=location.address;
+            });
+
+        })
+        document.getElementById("go").addEventListener("click",function(){
+            //根据输入框目前的值进行地址解析获得经纬度
+            //创建地址解析器实例
+            var myGeo = new BMapGL.Geocoder();
+            let start=document.getElementById("start").value;
+            let end=document.getElementById("end").value;
+            if(start!=""&&end!=""){
+                myGeo.getPoint(start,function(startPoint){
+                    myGeo.getPoint(end,function(endPoint){
+                        driving.search(startPoint,endPoint);
+                    });
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

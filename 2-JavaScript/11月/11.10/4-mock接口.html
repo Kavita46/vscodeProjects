@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <script src="/0-Library/mock.js"></script>
+  </head>
+  <body>
+    <script>
+      var students = []; //临时保存数据的数据
+      //定义新增的数据接口
+      Mock.mock("接口地址", "post", function (param) {
+        //param中保存了前端发送请求时携带的参数
+        //param.body;//body取出来是字符串拼接的参数，需要我们手动的进行数据拆分
+        //模拟后端人员处理数据
+        var student = {};
+        var params = param.body.split("&");
+        for (var i = 0; i < params.length; i++) {
+          var paramName = params[i].split("=")[0];
+          var paramValue = decodeURI(params[i].split("=")[1]);
+          student[paramName] = paramValue;
+        }
+        students.push(student);
+        //模拟后端人员响应数据的过程
+        return { code: "200", message: "新增成功", student }; //接口规范中 增删改接口会返回本次操作的数据
+      });
+
+      $.ajax({
+        url: "woniuxy/student",
+        type: "post",
+        dataType: "json",
+        data: {
+          name: "张三",
+          sex: "男",
+          age: 12,
+          birthday: "1999-08-07",
+        },
+        success: function (data) {
+          console.log(data);
+          alert(data.message);
+        },
+      });
+    </script>
+  </body>
+</html>
