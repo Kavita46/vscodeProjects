@@ -1,0 +1,280 @@
+@charset "UTF-8";
+body {
+  width: 100vw;
+  position: relative;
+}
+
+body header {
+  height: 18rem;
+}
+
+body header .arrow-back::after {
+  content: "电影票详情";
+  white-space: nowrap;
+}
+
+body [class*="block-"] {
+  position: absolute;
+}
+
+body [class*="block-"] .footer-gray {
+  width: 100vw;
+  height: 1rem;
+  background: #edf0f9;
+  position: absolute;
+  bottom: 0;
+  position: absolute;
+}
+
+body .block-1 {
+  position: absolute;
+  top: 18rem;
+  width: 47rem;
+  height: 25rem;
+}
+
+body .block-1 .section-1 {
+  width: 32rem;
+  height: 20rem;
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+}
+
+body .block-1 .section-1 .movie-pic {
+  width: 13rem;
+  height: 19rem;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  background: url("../img/movie-1@2x.png") no-repeat center/100%;
+}
+
+body .block-1 .section-1 .text-box {
+  width: 17rem;
+  height: 19rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+body .block-1 .section-1 .text-box .text-1 {
+  width: 17rem;
+  color: #4073ff;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  font-size: 2rem;
+}
+
+body .block-1 .section-1 .text-box .text-2 {
+  width: 17rem;
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+body .block-1 .section-1 .text-box .text-3 {
+  width: 17rem;
+  position: absolute;
+  top: 13.5rem;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 0.75rem;
+  color: #8890a3;
+}
+
+body .block-1 .section-1 .seat-bar {
+  display: flex;
+  position: absolute;
+  bottom: 1.313rem;
+  left: 11.5rem;
+}
+
+body .block-1 .section-1 .seat-bar .seat-box {
+  margin-right: 0.625rem;
+}
+
+body .block-2 {
+  top: 43rem;
+  width: 47rem;
+  height: 34rem;
+}
+
+body .block-2 .text-box-1 {
+  height: 33rem;
+  position: absolute;
+  left: 3rem;
+  top: 0;
+  width: 20rem;
+}
+
+body .block-2 .text-box-1 [class*="l"] {
+  position: absolute;
+  left: 0;
+}
+
+body .block-2 .text-box-1 .l1 {
+  top: 2rem;
+  font-family: SourceHanSansCN-Bold;
+  font-size: 1.75rem;
+}
+
+body .block-2 .text-box-1 .l2 {
+  top: 5rem;
+}
+
+body .block-2 .text-box-1 .l3 {
+  top: 10rem;
+}
+
+body .block-2 .text-box-1 .l4 {
+  top: 13.438rem;
+}
+
+body .block-2 .text-box-1 .l4 .seat-bar {
+  display: flex;
+}
+
+body .block-2 .text-box-1 .l4 .seat-bar .seat-box {
+  color: #fff;
+  margin-right: 0.625rem;
+}
+
+body .block-2 .text-box-1 .l5 {
+  bottom: 13.348rem;
+}
+
+body .block-2 .text-box-1 .l6 {
+  font-family: SourceHanSansCN-Bold;
+  font-size: 1.75rem;
+  bottom: 10.375rem;
+}
+
+body .block-2 .text-box-1 .l7 {
+  bottom: 5.348rem;
+}
+
+body .block-2 .text-box-1 .l8 {
+  color: red;
+  bottom: 2.375rem;
+  font-family: SourceHanSansCN-Bold;
+  font-size: 1.75rem;
+}
+
+body .block-2 .text-box-2 {
+  height: 33rem;
+  width: 8rem;
+  position: absolute;
+  left: 33rem;
+  top: 0;
+}
+
+body .block-2 .text-box-2 [class*="l"] {
+  position: absolute;
+  left: 0;
+}
+
+body .block-2 .text-box-2 .l1 {
+  top: 2rem;
+  font-family: SourceHanSansCN-Bold;
+  font-size: 1.75rem;
+}
+
+body .block-2 .text-box-2 .l2 {
+  top: 5rem;
+}
+
+body .block-2 .text-box-2 .l3 {
+  top: 10rem;
+}
+
+body .block-2 .text-box-2 .l4 {
+  top: 13.438rem;
+}
+
+body .block-2 .text-box-2 .l5 {
+  bottom: 13.348rem;
+}
+
+body .block-2 .text-box-2 .l6 {
+  font-family: SourceHanSansCN-Bold;
+  font-size: 1.75rem;
+  bottom: 10.375rem;
+}
+
+body .block-3 {
+  position: absolute;
+  bottom: 0;
+  width: 47rem;
+  height: 24rem;
+}
+
+body .block-3 .text-box {
+  position: absolute;
+  bottom: 11rem;
+  width: 41rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+body .block-3 .button-blue {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.pay-box {
+  width: 46.875rem;
+  height: 46.875rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 1.125rem 1.125rem 0rem 0rem;
+}
+
+.pay-box .text-bar {
+  width: 41.875rem;
+  height: 2rem;
+  position: absolute;
+  top: 4rem;
+  left: 2.5rem;
+}
+
+.pay-box .text-bar .arrow-black {
+  width: 2.188rem;
+  height: 1.875rem;
+  background: url("../img/arrow-black.png") no-repeat center/100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pay-box .text-bar .span3 {
+  position: absolute;
+  left: 2.5rem;
+  top: 0;
+}
+
+.pay-box .text-bar .span2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pay-box .pay-card {
+  position: absolute;
+  left: 2.5rem;
+  top: 8.5rem;
+  background: url("../img/pay-card.png") no-repeat center/100%;
+  width: 41.875rem;
+  height: 20.75rem;
+}
+
+.pay-box .button-blue {
+  position: absolute;
+  bottom: 2.188rem;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <form action="">
+    <input type="button" value="获取" id="btn" />
+  </form>
+  <body>
+    <script>
+      $(function () {
+        $("#btn").click(function () {
+          $.ajax({
+            url: "https://www.fastmock.site/mock/bb4157f45a0b5ffdcb3f6d984517a6c0/woniuMovie/getAllMovies",
+            type: "get",
+            data: {},
+            success: function (data) {
+              console.log(data);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

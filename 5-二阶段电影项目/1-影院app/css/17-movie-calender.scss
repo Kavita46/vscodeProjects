@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  header {
+    position: unset;
+    width: 100vw;
+    height: 18.125rem;
+    background: url("../img/bg-kingkong.png") no-repeat center/100%;
+  }
+
+  .text-container {
+    position: absolute;
+    top: 18.125rem;
+    width: 46.875rem;
+    height: 18.125rem;
+
+    .movie-pic {
+      width: 13rem;
+      height: 19rem;
+      position: absolute;
+      top: -4.375rem;
+      left: 1rem;
+      background: url("../img/movie-1@2x.png") no-repeat center/100%;
+    }
+    .text-box {
+      width: 29.25rem;
+      height: 19rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      .text-left {
+        white-space: nowrap;
+        position: absolute;
+        color: #8890a3;
+        left: 0;
+      }
+      .text-1 {
+        top: 2.063rem;
+        color: #000018; // line-height: 0.75rem;
+      }
+      .text-2 {
+        top: 5.563rem;
+      }
+      .text-3 {
+        top: 8.438rem;
+      }
+
+      .text-4 {
+        top: 11.375rem;
+      }
+
+      .text-right {
+        position: absolute;
+        left: 8.688rem;
+        color: #263153;
+      }
+      .text-5 {
+        top: 5.563rem;
+      }
+      .text-6 {
+        bottom: 8.438rem;
+      }
+      .text-7 {
+        top: 11.375rem;
+      }
+    }
+
+    .footer-gray {
+      width: 100vw;
+      height: 1rem;
+      background: rgb(237, 240, 249);
+      position: absolute;
+      bottom: 0;
+      position: absolute;
+      // background-color: #ffffff;
+    }
+  }
+  .main {
+    width: 46.875rem;
+    height: 65.438rem;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+
+    .two-button-bar {
+      // position: absolute;
+      // top: 0;
+      width: 100vw;
+      height: 5rem;
+      display: flex;
+      border-bottom: 1px solid rgb(217, 217, 217);
+      .two-button {
+        a {
+          color: #000;
+        }
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-color: rgb(64, 115, 255);
+      }
+      #button-blue{
+        border-bottom: 5px solid;
+        border-bottom-color: rgb(64, 115, 255);
+      }
+      
+    }
+
+    .date-container {
+      width: 100vw;
+      height: 11.5rem;
+      border-bottom: 1px solid gray;
+      position: relative;
+      .date-bar {
+
+        position: absolute;
+        right: 0;
+        top: 2rem;
+        width: 44.375rem;
+        height: 7.625rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: scroll;
+
+        .date-item-1 {
+          flex-shrink: 0;
+          float: left;
+          overflow: scroll;
+          // overflow:hidden;
+          margin-right: 1.56rem;
+          width: 6.625rem;
+          height: 7.563rem;
+          background-color: #4073ff;
+          border-radius: 1.5rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          .h1 {
+            white-space: nowrap;
+            color: #fff;
+          }
+          .h2 {
+            color: #000;
+          }
+        }
+        .date-item-2 {
+          border-radius: 1.5rem;
+          border: solid 0.125rem #d1dfff;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .item-container {
+      width: 44.875rem;
+      height: 18.688rem;
+      margin-top: 2.5rem;
+      margin-right: 2.5rem;
+      margin-left: 2.5rem;
+      position: relative;
+
+
+      .p1 {
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .location-img {
+        width: 1.25rem;
+        height: 1.625rem;
+        background: url(../img/location.png) no-repeat center;
+        position: absolute;
+        top: 3.125rem;
+        left: 0;
+      }
+
+      .p2 {
+        font-family: SourceHanSansCN-Regular;
+        font-size: 1.5rem;
+        color: #141337;
+        position: absolute;
+        top: 3.2rem;
+        right: 1.313rem;
+      }
+      .p3 {
+        font-family: SourceHanSansCN-Regular;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 8rem;
+        left: 0;
+      }
+      .time-box {
+
+        width: 44.875rem;
+        height: 7.438rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display:flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+
+        .box{
+          margin-right:0.75rem;
+          width: 7.75rem;
+          height: 3.375rem;
+          background-color: #edf0f9;
+          border-radius: 0.5rem;
+          text-align:center;
+          color:#000;
+          line-height:3.375rem;
+        }
+        .box-1{
+          background-color: #ffffff;
+          border: solid 0.125rem #d1dfff;
+        }
+        .box-2{
+          background-color: #4073ff;
+          color:#fff;
+        }
+      }
+    }
+  }
+}

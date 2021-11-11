@@ -1,0 +1,115 @@
+header {
+  height: 101.563rem;
+  position: relative;
+
+  .arrow-back::after {
+    content: "电影票详情";
+    width: 15rem;
+  }
+
+  .bg {
+    width: 42.625rem;
+    height: 70.875rem;
+    position: absolute;
+    top: 18.125rem;
+    left: 2.125rem;
+    right: 2.125rem;
+    border-radius: 0.8rem;
+    background: url(../img/bg-long.png) no-repeat center/100%;
+    .section-1 {
+      // border: 1px solid red;
+      width: 30.313rem;
+      height: 14.875rem;
+      position: absolute;
+      top: 2.563rem;
+      left: 2.875rem;
+      .movie-pic {
+        width: 8.25rem;
+        height: 14.75rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../img/movie-1@2x.png") no-repeat center/100%;
+      }
+      .text-1 {
+          position:absolute;
+          top:2.313rem;
+          left:11.5rem;
+          font-size: 2rem;
+        line-height: 0.75rem;
+        // color: #4073ff;
+      
+      }
+      .text-2 {
+        position:absolute;
+        top:5.5rem;
+        left:11.5rem;
+        font-size: 1.5rem;
+
+      }
+      .text-3 {
+          position:absolute;
+        top:8.563rem;
+        left:11.5rem;
+        font-size: 1.5rem;
+        line-height: 0.75rem;
+        color: #8890a3;
+      }
+      .seat-bar{
+          display:flex;
+        position:absolute;
+        bottom:1.313rem;
+        left:11.5rem;
+        .seat-box{
+            margin-right:0.625rem;
+        }
+      }
+    }
+
+    .QR-box {
+      width: 24.375rem;
+      height: 40.563rem;
+      position: absolute;
+      left: 9.125rem;
+      right: 9.125rem;
+      bottom: 4.25rem;
+      // border: 1px solid red;
+
+      [class*="text"] {
+        width: 24.375rem;
+      }
+      .text-1 {
+        position: absolute;
+        top: 0;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .text-2 {
+        position: absolute;
+        bottom: 5.125rem;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .text-3 {
+        position: absolute;
+        bottom: 0;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+        font-family: SourceHanSansCN-Bold;
+        font-size: 3rem;
+      }
+    }
+    .QR {
+      position: absolute;
+      left: 9.125rem;
+      right: 9.125rem;
+      bottom: 18.875rem;
+      width: 24.375rem;
+      height: 24.375rem;
+      background: url(../img/QR-big.png) no-repeat center/100%;
+    }
+  }
+}

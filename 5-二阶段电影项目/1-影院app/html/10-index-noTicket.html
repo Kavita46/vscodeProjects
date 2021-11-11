@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="../js/1.js"></script>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <link href="../css/public.css" rel="stylesheet" />
+    <link href="../css/10-index-noTicket.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="icon-1"></div>
+      <div class="icon-2"></div>
+      <div class="text-try font-bold">您好,李先生</div>
+      <div class="header-bottom">
+        <a href="#"><div class="icon-3"></div></a>
+        <div class="text-city">成都</div>
+        <a href="#"> <div class="icon-4"></div></a>
+      </div>
+    </header>
+
+    <div class="movies-bar">
+      <div class="text-wrapper">
+        <div class="title">正在热映</div>
+        <a href="8-films-now.html">查看更多</a>
+      </div>
+  
+      
+
+  </div>
+
+    <div class="movies-bar">
+      <div class="text-wrapper">
+        <div class="title">即将上映</div>
+        <a href="8-films-now.html">查看更多</a>
+      </div>
+
+
+  </div>
+
+  <div class="score-board">
+    <span class ="p1">评分榜</span>
+    <a href ="8-films-now.html" class = "p2">查看更多</a>
+  </div>
+
+  <footer>
+    <div class="footer-bar">
+      <a href="../html/9-index-noticket.html"><div class="footer-1"></div></a>
+      <a href="../html/1-cinema.html"><div class="footer-2"></div></a>
+      <a href="../html/6-myTicket.html"><div class="footer-3"></div></a>
+      <a href="../html/7-my.html"><div class="footer-4"></div></a>
+    </div>
+  </footer>
+
+
+  <script>
+    $(function(){
+    
+      $.ajax({
+        url:"https://www.fastmock.site/mock/bb4157f45a0b5ffdcb3f6d984517a6c0/woniuMovie/getAllMovies",
+        type:"get",
+        dataType:"json",
+        data:{},
+        success:function(data){
+          var movies = data.movies;
+          for(let i =0; i < movies.length; i++){
+            var mName = movies[i].title;
+            var mPic = movies[i].imgSrc;
+            console.log(mPic);
+let html = `<div class="movie-wrapper">
+          <a href="2-detail.html">
+          <img src = "${mPic}" class="movie-pic"></img>
+        </a>
+          <div class="movie-name">${mName}</div>
+        </div>`;
+
+        console.log(html);
+            $(".movies-bar").append(html);
+          }
+        }
+      })
+    });
+  </script>
+  </body>
+</html>

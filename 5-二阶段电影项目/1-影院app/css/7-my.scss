@@ -1,0 +1,77 @@
+footer {
+  .footer-bar {
+    .footer-4::after{
+      color:rgb(11, 26, 63);
+    }
+  }
+}
+header {
+  height: 33.75rem;
+  position: relative;
+
+  .label {
+    // content: "我的";
+    color:#fff;
+    font-size: 2.25rem;
+    position: absolute;
+    top: 7.625rem;
+    left: 2.438rem;
+  }
+
+  .user-head {
+    background: url("../img/head-img.png") no-repeat;
+    width: 11.813rem;
+    height: 11.813rem;
+    background-size: 100%;
+    position: absolute;
+    top: 14.563rem;
+    margin-left: 17.5rem;
+    margin-right: 17.5rem;
+  }
+  .user-name{
+    width:10rem;
+    font-size: 1.75rem;
+    color:#f2f2f2;
+    position: absolute;
+   bottom:3.5rem;
+    left: 20.81rem;
+    right:20.875rem;
+  }
+}
+
+.main {
+  height: 67.813rem;
+  .item {
+    width: 100vw;
+    height: 7.75rem;
+    border: transparent 1px solid;
+    border-bottom-color: rgb(210, 210, 210);
+    position: relative;
+    a {
+      text-decoration: none;
+      color: #0b193f;
+      margin-left: 2rem;
+      font-family: SourceHanSansCN-Regular;
+      font-size: 1.75rem;
+      line-height: 7.75rem;
+    }
+    .arrow-right {
+      position: absolute;
+      top: 2.8rem;
+      right: 3.4rem;
+      width: 0.938rem;
+      height: 1.688rem;
+
+      background: url("../img/arrow-right.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+footer{
+  .footer-bar {
+    .footer-4 {
+      background: url("../img/footer-4b.png") no-repeat center/100% 100%;
+    }
+  }
+}

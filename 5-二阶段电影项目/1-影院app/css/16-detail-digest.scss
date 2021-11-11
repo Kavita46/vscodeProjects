@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  header {
+    position: unset;
+    width: 100vw;
+    height: 18.125rem;
+    background: url("../img/bg-kingkong.png") no-repeat center/100%;
+  }
+
+  .text-container {
+    // border: 1px solid red;
+    position: absolute;
+    top: 18.125rem;
+    width: 46.875rem;
+    height: 18.125rem;
+
+    .movie-pic {
+      width: 13rem;
+      height: 19rem;
+      position: absolute;
+      top: -4.375rem;
+      left: 1rem;
+      background: url("../img/movie-1@2x.png") no-repeat center/100%;
+    }
+    .text-box {
+      width: 29.25rem;
+      height: 19rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      .text-left {
+        white-space: nowrap;
+        position: absolute;
+        color: #8890a3;
+        left: 0;
+      }
+      .text-1 {
+        top: 2.063rem;
+        color: #000018; // line-height: 0.75rem;
+      }
+      .text-2 {
+        top: 5.563rem;
+      }
+      .text-3 {
+        top: 8.438rem;
+      }
+
+      .text-4 {
+        top: 11.375rem;
+      }
+
+      .text-right {
+        position: absolute;
+        left: 8.688rem;
+        color: #263153;
+      }
+      .text-5 {
+        top: 5.563rem;
+      }
+      .text-6 {
+        bottom: 8.438rem;
+      }
+      .text-7 {
+        top: 11.375rem;
+      }
+    }
+
+    .footer-gray {
+      width: 100vw;
+      height: 1rem;
+      background: rgb(237, 240, 249);
+      position: absolute;
+      bottom: 0;
+      position: absolute;
+      // background-color: #ffffff;
+    }
+  }
+  .main {
+    width: 46.875rem;
+    height: 65.438rem;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    .describe {
+      position:absolute;
+      bottom:0;
+      left: 2.5rem;
+      top: 8.5rem;
+
+      width: 41.875rem;
+      height: 28.625rem;
+
+      line-height: 3.375rem;
+    }
+
+    .two-button-bar {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 5rem;
+      display: flex;
+      border-bottom:1px solid rgb(217, 217, 217);
+      .two-button {
+        a {
+          color: #000;
+        }
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .two-button2 {
+        border-bottom: 5px solid;
+        border-bottom-color: rgb(64, 115, 255);
+      }
+    }
+  }
+}

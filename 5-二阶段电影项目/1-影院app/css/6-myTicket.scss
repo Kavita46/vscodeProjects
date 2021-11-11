@@ -1,0 +1,91 @@
+header {
+  height: 24.3rem;
+}
+footer {
+  .footer-bar {
+    .footer-3::after{
+      color:rgb(11, 26, 63);
+    }
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .ticket {
+  position:relative;
+    margin-top: 2.7rem;
+    width: 41.875rem;
+    height: 16.375rem;
+    position: relative;
+    background-color: #0b193f;
+    background: url("../img/ticket-long.png") no-repeat;
+    background-size: 100% 100%;
+
+    .title {
+      margin-top: 2.313rem;
+      margin-left: 3.063rem;
+      font-family: SourceHanSansCN-Bold;
+      font-size: 1.75rem;
+      line-height: 0.75rem;
+      letter-spacing: 0rem;
+      color: #ffffff;
+    }
+    .QR-small {
+      position: absolute;
+      top: 2.313rem;
+      right: 3.875rem;
+      width: 4.438rem;
+      height: 4.438rem;
+      background: url("../img/QR-small.png") no-repeat;
+      background-size: 100%;
+    }
+
+    .place {
+      position:absolute;
+
+      top:5.438rem;
+      left: 3.125rem;
+
+      font-family: SourceHanSansCN-Regular;
+      font-size: 1.5rem;
+      // line-height: 0.75rem;
+      letter-spacing: 0rem;
+      color: #ffffff;
+      opacity: 0.47;
+    }
+
+    .number {
+      position:absolute;
+     bottom: 3.25rem;
+      left: 3.125rem;
+      width: 8.5rem;
+      line-height: 7.313rem;
+      font-family: SourceHanSansCN-Bold;
+      font-size: 1.75rem;
+      line-height: 0.75rem;
+      letter-spacing: 0.475rem;
+      color: #f3b438;
+    }
+    .detail {
+
+      line-height:0.75rem;
+      // width:8rem;
+      position:absolute;
+      bottom:3.25rem;
+      right:3.25rem;
+      color: #fff;
+      font-family: SourceHanSansCN-Regular;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+footer {
+  .footer-bar {
+    .footer-3 {
+      background: url("../img/footer-3b.png") no-repeat center/100% 100%;
+    }
+  }
+}

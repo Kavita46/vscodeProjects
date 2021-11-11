@@ -1,0 +1,265 @@
+//整合了两个页面,因为只加了个银行卡功能
+
+body {
+  width: 100vw;
+  position: relative;
+
+  header {
+    height: 18rem;
+    .arrow-back::after {
+      content: "电影票详情";
+      white-space: nowrap;
+    }
+  }
+
+  [class*="block-"] {
+    position: absolute;
+    .footer-gray {
+      width: 100vw;
+      height: 1rem;
+      background: rgb(237, 240, 249);
+      position: absolute;
+      bottom: 0;
+      position: absolute;
+      // background-color: #ffffff;
+    }
+  }
+  .block-1 {
+    position: absolute;
+    // margin-bottom: 1rem;
+
+    top: 18rem;
+    width: 47rem;
+    height: 25rem;
+
+    .section-1 {
+      width: 32rem;
+      height: 20rem;
+
+      position: absolute;
+      top: 3rem;
+      left: 2rem;
+      .movie-pic {
+        width: 13rem;
+        height: 19rem;
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        background: url("../img/movie-1@2x.png") no-repeat center/100%;
+      }
+
+      .text-box {
+        width: 17rem;
+        height: 19rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .text-1 {
+          width: 17rem;
+          color: #4073ff;
+          position: absolute;
+          top: 5rem;
+          left: 0;
+          font-size: 2rem;
+          // line-height: 0.75rem;
+        }
+        .text-2 {
+          width: 17rem;
+          position: absolute;
+          top: 9rem;
+          left: 0;
+          font-size: 1.5rem;
+        }
+        .text-3 {
+          width: 17rem;
+          position: absolute;
+          top: 13.5rem;
+          left: 0;
+          font-size: 1.5rem;
+          line-height: 0.75rem;
+          color: #8890a3;
+        }
+      }
+      .seat-bar {
+        display: flex;
+        position: absolute;
+        bottom: 1.313rem;
+        left: 11.5rem;
+        .seat-box {
+          margin-right: 0.625rem;
+        }
+      }
+    }
+  }
+
+  .block-2 {
+    top: 43rem;
+    width: 47rem;
+    height: 34rem;
+
+    .text-box-1 {
+      height: 33rem;
+      position: absolute;
+      left: 3rem;
+      top: 0;
+      width: 20rem;
+
+      [class*="l"] {
+        position: absolute;
+        left: 0;
+      }
+      .l1 {
+        top: 2rem;
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+      }
+      .l2 {
+        top: 5rem;
+      }
+      .l3 {
+        top: 10rem;
+      }
+      .l4 {
+        top: 13.438rem;
+        .seat-bar {
+          display: flex;
+
+          .seat-box {
+            color: #fff;
+            margin-right: 0.625rem;
+          }
+        }
+      }
+      .l5 {
+        bottom: 13.348rem;
+      }
+      .l6 {
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+        bottom: 10.375rem;
+      }
+      .l7 {
+        bottom: 5.348rem;
+      }
+      .l8 {
+        color: red;
+        bottom: 2.375rem;
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+      }
+    }
+    .text-box-2 {
+      height: 33rem;
+      width: 8rem;
+      position: absolute;
+      left: 33rem;
+      top: 0;
+      [class*="l"] {
+        position: absolute;
+        left: 0;
+      }
+      .l1 {
+        top: 2rem;
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+      }
+      .l2 {
+        top: 5rem;
+      }
+      .l3 {
+        top: 10rem;
+      }
+      .l4 {
+        top: 13.438rem;
+      }
+      .l5 {
+        bottom: 13.348rem;
+      }
+      .l6 {
+        font-family: SourceHanSansCN-Bold;
+        font-size: 1.75rem;
+        bottom: 10.375rem;
+      }
+    }
+  }
+  .block-3 {
+    position: absolute;
+    bottom: 0;
+
+    width: 47rem;
+    height: 24rem;
+    .text-box {
+      position: absolute;
+      bottom: 11rem;
+      width: 41rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+
+      display: flex;
+      justify-content: space-between;
+    }
+    .button-blue {
+      position: absolute;
+      bottom: 2rem;
+    }
+  }
+}
+
+// 银行卡在这里
+
+.pay-box {
+  width: 46.875rem;
+  height: 46.875rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  // border: 1px solid red;
+
+  background-color: #ffffff;
+  border-radius: 1.125rem 1.125rem 0rem 0rem;
+
+  .text-bar {
+    // border: 1px solid red;
+    width: 41.875rem;
+    height: 2rem;
+    position: absolute;
+    top: 4rem;
+
+    left: 2.5rem;
+
+    .arrow-black {
+      // font-size:1.5rem;
+      width: 2.188rem;
+      height: 1.875rem;
+      background: url("../img/arrow-black.png") no-repeat center/100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+ .span3{
+   position:absolute;
+   left:2.5rem;
+   top:0;
+ }
+
+    .span2 {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .pay-card {
+    position: absolute;
+    left: 2.5rem;
+    top: 8.5rem;
+    background: url("../img/pay-card.png") no-repeat center/100%;
+    width: 41.875rem;
+    height: 20.75rem;
+  }
+
+  .button-blue {
+    position: absolute;
+    bottom: 2.188rem;
+  }
+}

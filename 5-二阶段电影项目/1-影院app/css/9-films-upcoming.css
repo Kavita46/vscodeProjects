@@ -1,0 +1,99 @@
+@charset "UTF-8";
+.arrow-back::after {
+  content: "特色电影";
+}
+
+header {
+  height: 24rem;
+}
+
+.main {
+  width: 100vw;
+  height: 77.563rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main .movie-container {
+  width: 34rem;
+  height: 19.75rem;
+  margin-left: 2rem;
+  margin-top: 2.75rem;
+  position: relative;
+}
+
+.main .movie-container .movie-pic {
+  border-radius: 0.875rem;
+  width: 13rem;
+  height: 19.375rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.1rem;
+}
+
+.main .movie-container .title {
+  position: absolute;
+  left: 15.62rem;
+  font-size: 2rem;
+  top: 2.125rem;
+}
+
+.main .movie-container .text-1 {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 16.063rem;
+  top: 5.625rem;
+  color: #8890a3;
+}
+
+.main .movie-container .text-2 {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 16.063rem;
+  top: 8rem;
+  color: #8890a3;
+}
+
+.main .movie-container .text-3 {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 16.063rem;
+  top: 10.438rem;
+  color: #8890a3;
+}
+
+.main .movie-container .text-4 {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 24.25rem;
+  top: 5.625rem;
+}
+
+.main .movie-container .text-5 {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 24.25rem;
+  top: 8rem;
+}
+
+.main .movie-container .text-6 {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 24.25rem;
+  top: 4.625rem;
+  top: 10.438rem;
+}
+
+.button-blue {
+  background: #edf0f9;
+  position: absolute;
+  width: 10.625rem;
+  height: 3.5rem;
+  bottom: 1.125rem;
+  left: 15.438rem;
+}
+
+.button-blue a {
+  color: #4073ff;
+  font-size: 1.5rem;
+}

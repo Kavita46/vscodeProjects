@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="../js/1.js"></script>
+  <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  <link href="../css/public.css" rel="stylesheet">
+  <link href="../css/3-register.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="icon-2"></div>
+    <a href="7-my.html">
+      <div class="arrow-back">
+      </div>
+    </a>
+
+  </header>
+
+  <div class="main">
+    <div class="input-box">
+      <div class="input-name">用户名</div>
+      <input type="text" class="input-item item-1" placeholder="Randy" />
+    </div>
+    <div class="input-box">
+      <div class="input-name">密码</div>
+      <input type="text" class="input-item item-2" placeholder="·········" />
+    </div>
+
+    <div class="input-box">
+      <div class="input-name">确认密码</div>
+      <input type="text" class="input-item item-3" placeholder="·········">
+      <div class="eye"></div>
+    </div>
+
+  </div>
+
+  <div class="button-blue" id="register_btn">
+
+    <h2>立即注册</h2>
+    <!-- <a href = "4-login.html">立即注册</a> -->
+  </div>
+
+  </div>
+
+  <script>
+    // var localStorage = window.localStorage;
+
+    $("#register_btn").click(function () {
+
+      var username = $(".item-1").val();
+      var password = $(".item-2").val();
+      var password_confirm = $(".item-3").val();
+
+      if (password == password_confirm) {
+        if(localStorage.getItem("users")==null){
+        var users = [];}
+        else if(localStorage.getItem("users").length !=0){
+          var users = JSON.parse(localStorage.getItem(users));
+        };
+
+
+        var user = {
+          username: username,
+          password: password
+        };
+        users.push(user);
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("注册成功");
+
+
+        $(".item-1").val("");
+        $(".item-2").val("");
+        $(".item-3").val("");
+        console.log(window.localStorage);
+      } else {
+        alert("密码不一致");
+      }
+
+      localStorage.getItem("username");
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>

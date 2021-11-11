@@ -1,0 +1,216 @@
+header {
+  height: 101.563rem;
+  position: relative;
+
+  .page-title {
+    font-family: SourceHanSansCN-Bold;
+    color: #f2f2f2;
+    position: absolute;
+    top: 7.625rem;
+    left: 2.438rem;
+    width: 15rem;
+    font-size: 2.25rem;
+  }
+
+  .bg {
+    width: 42.625rem;
+    height: 59.5rem;
+    position: absolute;
+    top: 15.438rem;
+    left: 2.125rem;
+    right: 2.125rem;
+    border-radius: 0.8rem;
+    background: url(../img/bg-short.png) no-repeat center/100%;
+    .section-1 {
+      width: 30.313rem;
+      height: 14.875rem;
+      position: absolute;
+      top: 2.563rem;
+      left: 2.875rem;
+      .movie-pic {
+        width: 8.25rem;
+        height: 14.75rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../img/movie-1@2x.png") no-repeat center/100%;
+      }
+      .text-1 {
+        color: #4073ff;
+        position: absolute;
+        top: 2.313rem;
+        left: 11.5rem;
+        font-size: 1.5rem;
+        line-height: 0.75rem;
+        // color: #4073ff;
+      }
+      .text-2 {
+        position: absolute;
+        top: 4.5rem;
+        left: 11.5rem;
+        font-size: 2rem;
+      }
+      .text-3 {
+        position: absolute;
+        top: 8.563rem;
+        left: 11.5rem;
+        font-size: 1.5rem;
+        line-height: 0.75rem;
+        color: #8890a3;
+      }
+      .seat-bar {
+        display: flex;
+        position: absolute;
+        bottom: 1.313rem;
+        left: 11.5rem;
+        .seat-box {
+          margin-right: 0.625rem;
+        }
+      }
+    }
+
+    .QR-box {
+      width: 24.375rem;
+      height: 40.563rem;
+      position: absolute;
+      left: 9.125rem;
+      right: 9.125rem;
+      bottom: 4.25rem;
+      border: 1px solid red;
+
+      [class*="text"] {
+        width: 24.375rem;
+      }
+      .text-1 {
+        position: absolute;
+        top: 0;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .text-2 {
+        position: absolute;
+        bottom: 5.125rem;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .text-3 {
+        position: absolute;
+        bottom: 0;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+        font-family: SourceHanSansCN-Bold;
+        font-size: 3rem;
+      }
+    }
+    .QR {
+      position: absolute;
+      left: 9.125rem;
+      right: 9.125rem;
+      bottom: 18.875rem;
+      width: 24.375rem;
+      height: 24.375rem;
+      background: url(../img/QR-big.png) no-repeat center/100%;
+    }
+
+    .text-container {
+      width: 35.875rem;
+      height: 30rem;
+      position: absolute;
+      bottom: 3.125rem;
+      left: 2.875rem;
+      .box-1 {
+        width: 35.875rem;
+        height: 16rem;
+        position: relative;
+
+        [class*="text"] {
+          position: absolute;
+        }
+        .text-1 {
+          top: 0;
+          left: 0;
+        }
+        .text-2 {
+          font-family: SourceHanSansCN-Bold;
+          font-size: 1.75rem;
+          left: 0;
+          top: 2.875rem;
+        }
+        .text-3 {
+          left: 0;
+          top: 7.938rem;
+        }
+        .text-1r {
+          top: 0;
+          left: 28.125rem;
+        }
+        .text-2r {
+          font-family: SourceHanSansCN-Bold;
+          font-size: 1.75rem;
+          top: 2.875rem;
+          left: 28.125rem;
+        }
+        .text-3r {
+          top: 7.938rem;
+          left: 28.125rem;
+        }
+        .text-4r {
+          position: absolute;
+          // width:12rem;
+          top: 11.375rem;
+          left: 28.125rem;
+        }
+        .seat-bar {
+          display: flex;
+          position: absolute;
+          // width:12rem;
+          top: 10.625rem;
+          left: 0;
+          .seat-box {
+            color: #fff;
+            margin-right: 0.625rem;
+          }
+        }
+      }
+      .box-2 {
+        width: 35.875rem;
+        height: 14rem;
+        position: relative;
+
+        [class*="part"] {
+          position: absolute;
+        }
+        .part-1 {
+          top: 2rem;
+          left: 0;
+        }
+        .part-2 {
+          top: 2rem;
+          right: 3.438rem;
+        }
+        .part-3 {
+          bottom: 2.75rem;
+          left: 0;
+          font-family: SourceHanSansCN-Bold;
+          font-size: 3rem;
+          letter-spacing: 0.813rem;
+        }
+        .part-4 {
+          background: url("../img/QR-small.png") no-repeat center/100%;
+          width: 8rem;
+          height: 8rem;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.button-blue{
+    position:absolute;
+    top:80rem;
+}

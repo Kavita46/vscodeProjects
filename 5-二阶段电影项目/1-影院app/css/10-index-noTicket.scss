@@ -1,0 +1,36 @@
+body {
+  position: relative;
+}
+footer {
+  .footer-bar {
+    .footer-1 {
+      background: url("../img/footer-1b.png") no-repeat center/100% 100%;
+    }
+    .footer-1::after{
+      color:rgb(11, 26, 63);
+    }
+  }
+}
+
+.score-board {
+  position: absolute;
+  // height: 2rem;
+  width: 44.75rem;
+  bottom: 8.25rem;
+  left: 2.563rem;
+  right: 2.563rem;
+  // border: 1px solid red;
+
+  .p1 {
+    text-align: left;
+    font-size: 2rem;
+    font-family: SourceHanSansCN-Bold;
+  }
+  .p2 {
+        position: absolute;
+    color: #0b193f;
+    top: 0;
+    right: 0;
+    right: 2.563rem;
+  }
+}
