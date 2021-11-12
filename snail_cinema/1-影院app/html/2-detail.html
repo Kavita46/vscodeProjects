@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/1.js"></script>
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="../css/font.css" /> -->
+    <link rel="stylesheet" href="../css/public.min.css" />
+    <link rel="stylesheet" href="../css/2-detail.css" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="section"></div>
+    </div>
+
+    <div class="main">
+      <div class="title font-bold">特色电影</div>
+      <div class="movie-box box1">
+        <a href="16-detail-digest.html">
+          <div class="movie-picture picture-1"></div>
+        </a>
+        <div class="movie-title">哥斯拉大战金刚</div>
+        <div class="movie-price">￥35.9起</div>
+        <div class="time-container">
+          <span> 放映时间</span>
+
+          <div class="time-box">
+            <div class="item">13:00</div>
+            <div class="item">15:00</div>
+            <div class="item">17:00</div>
+            <div class="item">19:00</div>
+            <div class="item">21:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="movie-box box1">
+        <a href="16-detail-digest.html">
+          <div class="movie-picture picture-1"></div>
+        </a>
+        <div class="movie-title">哥斯拉大战金刚</div>
+        <div class="movie-price">￥35.9起</div>
+        <div class="time-container">
+          <span> 放映时间</span>
+
+          <div class="time-box">
+            <div class="item">13:00</div>
+            <div class="item">15:00</div>
+            <div class="item">17:00</div>
+            <div class="item">19:00</div>
+            <div class="item">21:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="movie-box box1">
+        <a href="16-detail-digest.html">
+          <div class="movie-picture picture-1"></div>
+        </a>
+        <div class="movie-title">哥斯拉大战金刚</div>
+        <div class="movie-price">￥35.9起</div>
+        <div class="time-container">
+          <span> 放映时间</span>
+
+          <div class="time-box">
+            <div class="item">13:00</div>
+            <div class="item">15:00</div>
+            <div class="item">17:00</div>
+            <div class="item">19:00</div>
+            <div class="item">21:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="movie-box box2">
+        <a href="16-detail-digest.html">
+          <div class="movie-picture picture-2"></div>
+        </a>
+        <div class="movie-title">指环王:护戒使者</div>
+        <div class="movie-price">￥35.9起</div>
+        <div class="time-container">
+          <span> 放映时间</span>
+
+          <div class="time-box">
+            <div class="item">13:00</div>
+            <div class="item">15:00</div>
+            <div class="item">17:00</div>
+            <div class="item">19:00</div>
+            <div class="item">21:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let id = location.search.split("id=")[1];
+
+    console.log("id 是" + id);
+    $(function () {
+      $.ajax({
+        url: "https://www.fastmock.site/mock/bb4157f45a0b5ffdcb3f6d984517a6c0/woniuMovie/getAllOperas",
+        data: {},
+        dataType: "json",
+        success: function (data) {
+          console.log(data);
+          var index = parseInt(id) - 1;
+          let operas = data.operas;
+          let html = `
+              <div class="head">
+        
+        <div class="head-img" style = "background: url('${operas[index].img_src}') no-repeat center/100%">
+          <a href="1-cinema.html"> <div class="arrow-back"></div></a>
+        </div>
+        <div class="head-name font-bold">${operas[index].name}</div>
+      </div>
+      `;
+
+          $(".top").prepend(html);
+
+          // 渲染地址等
+
+          let html2 = `
+          <div class="address">
+     ${operas[index].address}
+        </div>
+        <div class="box">
+          <div class="box-bar">
+            <div class="location"></div>
+            <p>1.0km</p>
+          </div>
+
+          <span>15分钟</span>
+        </div>
+        <div class="box">
+          <div class="box-bar">
+            <div class="moneys"></div>
+          </div>
+
+          <span>￥30起</span>
+        </div>
+        <div class="box">
+          <div class="box-bar">
+            <div class="star"></div>
+            <p>4.8分</p>
+          </div>
+          <span>1000+评分</span>
+        </div>
+        `;
+
+          $(".section").append(html2);
+        },
+      });
+    });
+  </script>
+</html>

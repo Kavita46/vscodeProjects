@@ -1,5 +1,6 @@
 body {
   position: relative;
+  border: 1px solid green;
 }
 
 .top {
@@ -24,7 +25,6 @@ body {
 
 .top .head .head-img {
   position: relative;
-  background: url("../img/header-1@2x.png") no-repeat center/100%;
   height: 23.125rem;
 }
 
@@ -42,6 +42,7 @@ body {
 }
 
 .section .address {
+  width: 100%;
   font-size: 1.5rem;
   line-height: 1.75rem;
   color: #131f44;
@@ -105,9 +106,14 @@ body {
 }
 
 .main {
+  width: 100%;
   height: 56.25rem;
   position: absolute;
   bottom: 0;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
 }
 
 .main .title {
@@ -129,7 +135,7 @@ body {
 }
 
 .main .movie-box {
-  width: 36.75rem;
+  width: 100%;
   height: 19.688rem;
   position: relative;
   margin-left: 2rem;

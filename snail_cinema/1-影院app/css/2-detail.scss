@@ -1,6 +1,9 @@
 // 上半部分
 body {
   position: relative;
+
+  //   height: 101.563rem;
+  border:1px solid green;
 }
 
 .top {
@@ -21,7 +24,7 @@ body {
 
     .head-img {
       position: relative;
-      background: url("../img/header-1@2x.png") no-repeat center/100%;
+
       height: 23.125rem;
     }
   }
@@ -38,6 +41,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   .address {
+    width:100%;
     font-size: 1.5rem;
     line-height: 1.75rem;
     color: #131f44;
@@ -103,10 +107,14 @@ body {
 
 // 下半部分
 .main {
+  width:100%;
   height: 56.25rem;
   position: absolute;
   bottom: 0;
-  // border: 1px solid red;
+  overflow:scroll;
+  display:flex;
+  flex-wrap:wrap;
+  border: 1px solid red;
 
   .title {
     font-size: 2rem;
@@ -126,7 +134,7 @@ body {
   }
   .movie-box {
     // border: 1px solid red;
-    width: 36.75rem;
+    width:100%;
     height: 19.688rem;
     position: relative;
     margin-left: 2rem;

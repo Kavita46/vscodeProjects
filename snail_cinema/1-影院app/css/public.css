@@ -12,8 +12,12 @@
   font-size: 2rem;
 }
 
+html{
+  border:1px solid blue;
+}
 body {
   height: 101.563rem;
+  border: 1px solid;
 }
 
 header {
