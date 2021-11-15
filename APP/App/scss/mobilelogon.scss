@@ -1,0 +1,88 @@
+html{
+    font-size:100vw/750*50;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+@function size($num){ 
+    @return ($num/50) + rem; 
+  }
+#page{
+    width: 100%;
+    height:100vh;
+    background-color:#ffffff;
+    .header{
+        width: 100%;
+        height:size(280);
+        background-color: #0b193f;
+        background-image:url(../images/bg1r.png);
+        background-size:25%;
+        background-repeat: no-repeat;
+        background-position:right  top;
+        box-sizing: border-box;   
+        padding-left:size(40);
+        overflow: hidden;
+        img{
+            display: block;
+            margin:size(110) 0 size(30);
+            width: size(35);
+        }
+        p{
+            color: #f2f2f2;
+            font-size: size(36);
+        }
+    }
+    .main{
+        width: 100%;
+        padding:size(40);
+        box-sizing: border-box;      
+        color: #666666;
+        font-size:size(24); 
+        .box{
+            margin-top: size(30);
+            .item{
+                position: relative;
+                img{
+                position: absolute;
+                right:5%;
+                top:25%;
+                }
+            }
+            p{
+                margin-bottom:size(20);
+                color: #666666;
+                font-size: size(24);
+            }
+            input{
+                width: 100%;
+                height:size(96);
+                border-radius:size(16);
+                border: solid 1px #cccccc;
+            }
+            //js
+            #username-msg,#pass-msg,#affirmpass-msg{
+                color: red;
+                font-size: size(24);
+                // display: none;
+            }
+        }     
+        .loginbtn{
+            width: 100%;
+            background-color: #4073ff;
+            border: none;
+            border-radius: size(16);
+            height:size(96);
+            margin: size(60) 0 size(50);
+            color: #ffffff;
+            font-size:size(32);
+        }
+    }
+}
+
+.riter{
+    border: 1px solid green !important;
+}
+.error{
+    border: 1px solid red !important;
+}

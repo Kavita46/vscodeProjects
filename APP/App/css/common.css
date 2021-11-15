@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+a {
+    text-decoration: none;   
+}
+.clear-fix::after,
+.clear-fix::before{
+    content:'';
+    display: table;
+    clear:both;
+}
+
+.w {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+img {
+    vertical-align: middle;
+}
+
+.activity{
+    background-color: #f99135;
+    color: #fff !important;
+}

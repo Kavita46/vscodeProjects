@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/changepass.css">
+    <script src="./util/jquery-3.5.1.min.js"></script>
+    <script src="./js/changepass.js"></script>
+</head>
+
+<body>
+    <div id="page">
+        <div class="header">
+            <a href="javascript:;" id="preoff"><img src="images/back.png" alt=""></a>
+            <p>修改密码</p>
+        </div>
+        <div class="main">
+            <div class="oldpass box">
+                <p>旧密码</p>
+                <div class="item">
+                    <input type="text" id="used">
+                    <img src="images/eye.png" alt="">
+                    <p id="oldpass-msg"></p>
+                </div>
+            </div>
+            <div class="newpass box">
+                <p>新密码</p>
+                <div class="item">
+                    <input type="text" id="newpas">
+                    <img src="images/eye.png" alt="">
+                    <p id="newpass-msg"></p>
+                </div>
+            </div>
+            <div class="affirmpass box">
+                <p>确认密码</p>
+                <div class="item">
+                    <input type="text" id="repas">
+                    <img src="images/eye.png" alt="">
+                    <p id="affirmpass-msg"></p>
+                </div>
+                
+            </div>
+            <a href="">
+                <button class="loginbtn">确认修改</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

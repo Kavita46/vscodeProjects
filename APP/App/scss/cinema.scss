@@ -1,0 +1,233 @@
+@function toRem($a) {
+    @return ($a/50) + rem;
+}
+html {
+    font-size: 100vw/750 * 50;
+}
+header {
+    background-color: #0b193f;
+    #head {
+        height: toRem(280);
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            display: block;
+
+            background-image: url("../images/bg1r.png");
+            position: absolute;
+            background-size: cover;
+            right: 0px;
+            top: 0px;
+            width: toRem(179);
+            height: toRem(206);
+        }
+        .wrap {
+            margin-left: toRem(42);
+            margin-top: toRem(193);
+            color: #f2f2f2;
+            font-size: toRem(36);
+            display: flex;
+            align-items: center;
+            h3 {
+                font-weight: normal;
+                font-size: toRem(36);
+                margin-left: toRem(17);
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: toRem(44);
+                height: toRem(34);
+                background-image: url("../images/helo.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .addre_top {
+        height: toRem(90);
+        width: 100%;
+        padding: 0 toRem(52) 0 toRem(42);
+        box-sizing: border-box;
+        background-color: #233052;
+        line-height: toRem(90);
+        position: relative;
+        .ade_left {
+            display: flex;
+            align-items: center;
+            color: #f2f2f2;
+            span {
+                display: block;
+                width: toRem(30);
+                height: toRem(40);
+                // margin-right: toRem(24);
+                background-image: url(../images/addres.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .setcity {
+                // font-weight: normal;
+                
+                width: 100%;
+                height: toRem(90);
+                display: flex;
+                align-items: center;
+                select {
+                    font-size: toRem(28);
+                    overflow: hidden;
+                    height:toRem(60);
+                    width: 100%;
+                    border: none;
+                    background-color: #233052;
+                    outline: none;
+                    color: #fff;
+                    appearance: none;
+                    box-sizing: border-box;
+                    padding-left: toRem(24);
+                }
+            }
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: toRem(25);
+            height: toRem(20);
+            background-image: url(../images/down_.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: toRem(35);
+            right: toRem(55);
+            pointer-events: none;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    padding: toRem(40);
+    box-sizing: border-box;
+    #cinema {
+        width: 100%;
+        // padding: toRem(40);
+        .cinema_lis {
+            li {
+                display: flex;
+                margin-bottom: toRem(42);
+                .img_cm {
+                    margin-right: toRem(31);
+                    img {
+                        width: toRem(194);
+                        height: toRem(122);
+                        border-radius: toRem(14);
+                    }
+                }
+                .cinema_dec {
+                    
+                    
+                    h3{
+                        color: #000018;
+                        font-size: toRem(28);
+                        margin-bottom: toRem(23);
+                        margin-top: toRem(26);
+                    }
+                    .posi{
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            color: #141337;
+                            font-size: toRem(24);
+                        }
+                        b {
+                            display: block;
+                            background-image: url(../images/posi2.png);
+                            width: toRem(20);
+                            height: toRem(26);
+                            background-size: cover;
+                            margin-right: toRem(10) ;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+        
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: toRem(0);
+    padding: toRem(14) toRem(92);
+    box-sizing: border-box;
+    height: toRem(99);
+    background-color: #fff;
+
+    width: 100%;
+    #tobbar {
+        .baritem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li {
+                .home {
+                    background-image: url(../images/home.png);
+                    width: toRem(40);
+                    height: toRem(38);
+                    background-size: cover;
+                    margin: 0 auto;
+                }
+                .fot {
+                    font-size: toRem(20);
+                    color: #b6bac5;
+                    text-align: center;
+                    margin-top: toRem(9);
+                }
+                .enter {
+                    background-image: url(../images/home2.png);
+                }
+                .selt {
+                    color: #0b1a40;
+                }
+
+                // 影城
+                .movie_city {
+                    background-image: url(../images/fa.png);
+                    width: toRem(40);
+                    height: toRem(38);
+                    background-size: cover;
+                    margin: 0 auto;
+                }
+                .city {
+                    background-image: url(../images/fang.png);
+                }
+                //影片
+                .movies {
+                    background-image: url(../images/tab3.png);
+                    width: toRem(44);
+                    height: toRem(34);
+                    background-size: cover;
+                    // background-repeat: no-repeat;
+                }
+                .mov {
+                    background-image: url(../images/tab.png);
+                }
+
+                // 我的
+                .myself {
+                    background-image: url(../images/my.png);
+                    width: toRem(33);
+                    height: toRem(40);
+                    background-size: cover;
+                    margin: 0 auto;
+                }
+                .self {
+                    background-image: url(../images/mys.png);
+                }
+            }
+        }
+    }
+}

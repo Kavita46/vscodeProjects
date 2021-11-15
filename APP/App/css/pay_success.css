@@ -1,0 +1,169 @@
+html {
+  font-size: 6.66667vw;
+  background-color: #0b193f;
+}
+
+header #head {
+  height: 4.96rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header #head::before {
+  content: "";
+  display: block;
+  background-image: url("../images/bg1r.png");
+  position: absolute;
+  background-size: cover;
+  right: 0px;
+  top: 0px;
+  width: 3.58rem;
+  height: 4.12rem;
+}
+
+header #head .wrap {
+  margin-left: 0.8rem;
+  margin-top: 2.44rem;
+  color: #f2f2f2;
+}
+
+header #head .wrap h3 {
+  font-weight: normal;
+  font-size: 0.72rem;
+}
+
+main {
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+}
+
+main #order_main {
+  width: 100%;
+  height: 19.04rem;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  background-image: url(../images/sdf.png);
+  background-size: 100% 100%;
+}
+
+main #order_main .order_pay {
+  display: flex;
+  margin-bottom: 1.42rem;
+}
+
+main #order_main .order_pay .img_p {
+  margin-right: 0.98rem;
+}
+
+main #order_main .order_pay .img_p img {
+  width: 2.34rem;
+  height: 4.2rem;
+  border-radius: 0.28rem;
+}
+
+main #order_main .order_pay .orders {
+  font-size: 0.48rem;
+}
+
+main #order_main .order_pay .orders p {
+  color: #4073ff;
+  margin-top: 0rem;
+}
+
+main #order_main .order_pay .orders h3 {
+  margin: 0.46rem 0;
+  font-size: 0.64rem;
+  color: #000018;
+}
+
+main #order_main .order_pay .orders #addres_ord {
+  color: #8890a3;
+}
+
+main #order_main .data {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.98rem;
+  box-sizing: border-box;
+  border-bottom: 1px dashed #caced7;
+}
+
+main #order_main .data .timer h5 {
+  font-size: 0.48rem;
+  color: #000018;
+  margin-bottom: 0.48rem;
+  margin-top: 1.08rem;
+}
+
+main #order_main .data .timer p {
+  font-size: 0.56rem;
+  color: #000018;
+}
+
+main #order_main .data .timer .seat {
+  display: flex;
+}
+
+main #order_main .data .timer .seat li {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.28rem;
+  background-color: #4073ff;
+  color: #f2f2f2;
+  font-size: 0.4rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin-right: 0.2rem;
+}
+
+main #order_main .data .right {
+  width: 2.6rem;
+}
+
+main #order_main .coder {
+  display: flex;
+  justify-content: space-between;
+}
+
+main #order_main .coder h5 {
+  font-size: 0.48rem;
+  color: #000018;
+  margin-bottom: 0.48rem;
+  margin-top: 1.08rem;
+}
+
+main #order_main .coder p {
+  margin-top: 1.18rem;
+}
+
+main #order_main .coder .itecode {
+  width: 2.6rem;
+}
+
+main #order_main .coder .itecode .cod {
+  width: 2.56rem;
+  height: 2.56rem;
+  background-image: url(../images/er.png);
+  background-size: 100% 100%;
+  padding: 0.16rem;
+  box-sizing: border-box;
+}
+
+main #order_main .coder .itecode .cod img {
+  width: 2.24rem;
+  height: 2.24rem;
+}
+
+main .toindex a {
+  display: block;
+  width: 100%;
+  height: 1.92rem;
+  font-size: 0.64rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.92rem;
+  background-color: #4073ff;
+  border-radius: 0.28rem;
+  margin-top: 1.56rem;
+  margin-bottom: 0.4rem;
+}
