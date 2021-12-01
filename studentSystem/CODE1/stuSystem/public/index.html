@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src = "jquery.min.js"></script>
+  </head>
+  <body>
+
+   账号 <input type="text" name="" id="username"><br>
+   密码 <input type="text" name="" id="password"><br>
+    <button id="btn">登录按钮</button>
+    <button id="btn2">注册按钮</button>
+
+    <img  style = "visibility:hidden" id = "loading" src="./img/loading-buffering.gif" alt="" >
+
+
+    <img src="" alt="" id  ="head" >
+    <script>
+      $(function () {
+        $("#btn").click(function () {
+          $.ajax({
+            url: "/users/login",
+            type: "get",
+            dataType: "json",
+            data:{
+              username: $("#username").val(),
+              password: $("#password").val()
+            },
+
+            beforeSend(){
+                // 显示加载图标
+                $("#loading").css("visibility","visible");
+                console.log("发送之前");
+            },
+            success(res) {
+
+              console.log(res);
+              if(res.code==200){
+                // 显示头像
+                $("#head").attr("src",res.user.img);
+                console.log(res.user.img);
+                $("#head").css("visibility","visible");
+              }
+              else{
+                alert(res.msg);
+              }
+            },
+            error(res) {
+              console.log(res);
+              console.log("报错");
+            },
+            complete(res) {
+              console.log(res);
+              console.log("完成");
+            //   隐藏加载图标
+              $("#loading").css("visibility","hidden");
+            }
+
+          });
+        });
+
+        $("#btn2").click(function () {
+        
+          $.ajax({
+            url: "/users/register",
+            type: "post",
+            dataType: "json",
+            data:{
+              username: $("#username").val(),
+              password: $("#password").val()
+            },
+
+            beforeSend(){
+                // 显示加载图标
+                console.log("发送之前");
+            },
+            success: function (data) {
+              console.log(data);
+            },
+            error(res) {
+              console.log(res);
+              console.log("报错");
+            },
+            complete(res) {
+              console.log(res);
+              console.log("完成");
+            //   隐藏加载图标
+            }
+
+          });
+        });
+      })
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    function Person(name, age){
+        this.name = name;
+         this.age = age;
+         this.hobby = ['睡觉','吃饭','玩游戏'];
+    }
+     
+  
+// class 是一个语法糖, 改写组合模式
+    class Tecaher{
+
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+            this.hobby = ['睡觉','吃饭','打豆豆'];
+        }
+
+        sayName(){
+            console.log(this.name);
+        }
+    }
+
+
+    var student = new Person('张三',18);
+    var teacher = new Tecaher('李四',20);
+
+
+    console.log(student.hobby);
+    console.log(teacher.hobby);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="/0-Library/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>个人中心</h1>
+    <input type="file" multiple name="" id="head" value="浏览" />
+
+    <img src="" alt="" id="head_img" />
+
+    <script>
+      $("#head").change(function () {
+        var file = this.files[0];
+        let fd = new formData();
+        fd.append(file);
+        $.ajax({
+          url: "/users/upload_temp",
+          type: post,
+          data: fd,
+          // 让ajax不要处理文件请求
+          processData: false,
+          contentType: false,
+          // 让ajax不要处理文件请求
+          success(res) {
+            console.log(res);
+          },
+        });
+        // ajax完成
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!-- // 兔子速度快，但是要打盹，乌龟速度慢，但是不会停下，问谁能先到终点?
+// 兔子打盹采用随机解决（例如Math.random()<0.3才跑）
+// 1.定义兔子类、包含属性speed(速度 3米/1秒) 、
+// 包含赛跑的函数：通过计时器模拟兔子赛跑的过程，1秒执行一次，通过随机数判断数字<0.3打盹，跑到100米计时器结束，统计耗时。
+// 2.定义乌龟类，包含属性speed(速度 1米/1秒)， 
+// 包含赛跑的函数：通过计时器模拟乌龟赛跑的过程，1秒执行一次，不休息跑到100米计时器结束，统计耗时。 
+// 3.创建走一只乌龟和一支兔子，调用函数，开跑 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 兔子类
+      class rabbit {
+        constructor() {
+          this.speed = 3;
+          this.time = 0;
+          this.distance = 0;
+          this.sleepCount = 0;
+        }
+
+        run() {
+          var timer = setInterval(() => {
+            if (this.distance < 100) {
+              this.time++;
+            //   //console.log(this.time);
+              let random = Math.random();
+              //console.log("随机数是" + random);
+              if (random < 0.6) {
+                this.sleepCount++;
+                //console.log('兔子打盹' + this.sleepCount + "次");
+              } else {
+                //console.log('兔子跑了' + this.distance+ '米');
+                this.distance += this.speed;
+              }
+            } else if (this.distance >= 100) {
+              clearInterval(timer);
+              //console.log("一共花了" + this.time);
+              //console.log('兔子跑了' + this.distance + '米' + "花了" + this.time + '秒');
+              //console.log("兔子一共睡了" + this.sleepCount + "次");
+            }
+          }, 100);
+
+          return this.time;
+        }
+      }
+
+      class turtle {
+        constructor() {
+          this.speed = 1;
+          this.time = 0;
+          this.distance = 0;
+        }
+
+        run() {
+          var timer2 = setInterval(() => {
+            if (this.distance < 100) {
+              this.time++;
+              this.distance += this.speed;
+              //console.log('乌龟跑了' + this.time + '分钟' + '跑了' + this.distance + '米');
+            } else if (this.distance >= 100) {
+                 //console.log("乌龟跑完了");
+              clearInterval(timer2);
+            }
+          }, 100);
+          return this.time;
+        }
+      }
+
+      var rabbit_1 = new rabbit();
+      var turtle_1 = new turtle();
+    //   rabbit_1.run();
+
+
+
+    console.log(rabbit_1.run());
+
+    console.log(turtle_1.run());
+    //   if(rabbit_1.run() > turtle_1.run()) {
+    //     //console.log("兔子赢了");
+    //   } else {
+    //     //console.log("乌龟赢了");
+    //   }
+    //   //console.log(rabbit_1.time);
+    // //   这个时候打印不出来, 是计时器在异步吗?
+    // //   //console.log("兔子一共跑的时间是----------" + rabbit_1.time);
+    //   //console.log(rabbit_1.time)
+
+
+
+    // 
+    </script>
+  </body>
+</html>
