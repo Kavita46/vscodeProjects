@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Kavita46/vscodeProjects#readme",
   "dependencies": {
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "mongoose": "^6.0.14",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   }
 }
