@@ -10,8 +10,12 @@ var http = require('http');
 
 /**
  * Get port from environment and store in Express.
+ * 
+ * 
  */
 
+
+// TODO 这个port 跟app里监听的有什么区别
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 

@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-const {register , login} = require('../controllers/userController.js');
+const {register , login} = require('../controller/userController.js');
 
 /* GET users listing. */
 // 注册
-router.get('/', function(req, res, next) {
+router.get('/login', function(req, res, next) {
   res.send('respond with a resource');
 });
 
 
 // 登录
-router.get('/', function(req, res, next) {
+router.get('/register', function(req, res, next) {
   res.send('respond with a resource');
 });
 

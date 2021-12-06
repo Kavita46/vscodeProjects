@@ -9,10 +9,12 @@ require("./utils/db.js");
 
 // require了路由,一定会执行的代码
 var indexRouter = require('./routes/index');
-
-
 var usersRouter = require('./routes/users');
+var studentRouter = require('./routes/students');
+var classRouter = require('./routes/classes');
+const jwt = require('express-jwt');
 
+const jwtAuth = require("./utils/jwtAuth.js");
 
 var app = express();
 
@@ -24,10 +26,18 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+// 先经过public(所有静态页面)的路径
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 通过路径之后再使用拦截规则
+app.use(jwtAuth);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/students', studentRouter);
+app.use('/classes', classRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,7 +57,7 @@ app.use(function(err, req, res, next) {
 
 // module.exports = app;
 
-const portNum = 3000;
+const portNum = 3333;
 app.listen(portNum, function(){
   console.log('Server is running on port ' + portNum);
 });

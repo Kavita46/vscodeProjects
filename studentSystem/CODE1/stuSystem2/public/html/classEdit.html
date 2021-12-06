@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>修改</h1>
+
+    <p>班级名称<input type="text" name="" id="cname" /></p>
+
+    <button>确认修改</button>
+
+    <script>
+            $(function () {
+
+                let id = $("#id").val();
+              $("button").click(function () {
+                var cname = $("#cname").val();
+
+
+                $.post('/classes/editClass', {cname}, function(res){
+
+
+
+                });
+
+
+
+                
+              });
+            });
+    </script>
+  </body>
+</html>

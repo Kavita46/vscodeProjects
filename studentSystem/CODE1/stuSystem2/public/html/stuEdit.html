@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- <script src = '../js/401.js'></script> -->
+  </head>
+  <body>
+    <h1>修改</h1>
+
+    <p>姓名<input type="text" name="" id="sname" /></p>
+    <p>年龄<input type="text" name="" id="age" /></p>
+    <p>
+      性别 男<input type="radio" name="gender" value="男" /> 女<input
+        type="radio"
+        name="gender"
+        value="女"
+      />
+    </p>
+    <p>地址<input type="text" name="" id="address" /></p>
+    <p>
+      爱好:<br />
+
+      吃饭<input type="checkbox" name="hobby" value="吃饭" id="" /> 睡觉<input
+        type="checkbox"
+        name="hobby"
+        value="睡觉"
+        id=""
+      />
+      打豆豆<input type="checkbox" name="hobby" value="打豆豆" id="" />
+
+      <!-- <input type="text" name="" id="hobby" /></p> -->
+
+      <br />
+      <button id="btn_edit">确认修改</button>
+      <script>
+        $(function () {
+
+          $.ajaxSetup({
+          headers: {
+            Authorization: localStorage.token,
+          },
+
+          error(res) {
+            console.log(res);
+
+            if (res.status == 401) {
+              alert("请先登录");
+              top.location.href = "/html/index.html";
+            }
+          },
+        });
+
+
+
+          // 从地址里取得ID
+          let _id = location.search.split("=")[1];
+
+          console.log(_id);
+          $.get("/students/getById", { _id }, function (res) {
+            const { sname, gender, address, age, hobby } = res.result;
+
+            $("#sname").val(sname);
+            $("#address").val(address);
+            $("#age").val(age);
+
+            //   let
+            $("input[name='hobby']").val(hobby);
+            //   $("#hobby").val(hobby);
+            $(`input[value=${gender}`).attr("checked", true);
+            // 渲染已有信息
+
+            // 修改信息
+
+            $("#btn_edit").click(function () {
+              var hobbies = [];
+              // 获得多选框下已经被选中的对象
+              $("input[type='checkbox']:checked").each((index, item) => {
+                hobbies.push($(item).val());
+              });
+
+              console.log(hobbies);
+              $.ajax({
+                url: "/students/editStudent",
+                type: "post",
+                data: {
+                    _id:_id,
+                  sname: $("#sname").val(),
+                  age: $("#age").val(),
+                  address: $("#address").val(),
+                  hobby: hobbies.join(),
+                  gender: $("input[name='gender']:checked").val(),
+                },
+                success(res){
+                    console.log(res);
+
+                    location.href = "/html/stuList.html"
+                }
+              });
+            });
+          });
+        });
+      </script>
+    </p>
+  </body>
+</html>

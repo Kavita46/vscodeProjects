@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      li a {
+        /* 让a标签在li里居中 */
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        white-space: nowrap;
+      }
+      .son {
+        display: none;
+      }
+      .parent {
+        width: 120px;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      li {
+        border-radius: 5px solid cyan;
+        border: 1px solid blue;
+      }
+    </style>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/401.js"></script>
+  </head>
+  <body>
+    <div id="head">
+      <h1 id="welcome">欢迎您</h1>
+    </div>
+
+    <div style="display: flex">
+      <div id="left">
+        <!-- 左侧菜单 -->
+        <ul>
+          <li class="parent">
+            学生管理
+            <ul class="son">
+              <li><a href="./stuAdd.html" target="r">学生添加</a></li>
+              <br />
+              <li><a href="./stuList.html" target="r">学生列表</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="parent">
+            班级管理
+            <ul class="son">
+              <li><a href="./classAdd.html" target="r">班级添加</a></li>
+              <br />
+              <li><a href="./classList.html" target="r">班级列表</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- iFrame框架显示内容 -->
+      <div style="margin-left: 100px">
+        <iframe
+          frameborder="0"
+          style="width: 800px; height: 600px"
+          src="./stuList.html"
+          name="r"
+        ></iframe>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        //  let user =  JSON.parse(localStorage.getItem('user'));
+        // $('#welcome').html('欢迎您, ' + user.username + '管理员');
+
+$.get("/users/getUserInfo", function(res){
+
+
+})
+
+
+
+        $(".parent").click(function () {
+          $(this).children(".son").toggle(300);
+        });
+      });
+    </script>
+  </body>
+</html>
