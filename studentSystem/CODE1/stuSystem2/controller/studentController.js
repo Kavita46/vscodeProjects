@@ -22,7 +22,6 @@ async function deleteStudent(req, res, next) {
 
 
 async function editStudent(req, res, next) {
-
     console.log("req.body")
     const { _id, sname, age, address, gender, hobby } = req.body;
     // TODO 修改函数
