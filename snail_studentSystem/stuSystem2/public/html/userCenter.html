@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/401.js"></script>
+  </head>
+  <body>
+    <h1>个人中心</h1>
+    <input type="file" name="" id="upload" />
+    <br />
+    <img width="100px" src="" id="head" alt="" />
+
+    <br />
+
+    <button id="confirm">确认上传</button>
+
+    <br />
+    用户名<input type="text" name="" id="username" /> <br />
+    密码<input type="text" name="" id="password" /> <br />
+    <!-- 用户ID<input type="text" name="" id="userId" /> <br /> -->
+    <!-- 头像路径<input type="text" name="" id="headFile" /> -->
+    <br />
+
+    <input type="button" value="修改信息" id="update" />
+
+    <script>
+      let filename = "";
+      let _id = "";
+      let password = "";
+      let originSrc = "";
+      $(function () {
+        // 渲染初始信息
+        $.get("/users/getUserInfo", function (res) {
+          _id = res.user._id;
+          password = res.user.password;
+          originSrc = res.user.head;
+          $("#username").val(res.user.username);
+          $("#password").val(res.user.password);
+          // $("#userId").val(res.user._id);
+          // $("#headFile").val(res.user.head);
+          // 这里是原始头像
+
+          console.log(res.user.head);
+          $("#head").attr("src", "/images/" + res.user.head);
+        });
+
+        // 上传至临时,并且展示出来
+        $("#upload").change(function () {
+          let fd = new FormData();
+          const file = this.files[0];
+          console.log(file);
+          fd.append("file", file);
+          $.ajax({
+            url: "/users/uploadTemp",
+            type: "post",
+            data: fd,
+            // XXX 让ajax 不要处理文件内容
+            processData: false,
+            contentType: false,
+            success(res) {
+              console.log("res 是 ");
+              console.log(res);
+              // 这里是更改后的头像
+              filename = res.head.filename;
+              $("#head").attr("src", "/temp/" + res.head.filename);
+            },
+          });
+        });
+
+        $("#confirm").click(function () {
+          console.log("确认修改");
+
+          $.get("/users/uploadConfirm", { filename }, function (res) {
+            console.log(res);
+            console.log(res);
+            if (res.code === 200) {
+              alert("上传成功");
+            } else {
+              alert("上传失败");
+            }
+          });
+        });
+
+        $("#update").click(function () {
+          // 如果没有修改头像
+          if (filename == "") {
+            filename = originSrc;
+            console.log(filename);
+          }
+          $.ajax({
+            url: "/users/updateUserInfo",
+            type: "post",
+            data: {
+              _id: _id,
+              username: $("#username").val(),
+              password: $("#password").val(),
+              head: filename,
+            },
+
+            success(res) {
+              console.log(res);
+
+              alert("修改成功");
+
+              localStorage.removeItem("token");
+              top.location.href = "/html/index.html";
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

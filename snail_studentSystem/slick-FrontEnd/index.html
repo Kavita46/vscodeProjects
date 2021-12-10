@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /*设置body*/
+      body {
+        margin: 0;
+        padding: 0;
+        font: 16px "微软雅黑", sans-serif;
+      }
+      /*设置轮播图的边框相对定位*/
+      .play-box {
+        position: relative;
+        width: 500px;
+        height: 313px;
+        margin: 100px auto;
+        border: 1px solid #ccc;
+      }
+      /*设置边框下的图片*/
+      .play-box img {
+        width: 500px;
+        height: 313px;
+        border: 0;
+      }
+      /*设置超链接下的所有图片不显示*/
+      .play-box a {
+        display: block; /*现在是文本状态，要修改为块状*/
+        overflow: hidden; /*隐藏超过边框高度的图片*/
+        opacity: 0; /*默认图片为全透明*/
+        height: 0; /*默认高度为0*/
+        transition: opacity 0.5s; /*默认透明度过渡时间为0.5s*/
+      }
+      /*设置当前图片显示*/
+      #imgList a.current {
+        opacity: 1; /*默认图片显示*/
+        height: auto; /*默认高度为自动*/
+      }
+      /*设置列表ul*/
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      /*设置列表ul下的li*/
+      ul li {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+        font-size: 0;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+        float: left;
+      }
+      /*当图片变化时，图标也跟着变化*/
+      ul li.current {
+        background-color: red;
+      }
+      /*设置图标绝对定位*/
+      .iconList {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -45px;
+      }
+      /*设置向左向右图标*/
+      .sliderbar {
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        width: 30px;
+        height: 50px;
+        font-family: simsun;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        background-color: #000;
+        opacity: 0.6;
+        display: none;
+        cursor: pointer;
+      }
+      /*设置向左图标*/
+      .slidebar-left {
+        left: 0;
+      }
+      /*设置向右图标*/
+      .slidebar-right {
+        right: 0;
+      }
+    </style>
+
+
+    <script src = 'node_modules/jquery/dist/jquery.min.js'></script>
+  </head>
+  <body>
+    <!--轮播图边框-->
+    <div id="playBox" class="play-box">
+      <!--图片列表-->
+      <div id="imgList">
+        </div>
+        <script>
+            $(document).ready(function () {
+              //设置变量速度为3秒
+              var speed = 2000;
+              //循环变量为1，是避免定时器再等第一章图片
+              var m = 1;
+              //设置定时器的函数和时间
+              var playTimer = setInterval(runPlay, speed);
+              //定时函数
+              function runPlay() {
+                //判读如果m大于4，就设置m=0
+                if (m > 4) {
+                  m = 0;
+                }
+                //调用controlPlay函数来控制图片变化
+                controlPlay(m);
+                m++;
+              }
+              //通过参数控制图片的变化,图标变化
+              function controlPlay(n) {
+                $("#imgList a").removeClass("current").eq(n).addClass("current");
+                $("ul li").removeClass("current").eq(n).addClass("current");
+              }
+              //给整个轮播图绑定鼠标事件，当鼠标放到轮播图上停止轮播图，当鼠标离开轮播图继续滚动
+              $("#playBox")
+                .mouseenter(function () {
+                  //停止定时
+                  clearInterval(playTimer);
+                  //左右控制按钮显示
+                  $(".sliderbar").fadeIn(300);
+                })
+                .mouseleave(function () {
+                  //重新开始定时
+                  playTimer = setInterval(runPlay, speed);
+                  //左右控制按钮隐藏
+                  $(".sliderbar").fadeOut(300);
+                });
+              //给li绑定控制图标绑定单击事件
+              $("ul li")
+                .click(function () {
+                  controlPlay($(this).index());
+                  //鼠标点击过后修改m的值
+                  m = $(this).index() + 1;
+                })
+                .hover(function () {
+                  //给li取消鼠标悬停的冒泡
+                  return false;
+                });
+              //给左右的控制图标取消 鼠标悬停的冒泡
+              $(".sliderbar").hover(function () {
+                return false;
+              });
+              //下一张图片
+              $(".slidebar-right").click(function () {
+                //判断m的值
+                if (m > 4) {
+                  m = 0;
+                }
+                //显示下一站图片
+                controlPlay(m);
+                m++;
+              });
+              //上一张图片
+              $(".slidebar-left").click(function () {
+                //m默认显示下一张，所以为了显示上一张，m必须减2
+                m -= 2;
+                if (m < 0) {
+                  m = 4;
+                }
+                //显示上一张图片
+                controlPlay(m);
+                //保证m要显示下一张
+                m++;
+              });
+            });
+          </script>
+
+        <script>
+          $(function () {
+            $.get("http://localhost:3333/banners/getBanners", function (res) {
+              console.log(res);
+
+              res.result.forEach((item,index)=>{
+                  var imgHtml;
+if(index == 1){
+    imgHtml = `<a href="#" target="_blank" class="current">
+          <img src="http://localhost:3333/banner_imgs/${item.picName}" />
+        </a>`
+}else{
+    imgHtml = `<a href="#" target="_blank">
+          <img src="http://localhost:3333/banner_imgs/${item.picName}" />
+        </a>`
+
+}
+
+                $("#imgList").append(imgHtml);
+            
+              })
+            });
+          });
+
+        </script>
+      </div>
+      <!--图标列表-->
+      <div class="iconList">
+        <ul>
+          <li class="current">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+      </div>
+      <!--左箭头-->
+      <div class="sliderbar slidebar-left"><</div>
+      <!--右箭头-->
+      <div class="sliderbar slidebar-right">></div>
+    </div>
+
+  </body>
+</html>
