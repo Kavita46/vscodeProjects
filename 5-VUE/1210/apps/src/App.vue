@@ -3,21 +3,36 @@
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>
    -->
 
-   <eat></eat>
-   <change></change>
+  <div>
+    <eat></eat>
+    <change></change>
+    <cart></cart>
+    <compute></compute>
+    <todo></todo>
+  </div>
 </template>
+
+
+   <!-- <todo></todo>
+   -->
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import eat from './components/eat.vue'
-import change from './components/change.vue'
+import eat from "./components/eat.vue";
+import change from "./components/change.vue";
+import cart from "./components/cart.vue";
+import compute from "./components/compute.vue";
+
+import todo from './components/todo.vue'
 export default {
-  name: 'App',
+  name: "App",
   components: {
-   eat,
-   change
-  }
-}
+    eat,
+    change,
+    cart,
+    compute,todo
+  },
+};
 </script>
 
 <style>
