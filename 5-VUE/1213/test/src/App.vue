@@ -7,18 +7,28 @@
     <!-- <hear></hear> -->
 
     <demo1></demo1>
+    <demo2></demo2>
+    <demo3></demo3>
+
+  <father></father>
   </div>
 </template>
 
 <script>
-import demo1 from './components/demo1.vue'
+import father from './components/1214demo/father.vue'
+import demo3 from './components/demo3.vue'
+import demo1 from "./components/demo1.vue";
+import demo2 from "./components/demo2.vue";
 // import HelloWorld from "./components/HelloWorld.vue";
 // rom "./components/selectAll.vue";
 // import hear from "./components/hear.vue";
 export default {
   name: "App",
   components: {
-    demo1
+    demo1,
+    demo2,
+    demo3,
+    father
     // HelloWorld,
 
     // hear

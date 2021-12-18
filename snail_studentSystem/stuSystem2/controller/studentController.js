@@ -19,6 +19,8 @@ async function editStudent(req, res, next) {
     const { _id, sname, age, address, gender, hobby, cla_id } = req.body;
     // TODO 修改函数
     // BUG 这里hobby空值的时候会成为一个带空白的数组
+
+    console.log('这里的hobby是' + hobby)
     const result = await studentModel.updateOne({ _id }, { sname, age, address, gender, cla_id, hobby: hobby.split(",") });
     res.send(
         req.body

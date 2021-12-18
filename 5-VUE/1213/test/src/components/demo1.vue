@@ -36,12 +36,7 @@ export default {
       },
       set(val) {
 
-          this.todoList.forEach(item => {
-            item.checked = val;
-          });
-        // this.h1 = val;
-        // this.h2 = val;
-        // this.h3 = val;
+          this.todoList.forEach(item =>   item.checked = val         );
       },
     },
   },

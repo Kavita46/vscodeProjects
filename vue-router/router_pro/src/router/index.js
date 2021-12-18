@@ -84,6 +84,16 @@ router.beforeEach((to, from, next)=>{
   console.log(to);
   console.log(from);
   console.log(next);
-  localStorage.getItem('token')
+  
+
+  if(to.path/includes('/home')){
+    next()
+  }else{
+    if(localStorage.getItem('token')){
+      next()
+    }else{
+      
+    }
+  }
 })
 export default router

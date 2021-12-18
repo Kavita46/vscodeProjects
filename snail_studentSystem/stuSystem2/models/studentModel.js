@@ -14,24 +14,29 @@ const mongoose = require('mongoose');
 // 设置Schema(集合的字段)
 const Schema = mongoose.Schema;
 const studentSchema = new Schema({
-    sname:String,
+    sname: String,
     // String,Number, Object, Array
-    address:String,
-    age:Number,
-    gender:String,
-    hobby:Array,
-    cla_id:{
-        type:Schema.Types.String,
-        ref:"classes"
+    address: String,
+    age: Number,
+    gender: String,
+    hobby: { type: Array, default: [] },
+    cla_id: {
+        type: Schema.Types.String,
+        ref: "classes",
+        default: '61aae2cea97579378d12c169'
     },
-    flag:Number,
-    imgs:String
-   },{
-        // 避免产生无意义字段
-        versionKey:false}
+    flag: {
+        type: Number,
+        default: 1
+    },
+    imgs: { type: String, default: 'head.png' }
+}, {
+    // 避免产生无意义字段
+    versionKey: false
+}
 );
 
 // model(name, schema, collectionName) collectionName 是数据库里的集合名字
 const studentModel = mongoose.model("studentModel", studentSchema, "students")
 // 后端暴露
-module.exports  = studentModel;
+module.exports = studentModel;

@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 可以使用跨域来访问
 app.use(allowCrossDomain);
 // 通过路径之后再使用拦截规则
-app.use(jwtAuth);
+// app.use(jwtAuth);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -76,7 +76,7 @@ app.use(function(err, req, res, next) {
 
 // module.exports = app;
 
-const portNum = 3333;
+const portNum = 7777;
 app.listen(portNum, function(){
   console.log('Server is running on port ' + portNum);
 });
