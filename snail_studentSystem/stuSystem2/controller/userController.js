@@ -75,21 +75,17 @@ async function updateUserInfo(req, res){
 
 
 async function uploadTemp(req, res, next) {
-
   let imageUpload = await uploadFiles();
-
   imageUpload(req, res, err => {
     if (err) {
-
       console.log('异常');
       res.send({ code: 202 })
     }
     else {
       console.log(req.files[0])
-
       // 这里 如果 request不send  的话就会被挂起
-
-      res.send({ head: req.files[0] });
+      res.send({head:req.files[0].filename})
+      // res.send({ head: req.files[0] });
     }
   })
 }
