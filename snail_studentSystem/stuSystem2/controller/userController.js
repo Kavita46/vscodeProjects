@@ -42,7 +42,7 @@ async function login(req, res, next) {
 
     );
 
-    res.send({ result, token: "Bearer " + token });
+    res.send({ result, token: "Bearer " + token, code:200 });
   } else {
 
     // BUG 登录失败的时候这个202进入不了

@@ -186,6 +186,7 @@ export default {
     // let res = await this.$store.dispatch("getStuList");
   },
 
+
   mounted() {
     this.getList();
   },

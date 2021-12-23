@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const {getStudents,deleteStudent, editStudent, getById, searchStudent
-,getByPages, addStudent} = require('../controller/studentController');
+,getByPages, addStudent, uploadTemp, uploadConfirm} = require('../controller/studentController');
 
 
 // 查询所有学生
@@ -18,4 +18,8 @@ router.get('/searchStudent', searchStudent)
 router.get('/getByPages', getByPages);
 
 router.post('/addStudent', addStudent)
+// 预上传
+router.post('/uploadTemp', uploadTemp);
+// 确认上传
+router.get('/uploadConfirm', uploadConfirm)
 module.exports = router;

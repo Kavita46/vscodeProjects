@@ -19,9 +19,7 @@ const classModel = require("../models/classModel");
 
 
 async function getClasses(req, res){
-
     const result = await classModel.find();
-
     res.send({
         result
     });

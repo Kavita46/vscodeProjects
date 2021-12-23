@@ -1,5 +1,7 @@
 const studentModel = require("../models/studentModel");
 const classModel = require("../models/classModel");
+const { uploadFiles, moveFiles, deleteFiles } = require("../utils/handleFiles");
+
 // 1-查询所有学生函数
 async function getStudents(req, res, next) {
     const result = await studentModel.find().populate("cla_id");
@@ -15,13 +17,29 @@ async function deleteStudent(req, res, next) {
 }
 // 3-修改学生函数
 async function editStudent(req, res, next) {
-    console.log("req.body")
-    const { _id, sname, age, address, gender, hobby, cla_id } = req.body;
+
+    console.log('前端传过来的是')
+    console.log(req.body)
+    const { _id,imgs, sname, age, address, gender, hobby, cla_id } = req.body;
     // TODO 修改函数
     // BUG 这里hobby空值的时候会成为一个带空白的数组
 
+    // 需要传进来一个字符串
     console.log('这里的hobby是' + hobby)
-    const result = await studentModel.updateOne({ _id }, { sname, age, address, gender, cla_id, hobby: hobby.split(",") });
+    const result = await studentModel.updateOne({ _id }, { imgs,sname, age, address, gender, cla_id, hobby: hobby.split(",") });
+
+    console.log('head的值是' + imgs);
+    // 移动图片
+
+    let fromPath = './public/temp';
+    let toPath = './public/images';
+
+    let obj = { fromPath, toPath, filename:imgs };
+    // 移动文件
+    moveFiles(obj);
+    // 删除临时文件的文件夹
+    deleteFiles('./public/temp/');
+
     res.send(
         req.body
     )
@@ -113,5 +131,50 @@ async function addStudent(req, res, next) {
     )
 }
 
+// 上传头像图片方法
 
-module.exports = { getStudents, deleteStudent, editStudent, getById, searchStudent, getByPages, addStudent };
+
+async function uploadTemp(req, res, next) {
+    let imageUpload = await uploadFiles();
+    imageUpload(req, res, err => {
+        if (err) {
+            console.log('异常');
+            res.send({ code: 202 })
+        }
+        else {
+            console.log(req.files[0])
+            // 这里 如果 request不send  的话就会被挂起
+            res.send({ head: req.files[0].filename })
+            // res.send({ head: req.files[0] });
+        }
+    })
+}
+
+async function uploadConfirm(req, res, next) {
+    const { filename } = req.query;
+    console.log('现在的filename是' + filename)
+    let fromPath = './public/temp';
+    let toPath = './public/images';
+
+    let obj = { fromPath, toPath, filename };
+    // 移动文件
+    moveFiles(obj);
+    // 删除临时文件的文件夹
+    deleteFiles('./public/temp/');
+    // BUG 这里可以上传任意文件,如何验证文件是图片?
+    // TAG 如果/images目录里含有文件名为filename的文件
+    if (fs.existsSync('./public/images/' + filename)) {
+        res.send({ code: 200 });
+    } else {
+        res.send({ code: 201 });
+    }
+
+
+    // 最后修改数据库里的头像
+
+
+}
+
+
+
+module.exports = { uploadTemp, uploadConfirm, getStudents, deleteStudent, editStudent, getById, searchStudent, getByPages, addStudent };

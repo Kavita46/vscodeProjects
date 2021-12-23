@@ -10,7 +10,7 @@ require("./utils/db.js");
 
 var allowCrossDomain = function(req,res,next){
   // 只允许这个域名跨域
-  // res.header('Access-Control-Allow-Origin','https://localhost:3333');
+  // res.header('Access-Control-Allow-Origin','https://localhost:8084');
 res.header('Access-Control-Allow-Origin','*');
 res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
 res.header('Access-Control-Allow-Headers','X-Requested-With,Origin,Accept,Content-Type,Authorization');
