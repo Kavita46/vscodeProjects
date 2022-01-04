@@ -47,10 +47,11 @@
         <el-table-column label="操作">
           <!-- XXX 如果要获得点击按钮的那一栏的值,一定要加template -->
           <template slot-scope="scope">
-            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+            <el-button v-privilege="'编辑'" size="mini" @click="handleEdit(scope.$index, scope.row)"
               >编辑</el-button
             >
             <el-button
+            v-privilege="'删除'"
               size="mini"
               type="danger"
               @click="handleDelete(scope.$index, scope.row)"

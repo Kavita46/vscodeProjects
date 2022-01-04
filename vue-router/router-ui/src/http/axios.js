@@ -14,7 +14,7 @@ console.log(config);
     return config.data;
 }, err=>{if(err.response.status ==401){
     alert('请登录');
-    router.push('/login');
+    router.push('/user/login');
 }})
 
 

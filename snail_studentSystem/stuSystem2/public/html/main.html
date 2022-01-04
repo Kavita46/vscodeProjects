@@ -44,6 +44,7 @@
       <h1 id="welcome">欢迎您</h1>
       <img src="" alt="" id="userHead" width  ='70px' />
       <a href="./userCenter.html">个人中心</a>
+      <button id='btn_quit'>注销</button>
     </div>
 
     <div style="display: flex">
@@ -102,6 +103,15 @@
         $(".parent").click(function () {
           $(this).children(".son").toggle(300);
         });
+
+
+
+        $('#btn_quit').click= function (){
+          alert('注销')
+          console.log('注销');
+          // localStorage.removeItem('token');
+        }
+        
       });
     </script>
   </body>

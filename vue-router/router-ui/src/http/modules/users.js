@@ -32,7 +32,13 @@ function uploadTemp(data) {
         method: 'post',
         data: data
     })
+}
 
+function getUserInfo(){
+    return axios({
+        url: `/${USERS}/getUserInfo`,
+        method: 'get'
+    })
 }
 
 
@@ -41,5 +47,5 @@ function uploadTemp(data) {
 
 
 export default {
-    register, login,uploadTemp
+    register, login,uploadTemp,getUserInfo
 }

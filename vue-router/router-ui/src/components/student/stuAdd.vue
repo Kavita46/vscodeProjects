@@ -1,9 +1,9 @@
 <!-- 我的页面 -->
 <template>
   <div>
-    {{ student }}
+    <!-- {{ student }} -->
 
-    {{student.hobby.join(",")}}
+    <!-- {{student.hobby.join(",")}} -->
     <el-form ref="form" :model="student" label-width="80px">
       <el-form-item label-width="500px" label="学生姓名">
         <el-input v-model="student.sname"></el-input>

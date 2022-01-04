@@ -2,9 +2,16 @@
 <template>
   <div>
     <div class="background">
+      <div>
+        <!-- <img  v-for = 'item in imgs' :key = 'item.url'   v-lazy="item.url" width="300px" height = "300px" display = 'block' /> -->
+      </div>
+
       <img :src="imgSrc" width="100%" height="100%" alt="" />
     </div>
 
+    <div>
+      <img src="" alt="" />
+    </div>
     <div class="main">
       <el-card class="box-card">
         <div slot="header" class="clearfix">
@@ -21,7 +28,7 @@
         <div id="btn_bar">
           <el-button @click="login">登录</el-button>
 
-          <el-button>注册</el-button>
+          <el-button @click='register'>注册</el-button>
         </div>
       </el-card>
     </div>
@@ -29,54 +36,103 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
+import { createNamespacedHelpers } from "vuex";
 
-const {mapState, mapMutations,mapActions } = createNamespacedHelpers('user');
-
-
+const { mapState, mapMutations, mapActions } = createNamespacedHelpers("user");
 
 export default {
   components: {},
   data() {
     return {
       // imgSrc: require("../"),
-
       imgSrc: require("../../assets/2.jpg"),
-
       user: {
         username: "",
         password: "",
       },
+
+      imgs: [
+        {
+          id: 1,
+          url: require("../../assets/h2.jpg"),
+        },
+        {
+          id: 2,
+          url: require("../../assets/h3.jpg"),
+        },
+        {
+          id: 3,
+          url: require("../../assets/h4.jpg"),
+        },
+        {
+          id: 4,
+          url: require("../../assets/h1.jpg"),
+        },
+      ],
     };
   },
   computed: {},
   watch: {},
   methods: {
-
-...mapMutations(['CHANGE_USER']),
-
+    ...mapMutations(["CHANGE_USER"]),
 
     async login() {
       try {
         let res = await this.api.users.login(this.user);
         if (res.result) {
-          // alert("登录成功");
           this.$message({
             message: "登录成功",
             type: "success",
-            duration:1000
+            duration: 1000,
           });
           this.CHANGE_USER(res.result);
-console.log(res.result);
+          console.log(res.result);
+
+          console.log(res.token);
+          localStorage.token = res.token;
           // this.CHANGE_USER({username:'zzz', password:'123'})
           this.$router.push("/student");
         } else {
-          alert("登录失败,用户名或密码错误");
+          this.$message({
+            message: "用户名或密码错误,登录失败",
+            type: "error",
+            duration: 1000,
+          });
+
+          this.user = {};
         }
       } catch (e) {
         alert("服务器异常");
       }
     },
+
+    async register() {
+      try {
+        let res = await this.api.users.register(this.user);
+        if (res.result) {
+          this.$message({
+            message: "注册成功",
+            type: "success",
+            duration: 1000,
+          });
+        } else {
+          this.$message({
+            message: "注册失败",
+            type: "error",
+            duration: 1000,
+          });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
+
+  created() {
+    if (localStorage.token) {
+      alert("您已经登录,正在跳转主页");
+      this.$router.push("/student");
+    }
   },
 };
 </script>

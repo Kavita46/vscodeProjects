@@ -6,12 +6,14 @@
         <!-- <span style = 'margin-left:-300px'>欢迎您 xxx 用户</span> -->
         <template>
           <div>
-            <span style="position: absolute; top: 0; left: 20px"
-              >欢迎{{user.username}}用户</span
+            <span style="position: absolute; top: 0; left: 200px; color:red"
+              >欢迎{{ user.username }}用户,   权限为{{user.privilege}}</span
+
+           
             >
 
-            <span> vuex的数据{{user}}</span>
-            <span style="color: blue">学生管理系统</span>
+            <!-- <span> vuex的数据{{ user }}</span> -->
+            <!-- <span style="color: blue">学生管理系统</span> -->
           </div>
         </template>
       </el-header>
@@ -20,6 +22,8 @@
           <Aside></Aside>
         </el-aside>
         <el-main>
+          <h1>欢迎来到学生管理系统</h1>
+          <el-button @click="quit">注销</el-button>
           <BreadCrumb></BreadCrumb>
           <br />
           <router-view></router-view>
@@ -35,10 +39,12 @@ const { mapState, mapMutations } = createNamespacedHelpers("user");
 
 import Aside from "../views/Aside.vue";
 import BreadCrumb from "../views/BreadCrumb.vue";
+import myChart from "../views/myChart.vue";
 export default {
   components: {
     Aside,
     BreadCrumb,
+    myChart,
   },
   data() {
     return {};
@@ -49,7 +55,13 @@ export default {
     }),
   },
   watch: {},
-  methods: {},
+  methods: {
+    quit() {
+      localStorage.removeItem("token");
+      this.$message.success("注销成功");
+      this.$router.push("/user/login");
+    },
+  },
 };
 </script>
 

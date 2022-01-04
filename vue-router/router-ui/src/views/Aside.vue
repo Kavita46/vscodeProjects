@@ -13,19 +13,18 @@
     >
       <el-submenu index="item.index" v-for="item in menus" :key="item.index">
         <template slot="title">
-          <i class="el-icon-user-solid"></i>
+          <i :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-
+        <!-- <el-menu-item-group> -->
+          <!-- <template slot="title">分组</template> -->
           <el-menu-item
             v-for="subItem in item.submenus"
             :key="subItem.index"
             :index="subItem.index"
             >{{ subItem.title }}
           </el-menu-item>
-        </el-menu-item-group>
+        <!-- </el-menu-item-group> -->
       </el-submenu>
     </el-menu>
   </div>
@@ -38,8 +37,9 @@ export default {
     return {
       menus: [
         {
-          index: "1",
+          index: "/student",
           title: "学生管理",
+          icon:"el-icon-user-solid",
           submenus: [
             {
               index: "/student/stuList",
@@ -49,10 +49,7 @@ export default {
               index: "/student/stuAdd",
               title: "新增学生",
             },
-            {
-              index: "/student/stuUpdate",
-              title: "修改学生",
-            },
+           
             {
               index: "/student/stuSync",
               title: "测试sync",
@@ -62,20 +59,26 @@ export default {
         {
           index: "2",
           title: "班级管理",
+          icon:"el-icon-s-grid",
           submenus: [
             {
-              index: "/class/classList",
+              index: "/student/classList",
               title: "班级列表",
             },
             {
-              index: "/class/classAdd",
+              index: "/student/classAdd",
               title: "新增班级",
             },
+            {
+              index:'/student/classChart',
+              title:'统计图表'
+            }
           ],
         },
         {
           index: "3",
           title: "用户管理",
+          icon:"el-icon-eleme",
           submenus: [
             {
               index: "/user/login",

@@ -49,7 +49,6 @@
             success(res) {
               if (res.result) {
                 console.log(res.result);
-
                 // 登陆成功,数据保存本地,然后跳转
                 localStorage.token = res.token;
                 location.href = "/html/main.html";

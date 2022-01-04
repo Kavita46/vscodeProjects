@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+class Observer{
+
+    constructor(data){
+        this.data = data;
+        this.walk(data);
+    }
+
+    walk(data){
+        Object.keys(data).forEach(key => {
+            this.defineReactive(data, key, data[key]);
+        })
+    }
+
+    defineReactive(obj, key, val){
+        Object.defineProperty(obj, key, {
+            get(){
+                console.log("触发get方法,用${key}获取值");
+                return val;
+            },
+            set(newVal){
+                console.log("触发set方法,用${key}设置值");
+                val = newVal;
+            },
+        })
+    }
+
+}
+
+let stu = {name:'格雷福斯',age:20 }
+
+new Observer(stu);
+console.log(stu);
+stu.name ='白胡子'
+
+    </script>
+</body>
+</html>

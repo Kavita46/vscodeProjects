@@ -25,21 +25,16 @@ async function register(req, res, next) {
 async function login(req, res, next) {
   const { username, password } = req.query;
   // userModel.create({username, password});
-
   // Promise MongoDB操作数据库 是异步操作,用await等待, await又需要用async
   const result = await userModel.findOne(req.query);
-
   // 这里如果没有查询到(登录失败),返回的result 是个null
-
   // 如果登陆成功,则生成token
   if (result != null) {
     const token = jwt.sign(
       // 保存任何数据,加密后随时解码
-
       { user: result },  //保存的数据,一般是user对象
       KEY,    //秘钥
       { expiresIn: '7d' }     //过期时间
-
     );
 
     res.send({ result, token: "Bearer " + token, code:200 });

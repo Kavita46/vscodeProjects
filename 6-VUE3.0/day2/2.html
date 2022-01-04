@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   let stu = { name: "艾瑞莉娅", age: "18" };
+    //   console.log(stu);
+
+      function defineReactive(obj, k, v) {
+        Object.keys(obj).forEach(k => {
+          Object.defineProperty(obj, k, {
+            get() {
+              console.log("触发get方法,用${k}获取值");
+              return v;
+            },
+            set(newVal) {
+              console.log("触发set方法,用${k}设置值");
+              v = newVal;
+            },
+          });
+        });
+      }
+
+      let stu = { name: "杰伦", age: "30" };
+
+      defineReactive(stu, "name",stu.name);
+
+      console.log(stu.name);
+      stu.name = '李红'
+      console.log(stu.name);
+    </script>
+  </body>
+</html>

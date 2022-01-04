@@ -47,10 +47,12 @@ app.use(cookieParser());
 // 先经过public(所有静态页面)的路径
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // 可以使用跨域来访问
 app.use(allowCrossDomain);
 // 通过路径之后再使用拦截规则
-// app.use(jwtAuth);
+app.use(jwtAuth);
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

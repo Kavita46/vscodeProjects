@@ -2,12 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Student from '../views/Student.vue'
 
+import store from '../store/index.js'
+
+import api from '../../src/http/api.js'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/student'
+    redirect: '/user/login'
   },
   {
     path: '/student',
@@ -68,7 +71,40 @@ const routes = [
             },
             {
               path: '/student/stuAdd',
-              title: '学生添加'
+              title: '添加学生'
+            }
+          ]
+        }
+      },
+      {
+        path: 'classList',
+        component: () => import('../components/class/classList.vue'),
+        meta: {
+          bread: [
+            {
+              path: '/student',
+              title: '班级管理'
+            },
+            {
+              path: '/student/classList',
+              title: '班级列表'
+            }
+          ]
+        }
+      },
+
+      {
+        path: 'classChart',
+        component: () => import('../views/myChart.vue'),
+        meta: {
+          bread: [
+            {
+              path: '/student',
+              title: '班级管理'
+            },
+            {
+              path: '/student/classChart',
+              title: '统计图表'
             }
           ]
         }
@@ -86,18 +122,44 @@ const routes = [
   },
   {
     path: '/user/update',
-    component:() => import('../components/user/update.vue')
-  }
-
-  // {
-  //   path: '/student/stuUpd',
-  //   name: 'stuUpd',
-  //   component: () => import('../components/stuUpd.vue')
-  // }
+    component: () => import('../components/user/update.vue')
+  },
 ]
 
 const router = new VueRouter({
   routes
+})
+
+
+// 放前置守卫, 引进store 和 api, 如果local 里 没有token 
+router.beforeEach(async (to, from, next) => {
+
+  console.log(to.path);
+
+  if (to.path.includes('/login')) {
+    next()
+  } else {
+    // 不放行
+    if (store.state.user.user) {
+      next();
+    } else {
+      if (localStorage.token) {
+        console.log('有token');
+        let res = await api.users.getUserInfo();
+        console.log(res);
+        console.log(res.user);
+        store.commit('user/CHANGE_USER', res.user)
+      } else {
+        router.push('/user/login')
+      }
+    }
+
+
+  }
+
+
+
+
 })
 
 export default router

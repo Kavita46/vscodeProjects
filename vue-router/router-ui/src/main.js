@@ -4,7 +4,10 @@ import router from './router'
 import store from './store'
 import api from '../src/http/api'
 
-import myDirective from '../src/directives/myDirective'
+import myDirective from './directives/privilege'
+
+import vueLazyload from 'vue-lazyload'
+
 
 
 // import urlUtils from '../src/utils/urlUtil'
@@ -21,6 +24,12 @@ Vue.prototype.$urlUtil= urlUtil
 
 import './plugins/element.js'
 
+Vue.use(vueLazyload, {
+  // 配置默认图
+  loading:require('../src/assets/loading.gif'),
+  throttleWait:3000
+  // 配置加载持续时间
+})
 Vue.config.productionTip = false
 // Vue.use(ElementUI)
 
