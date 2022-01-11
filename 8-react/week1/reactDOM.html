@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./week1/node_modules/react/umd/react.production.min.js"></script>
+    <script src="./week1/node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="./week1/node_modules/babel-standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 第一种写法 -->
+    <!-- <script tyle="text/babel">
+      const temp = React.createElement("h1", null, "hello, React");
+      ReactDOM.render(temp, document.getElementById("root"));
+    </script> -->
+
+    <script type="text/babel">
+    const temp = (<div>
+                <h1>react1</h1>
+                <h2>react2</h2>
+                <h3>react3</h3>
+            </div>
+        )
+
+      ReactDOM.render(temp, document.getElementById("root"));
+    </script>
+  </body>
+</html>
