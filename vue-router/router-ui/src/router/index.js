@@ -1,12 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Student from '../views/Student.vue'
-
 import store from '../store/index.js'
-
 import api from '../../src/http/api.js'
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',

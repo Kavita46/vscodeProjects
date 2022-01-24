@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖节流</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+电话号码<input type="text" id='input' placeholder='输入号码'>
+
+<div class='box'></div>
+<script>
+    // let nameInput = document.querySelector('input');
+    let nameInput = document.getElementById('input');
+
+    nameInput.addEventListener('input', debounce(myFun, 1000))
+    let box = document.querySelector('.box');
+    box.addEventListener('mousemove', throttle2(myFun2, 500)
+    )
+
+
+    // 函数防抖:就是指触发事件后 n 秒后才执行函数，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+    // 防抖用于防止频繁触发事件,例如联想搜索, 只有在用户停止输入后才会触发
+    // 初始化的时候会执行一次 但没有传入参数
+    function debounce(callback, delay) {
+        // 
+        console.log('初始化防抖函数');
+        let timeOut = null;  //外部变量
+        // 闭包, 内部函数使用外部变量
+        // 等待下一次触发事件,如果一定时间内没有下一次,则触发本次,如果有下一次,则进入下一次逻辑
+        return args => {
+            if (timeOut) {
+                clearTimeout(timeOut);
+            }
+            timeOut = setTimeout(callback, delay)
+            // 返回值是一个唯一的值,用来指向特定的这一个定时器,用来清除定时器
+        }
+    }
+    function myFun() {
+        console.log('触发防抖事件')
+        console.log(nameInput.value);
+    }
+    function myFun2(e) {
+        console.log('触发节流事件')
+        console.log('当前坐标')
+        console.log(e.clientX, e.clientY);
+    }
+    // 函数节流:对于连续的函数调用，每间隔一段时间，只让其执行一次, 将多个函数调用合并成一个函数调用
+    // 节流用于多次触发事件,比如鼠标移动,滚动条滚动,键盘输入
+    // 第一种做法:定时器
+    function throttle1(method, time) {
+        let timer = null;
+        return function () {
+            if (!timer) {
+                let that = this;
+                timer = setTimeout(() => {
+                    method();
+                    // method.apply(that, arguments);
+                    timer = null;
+                }, time)
+            }
+        }
+
+    }
+
+    // 第二种做法:时间戳
+    // 设置一个对比时间戳，触发事件时，使用当前时间戳减去对比时间戳，
+    // 如果差值大于设定的间隔时间，则执行函数，并用当前时间戳替换对比时间戳；
+    function throttle2(method, wait) {
+        // 对比时间戳，初始化为0则首次触发立即执行，初始化为当前时间戳则wait毫秒后触发才会执行
+        let previous = 0
+        // 这个this指向window
+        // console.log(this)
+        return function () {
+            // 这个this指向调用函数的那个对象,即box
+
+            let now = new Date().getTime()
+            // 间隔大于wait则执行method并更新对比时间戳
+            if (now - previous > wait) {
+                console.log(this)
+                method.apply(this,arguments);
+                previous = now
+            }
+        }
+    }
+
+    // 两种方法的区别
+// 首次触发：使用时间戳实现时会立即执行（将previous设为0的情况）；使用定时器实现会设置定时器，wait毫秒后执行。
+// 停止触发：使用时间戳实现时，停止触发后不会再执行；使用定时器实现时，由于存在定时器，停止触发后还会执行一次。
+
+
+</script>
+</body>
+
+</html>

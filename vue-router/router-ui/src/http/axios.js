@@ -4,7 +4,6 @@ import axios from 'axios'
 import router from '../router'
 let myaxios = axios.create({
     baseURL: 'http://localhost:7777',
-
     timeout: 3000
     // 超时
 })
@@ -17,14 +16,10 @@ console.log(config);
     router.push('/user/login');
 }})
 
-
 // 取得token 否则拦截
 myaxios.interceptors.request.use(config=>{
-
     // axios里写 跨域请求头
     config.headers.Authorization = localStorage.getItem('token');
     return config;
 })
-
-
 export default myaxios
