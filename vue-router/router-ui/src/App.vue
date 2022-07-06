@@ -1,27 +1,20 @@
 <!-- 我的页面 -->
 <template>
   <div>
-
-<router-view>
-  
-</router-view>
-
+    <router-view> </router-view>
+    
   </div>
 </template>
-
 <script>
-
-import Aside from '../src/views/Aside.vue'
+import Aside from "../src/views/Aside.vue";
 export default {
-  components: {Aside},
+  components: { Aside },
   data() {
     return {};
   },
   computed: {},
   watch: {},
-  methods: {
-   
-  },
+  methods: {},
 };
 </script>
 

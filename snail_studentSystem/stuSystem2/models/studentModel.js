@@ -14,11 +14,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const studentSchema = new Schema({
     sname: String,
+    sid:Number,
     // String,Number, Object, Array
     address: String,
     age: Number,
     gender: String,
     hobby: { type: Array, default: [] },
+    major:String,
+
     cla_id: {
         type: Schema.Types.String,
         ref: "classes",

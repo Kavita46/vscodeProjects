@@ -82,13 +82,13 @@ export default {
       // *****获得班级对应人数的算法****
 
     this.obj.xArray = this.studentList.map((item) => item.sname);
-    this.obj.yArray = this.studentList.map((item) => item.age);
+    this.obj.yArray = this.studentList.map((item) => item.score);
   },
   mounted() {
     this.myChart = echarts.init(document.getElementById("main"));
     this.myChart.setOption({
       title: {
-        text: "学生名字-年龄",
+        text: "学生名字-成绩",
       },
       tooltip: {},
       xAxis: {
@@ -97,7 +97,7 @@ export default {
       yAxis: {},
       series: [
         {
-          name: "年龄",
+          name: "成绩",
           type: "bar",
           data: [],
         },

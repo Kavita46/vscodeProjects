@@ -4,14 +4,11 @@ const { KEY } = require("../utils/const.js");
 const { uploadFiles, moveFiles, deleteFiles } = require("../utils/handleFiles");
 
 const fs = require('fs');
-
 async function register(req, res, next) {
   const { username, password } = req.body;
   // userModel.create({username, password});
-
   // Promise MongoDB操作数据库 是异步操作,用await等待, await又需要用async
   const result = await userModel.create(req.body);
-
   // resolve(result);
   res.send({
     result
@@ -37,7 +34,7 @@ async function login(req, res, next) {
       { expiresIn: '7d' }     //过期时间
     );
 
-    res.send({ result, token: "Bearer " + token, code:200 });
+    res.send({ result, token: "Bearer " + token, code: 200 });
   } else {
 
     // BUG 登录失败的时候这个202进入不了
@@ -61,9 +58,9 @@ async function getUserInfo(req, res) {
 }
 
 // 修改个人信息
-async function updateUserInfo(req, res){
-  const{_id, username,password, head} = req.body;
-  const result = await userModel.updateOne({_id},{username,password,head});
+async function updateUserInfo(req, res) {
+  const { _id, username, password, head } = req.body;
+  const result = await userModel.updateOne({ _id }, { username, password, head });
 
   res.send(req.body);
 }
@@ -79,7 +76,7 @@ async function uploadTemp(req, res, next) {
     else {
       console.log(req.files[0])
       // 这里 如果 request不send  的话就会被挂起
-      res.send({head:req.files[0].filename})
+      res.send({ head: req.files[0].filename })
       // res.send({ head: req.files[0] });
     }
   })
@@ -100,12 +97,12 @@ async function uploadConfirm(req, res, next) {
 
   // BUG 这里可以上传任意文件,如何验证文件是图片?
   // TAG 如果/images目录里含有文件名为filename的文件
-if(fs.existsSync('./public/images/' + filename)){
+  if (fs.existsSync('./public/images/' + filename)) {
 
-  res.send({ code: 200 });
-}else{
-  res.send({code:201});
-}
+    res.send({ code: 200 });
+  } else {
+    res.send({ code: 201 });
+  }
 
 
   // 最后修改数据库里的头像
@@ -113,6 +110,7 @@ if(fs.existsSync('./public/images/' + filename)){
 
 }
 
-module.exports = { register, login, getUserInfo, uploadTemp, uploadConfirm,
-updateUserInfo
+module.exports = {
+  register, login, getUserInfo, uploadTemp, uploadConfirm,
+  updateUserInfo
 };

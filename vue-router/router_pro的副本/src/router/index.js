@@ -115,7 +115,7 @@ router.beforeEach((to, from, next) => {
     if (localStorage.getItem('token')) {
       next()
     } else {
-      alert('没有token')
+      alert('没有token,啦啦啦')
       router.push('/home')
     }
   }

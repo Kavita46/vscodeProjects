@@ -6,10 +6,10 @@
         <!-- <span style = 'margin-left:-300px'>欢迎您 xxx 用户</span> -->
         <template>
           <div>
-            <span style="position: absolute; top: 0; left: 200px; color:red"
-              >欢迎{{ user.username }}用户,   权限为{{user.privilege}}</span
 
-           
+            
+            <span style="position: absolute; top: 0; left: 200px; color:red"
+              >欢迎{{ user.username }}用户, 身份为学生</span
             >
 
             <!-- <span> vuex的数据{{ user }}</span> -->
@@ -22,14 +22,20 @@
           <Aside></Aside>
         </el-aside>
         <el-main>
-          <h1>欢迎来到学生管理系统</h1>
+          <h1>学生成绩管理系统(学生端)</h1>
+ <v-html> 作者:李隆瀹 学号:2021220095 </v-html>
           <el-button @click="quit">注销</el-button>
           <BreadCrumb></BreadCrumb>
           <br />
           <router-view></router-view>
+            
         </el-main>
       </el-container>
+
     </el-container>
+
+
+ 
   </div>
 </template>
 
@@ -58,6 +64,7 @@ export default {
   methods: {
     quit() {
       localStorage.removeItem("token");
+      localStorage.removeItem("vuex");
       this.$message.success("注销成功");
       this.$router.push("/user/login");
     },

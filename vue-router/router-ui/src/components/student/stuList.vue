@@ -6,13 +6,21 @@
     <br />
     {{ pageData }} -->
     <!-- 1-表格模块 -->
-<el-input v-model='searchKey' @change='searchStudents' style ='width:500px'></el-input>
-<el-button @click='searchStudents'>搜索</el-button>
+    <el-input
+      v-model="searchKey"
+      @change="searchStudents"
+      style="width: 500px"
+    ></el-input>
+    <el-button @click="searchStudents">搜索</el-button>
 
     <el-table :data="pageData.result" style="width: 100%">
       <template>
-        <el-table-column prop="_id" label="学号" width="150"></el-table-column>
-        <el-table-column prop="sname" label="姓名" width="100"></el-table-column>
+        <el-table-column prop="sid" label="学号" width="150"></el-table-column>
+        <el-table-column
+          prop="sname"
+          label="姓名"
+          width="100"
+        ></el-table-column>
         <el-table-column prop="age" label="年龄" width="50"></el-table-column>
         <el-table-column
           prop="gender"
@@ -24,39 +32,53 @@
           label="班级"
           width="50"
         ></el-table-column>
-        <el-table-column
+        <!-- <el-table-column
           prop="address"
           label="住址"
           width="50"
-        ></el-table-column>
+        ></el-table-column> -->
         <el-table-column prop="imgs" label="头像" width="100">
           <template slot-scope="scope">
-            <el-avatar v-if = "scope.row.imgs"
+            <el-avatar
+              v-if="scope.row.imgs"
               :src="`http://localhost:7777/images/${scope.row.imgs}`"
             ></el-avatar>
-            <el-avatar v-else >无</el-avatar>
+            <el-avatar v-else>无</el-avatar>
           </template>
         </el-table-column>
 
-        <el-table-column
+        <!-- <el-table-column
           prop="hobby"
           label="爱好"
           width="180"
+        ></el-table-column> -->
+
+        <el-table-column
+          prop="major"
+          label="专业"
+          width="150"
         ></el-table-column>
 
         <el-table-column label="操作">
           <!-- XXX 如果要获得点击按钮的那一栏的值,一定要加template -->
           <template slot-scope="scope">
-            <el-button v-privilege="'编辑'" size="mini" @click="handleEdit(scope.$index, scope.row)"
-              >编辑</el-button
+            <el-button
+              size="mini"
+              @click="handleEdit(scope.$index, scope.row)"
+              >查看信息</el-button
             >
             <el-button
-            v-privilege="'删除'"
+              size="mini"
+              @click="handleScores(scope.$index, scope.row)"
+              >查看成绩</el-button
+            >
+            <!-- <el-button
+              v-privilege="'删除'"
               size="mini"
               type="danger"
               @click="handleDelete(scope.$index, scope.row)"
               >删除</el-button
-            >
+            > -->
           </template>
         </el-table-column>
       </template>
@@ -73,7 +95,6 @@
       :total="pageData.count"
     >
     </el-pagination>
-
   </div>
 </template>
 
@@ -87,7 +108,7 @@ export default {
   components: {},
   data() {
     return {
-      searchKey:'',
+      searchKey: "",
       currentPage: 1,
       // menus:['学号', '姓名', '年龄','性别','班级','住址', '爱好', '操作']
     };
@@ -110,7 +131,6 @@ export default {
       try {
         // BUG 假如不用await 接收, 第一次点击之后 不会及时刷新,也就是需要删除两个(第二个进入的时候上一个才执行)
         let res = await this.api.students.deleteStudent(row._id);
-
         if (res) {
           this.getStudents();
           this.$message({
@@ -129,30 +149,47 @@ export default {
     // 2-修改事件
     handleEdit(index, row) {
       console.log(index, row);
-      this.$router.push("/student/stuUpdate?_id=" + row._id);
+      this.$router.push("/teacher/stuUpdate?sid=" + row.sid);
     },
+    handleScores(index, row) {
+      console.log(index, row);
+      this.$router.push("/teacher/stuScore?sid=" + row.sid)
+    },
+
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
       this.pageData.pageSize = val;
       this.currentPage = 1;
-      this.CHANGE_PAGEDATA(this.pageData)
-       this.getByPages({ pageIndex: 1, pageSize: this.pageData.pageSize, k:this.searchKey });
+      this.CHANGE_PAGEDATA(this.pageData);
+      this.getByPages({
+        pageIndex: 1,
+        pageSize: this.pageData.pageSize,
+        k: this.searchKey,
+      });
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
       this.pageData.pageIndex = val;
-       this.CHANGE_PAGEDATA(this.pageData)
-        this.getByPages({ pageIndex: this.pageData.pageIndex, pageSize: this.pageData.pageSize, k: this.searchKey });
+      this.CHANGE_PAGEDATA(this.pageData);
+      this.getByPages({
+        pageIndex: this.pageData.pageIndex,
+        pageSize: this.pageData.pageSize,
+        k: this.searchKey,
+      });
     },
 
     // 6-搜索方法
 
-    searchStudents(){
+    searchStudents() {
       this.pageData.pageIndex = 1;
-      console.log('搜索关键词' + this.searchKey);
-       this.currentPage = 1;
-      this.getByPages({ pageIndex: this.pageData.pageIndex, pageSize: this.pageData.pageSize, k: this.searchKey });
-    }
+      console.log("搜索关键词" + this.searchKey);
+      this.currentPage = 1;
+      this.getByPages({
+        pageIndex: this.pageData.pageIndex,
+        pageSize: this.pageData.pageSize,
+        k: this.searchKey,
+      });
+    },
   },
 
   async created() {

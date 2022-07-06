@@ -12,7 +12,7 @@ const jwtAuth = expressJwt({
     // 拦截的白名单, 这里放行了以下方法
     // path:['/users/login','/users/register','/students/getByPages']
 
-    path: ['/users/login', '/users/register', '/public/images', '/banners/getBanners', '/students/uploadTemp']
+    path: ['/images','/scores/getScoreTable', '/students/getStudents', '/users/login', '/users/register', '/public/images', '/banners/getBanners', '/students/uploadTemp']
 
 })
 

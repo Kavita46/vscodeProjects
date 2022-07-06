@@ -28,7 +28,7 @@
         <div id="btn_bar">
           <el-button @click="login">登录</el-button>
 
-          <el-button @click='register'>注册</el-button>
+          <el-button @click="register">注册</el-button>
         </div>
       </el-card>
     </div>
@@ -37,9 +37,7 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-
 const { mapState, mapMutations, mapActions } = createNamespacedHelpers("user");
-
 export default {
   components: {},
   data() {
@@ -74,7 +72,7 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    ...mapMutations(["CHANGE_USER"]),
+    ...mapMutations(["CHANGE_USER", "CHANGE_ROLE"]),
 
     async login() {
       try {
@@ -86,12 +84,16 @@ export default {
             duration: 1000,
           });
           this.CHANGE_USER(res.result);
-          console.log(res.result);
-
-          console.log(res.token);
+          console.log(this.$store.state);
+          // this.CHANGE_ROLE(res.result.role)
+          this.CHANGE_ROLE(res.result.role);
+          // console.log(this.state.role);
+          console.log("仓库里的角色是");
+          console.log(this.$store.state.user.role);
           localStorage.token = res.token;
           // this.CHANGE_USER({username:'zzz', password:'123'})
-          this.$router.push("/student");
+          let role = this.$store.state.user.role;
+          this.$router.push("/" + role);
         } else {
           this.$message({
             message: "用户名或密码错误,登录失败",
@@ -131,7 +133,12 @@ export default {
   created() {
     if (localStorage.token) {
       alert("您已经登录,正在跳转主页");
-      this.$router.push("/student");
+      // let role = localStorage.vuex
+      console.log('打印仓库')
+      console.log(JSON.parse(localStorage.getItem('vuex')).user.role);
+      let role = JSON.parse(localStorage.getItem('vuex')).user.role;
+      console.log(typeof(role))
+      this.$router.push("/" + role);
     }
   },
 };

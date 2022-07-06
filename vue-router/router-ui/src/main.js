@@ -3,25 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import api from '../src/http/api'
-
 import myDirective from './directives/privilege'
-
 import vueLazyload from 'vue-lazyload'
-
-
-
 // import urlUtils from '../src/utils/urlUtil'
-
 import urlUtil from '../src/utils/urlUtils'
 
 Vue.prototype.api = api
 Vue.prototype.$urlUtil= urlUtil
 // import ElementUI from 'element-ui'
-
 // // import 'element-ui/lib.theme-chalk/index.css'
-
 // import '../node_modules/element-ui/lib/theme-chalk/index.css'
-
 import './plugins/element.js'
 
 Vue.use(vueLazyload, {

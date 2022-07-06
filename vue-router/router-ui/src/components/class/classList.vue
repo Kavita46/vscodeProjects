@@ -3,15 +3,39 @@
   <div>
     <el-table :data.sync="classList" style="width: 100%">
       <el-table-column
-        label="ID"
-        prop="_id"
+        label="专业"
+        prop="major"
         style="width: 50%"
       ></el-table-column>
       <el-table-column
-        label="名字"
+        label="班级名"
         prop="cname"
         style="width: 50%"
       ></el-table-column>
+      <el-table-column
+        label="人数"
+        prop="count"
+        style="width: 50%"
+      ></el-table-column>
+         <el-table-column label="操作">
+          <!-- XXX 如果要获得点击按钮的那一栏的值,一定要加template -->
+          <template slot-scope="scope">
+            <el-button
+            type="primary"
+              v-privilege="'编辑'"
+              size="mini"
+              @click="handleEdit(scope.$index, scope.row)"
+              >修改</el-button
+            >
+            <el-button
+            type="danger"
+              v-privilege="'老师'"
+              size="mini"
+              @click="handleScores(scope.$index, scope.row)"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
     </el-table>
     <br />
     <h3>添加班级</h3>
@@ -30,7 +54,7 @@ export default {
   data() {
     return {
       classList: [],
-      newClass: { cname: "" },
+      newClass: { cname: "", cid: -1, count: 0 },
     };
   },
   computed: {},
@@ -50,6 +74,8 @@ export default {
         type: "warning",
       })
         .then(() => {
+          this.newClass.cid = this.classList.length + 1;
+          console.log(this.newClass.cid);
           this.addClass(this.newClass);
           this.$message({
             type: "success",

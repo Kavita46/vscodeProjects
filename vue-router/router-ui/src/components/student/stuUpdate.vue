@@ -3,7 +3,7 @@
   <div style="display: flex">
     <div style="flex: 2">
       <el-form ref="form" :model="student" label-width="80px">
-        <el-form-item label="学生姓名">
+        <el-form-item label="姓名">
           <el-input v-model="student.sname"></el-input>
         </el-form-item>
 
@@ -11,7 +11,11 @@
           <el-input v-model="student.age"></el-input>
         </el-form-item>
 
-        <el-form-item label="住址">
+        <el-form-item label="学号">
+          <el-input readonly v-model="student.sid"></el-input>
+        </el-form-item>
+
+        <el-form-item label="籍贯">
           <el-input v-model="student.address"></el-input>
         </el-form-item>
 
@@ -26,14 +30,15 @@
           </el-option>
         </el-select>
 
-        <el-form-item label="爱好">
+        <!-- <el-form-item label="爱好">
           <el-checkbox-group v-model="student.hobby">
             <el-checkbox label="吃饭" name="type"></el-checkbox>
             <el-checkbox label="睡觉" name="type"></el-checkbox>
             <el-checkbox label="打豆豆" name="type"></el-checkbox>
-            <!-- <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox> -->
+            <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox> 
           </el-checkbox-group>
-        </el-form-item>
+        </el-form-item> -->
+
         <el-form-item label="性别">
           <el-radio-group v-model="student.gender">
             <el-radio label="男"></el-radio>
@@ -42,8 +47,13 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary" @click="editStudent">立即修改</el-button>
-          <el-button>取消</el-button>
+          <el-button
+            v-if="role == 'student'"
+            type="primary"
+            @click="editStudent"
+            >立即修改</el-button
+          >
+          <el-button @click="goBack">返回</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -63,7 +73,6 @@
 </template>
 
 <script>
-
 export default {
   components: {},
   data() {
@@ -71,8 +80,9 @@ export default {
       student: {
         // 这里不预定义会报错,length 不能读取
         hobby: [],
-        imgs:''
+        imgs: "",
       },
+      role: "",
       classList: [],
       labelPosition: "right",
       imageUrl: "",
@@ -81,15 +91,17 @@ export default {
   computed: {},
   watch: {},
   methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
     // 1-通过ID 获得学生信息
-    async getById(_id) {
-      console.log("id是" + _id);
+    async getById(sid) {
+      console.log("id是" + sid);
       try {
-        let res = await this.api.students.getById(_id);
-        console.log('res是');
+        let res = await this.api.students.getById(sid);
+        console.log("res是");
         console.log(res);
         this.student = res.result;
-
         console.log();
       } catch (e) {
         alert("服务器异常");
@@ -110,26 +122,25 @@ export default {
 
     // 3-修改学生信息
     async editStudent() {
-      // const { _id, sname, age, address, hobby, gender, cla_id } = data;
+      // const { _id, sname, age, address, hobby, gender, cla_id ,score} = data;
       // console.log("student是");
       // console.log(this.student);
       try {
-        console.log('student是');
-        console.log(this.student);
         let res = await this.api.students.editStudent(this.student);
         console.log(res);
-        alert("修改成功");
-        this.$router.push("/student/stuList");
+        this.$message.success("修改成功");
+        let role = this.role;
+        this.$router.push("/" + role);
         // this.$router.push("/student/stuList");
       } catch (e) {
-        alert("修改失败");
+        this.$message.error("修改失败");
       }
     },
     // 4-上传框的 图片检测
     handleAvatarSuccess(res, file) {
       // XXX 本地地址回显图片
 
-      this.$set(this.student,'imgs',file.response.head)
+      this.$set(this.student, "imgs", file.response.head);
       // this.student.imgs = file.response.head;
       console.log("student的head是");
       console.log(this.student.imgs);
@@ -151,16 +162,22 @@ export default {
   },
 
   async created() {
-    let itemId = this.$route.query._id;
-    console.log(itemId);
-
+    // 学生自查模式,不含参数
+    let role = JSON.parse(localStorage.getItem("vuex")).user.role;
+    if (role == "student") {
+      this.role = role;
+      let campus = JSON.parse(localStorage.getItem("vuex")).user.user.campusId;
+      await this.getById(campus);
+      this.imageUrl = "http://localhost:7777/images/" + this.student.imgs;
+    }
+    // 教师他查模式,含参数
+    let itemId = this.$route.query.sid;
+    if (itemId) {
+      let res = await this.getById(itemId);
+      this.imageUrl = "http://localhost:7777/images/" + this.student.imgs;
+    }
     // 获得初始渲染数据
-    let res = await this.getById(itemId);
-        console.log('result 是');
-    console.log(res);
-    this.imageUrl =  'http://localhost:7777/images/'+this.student.imgs;
     this.getClasses();
-
     //   let _id = $this.route.query._id;
     //   console.log(_id);
   },

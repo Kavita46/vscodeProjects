@@ -6,6 +6,8 @@ const userSchema = new Schema({
     username: String,
     // String,Number, Object, Array
     password: String,
+    role: String,
+    campusId:Number,
     head: {
         type: String,
         default: "1.jpeg"

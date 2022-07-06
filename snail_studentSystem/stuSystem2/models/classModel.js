@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const classSchema = new mongoose.Schema({
     cname: String,
-    count:Number
+    count:Number,
+    cid:Number
 }
     ,
     { versionKey: false });

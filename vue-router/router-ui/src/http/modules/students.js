@@ -14,7 +14,7 @@ function getById(data) {
     let myaxios = axios({
         url: `/${STUDENTS}/getById`,
         method: 'get',
-        params: { _id: data }
+        params: { sid: data }
     })
 
     console.log(myaxios);
@@ -22,8 +22,7 @@ function getById(data) {
 }
 
 function editStudent(data) {
-    const { _id, sname, age,imgs, address, hobby, gender, cla_id } = data;
-
+    const { _id, sname, age, imgs, address, hobby, gender, cla_id, score, major } = data;
     return axios({
         url: `/${STUDENTS}/editStudent`,
         method: 'post',
@@ -35,10 +34,11 @@ function editStudent(data) {
             hobby: hobby.join(),
             gender: gender,
             cla_id: cla_id,
-            imgs:imgs
+            imgs: imgs,
+            score: score,
+            major:major
         }
     })
-
 }
 
 // POST 是data, get 是 params
@@ -48,7 +48,6 @@ function deleteStudent(data) {
         url: `/${STUDENTS}/deleteStudent`,
         method: 'post',
         data: { _id: data }
-
         // { _id }
     })
 

@@ -20,13 +20,13 @@ async function editStudent(req, res, next) {
 
     console.log('前端传过来的是')
     console.log(req.body)
-    const { _id,imgs, sname, age, address, gender, hobby, cla_id } = req.body;
+    const { _id,imgs, sname, age, address, gender, hobby, cla_id,score } = req.body;
     // TODO 修改函数
     // BUG 这里hobby空值的时候会成为一个带空白的数组
 
     // 需要传进来一个字符串
     console.log('这里的hobby是' + hobby)
-    const result = await studentModel.updateOne({ _id }, { imgs,sname, age, address, gender, cla_id, hobby: hobby.split(",") });
+    const result = await studentModel.updateOne({ _id }, { imgs,sname, age, address, gender, cla_id, hobby: hobby.split(","),score });
 
     console.log('head的值是' + imgs);
     // 移动图片
@@ -46,8 +46,7 @@ async function editStudent(req, res, next) {
 }
 // 4-通过Id查询
 async function getById(req, res, next) {
-
-    const { _id } = req.query;
+    const { sid } = req.query;
     const result = await studentModel.findOne(req.query);
     res.send({ result });
 }
@@ -122,10 +121,10 @@ async function getByPages(req, res, next) {
 // 6-添加学生
 async function addStudent(req, res, next) {
     console.log("req.body")
-    const { sname, age, address, gender, hobby } = req.body;
+    const { sname, age, address, gender, hobby, score } = req.body;
     // TODO 修改函数
     // BUG 这里hobby空值的时候会成为一个带空白的数组
-    const result = await studentModel.create({ sname, age, address, gender, hobby: hobby.split(",") });
+    const result = await studentModel.create({ sname, age, address, gender, hobby: hobby.split(",") , score});
     res.send(
         req.body
     )
